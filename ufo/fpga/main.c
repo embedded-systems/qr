@@ -18,7 +18,7 @@
  * main -- do the demo
  *------------------------------------------------------------------
  */
-int main() 
+int main()
 {
 	printf("Hello World!\r\n");
 	while (1) {
