@@ -1,0 +1,150 @@
+#####################################################################
+### CONFIGURATION
+#####################################################################
+## PATH TO PROGRAMMING TOOLS
+TOOLDIR=../x32-tools/bin
+## VHDL SOURCE DIRECTORY
+VHDDIR=vhdl
+## JTAG_INDEX FOR FPGA UPLOADING
+JTAG_INDEX=0
+## PATH TO X32 LIBRARY SOURCES
+LIBDIR=library
+## extra C flags to compile the library/loader, use empty or -g to compile
+## with debug symbols
+C_COMPILE_FLAGS=
+## some linux systems require this to be -e
+#ECHO_FLAGS=-e
+ECHO_FLAGS=
+
+LOADER_SOURCES=loader/loader.c loader/loader_helper.bc loader/shell.c
+
+X32_CORE_SOURCES= \
+	$(VHDDIR)/core/types.vhd \
+	$(VHDDIR)/core/register.vhd \
+	$(VHDDIR)/core/register_init.vhd \
+	$(VHDDIR)/core/timer.vhd \
+	$(VHDDIR)/core/alu_leftshifter.vhd \
+	$(VHDDIR)/core/alu_rightshifter.vhd \
+	$(VHDDIR)/core/alu_divider.vhd \
+	$(VHDDIR)/core/alu_multiplier.vhd \
+	$(VHDDIR)/core/alu_addsub.vhd \
+	$(VHDDIR)/core/alu.vhd \
+	$(VHDDIR)/core/comperator_signed.vhd \
+	$(VHDDIR)/core/comperator_unsigned.vhd \
+	$(VHDDIR)/core/comperator.vhd \
+	$(VHDDIR)/core/controller.vhd \
+	$(VHDDIR)/core/decoder.vhd \
+	$(VHDDIR)/core/core.vhd 
+
+PERIPHERAL_SOURCES= \
+	$(VHDDIR)/peripherals/4x7seg/bin2hex.vhd \
+	$(VHDDIR)/peripherals/4x7seg/disp.vhd \
+	$(VHDDIR)/peripherals/rs232/rs232in.vhd \
+	$(VHDDIR)/peripherals/rs232/rs232out.vhd \
+	$(VHDDIR)/peripherals/rs232/fifo_buffer.vhd \
+	$(VHDDIR)/peripherals/rs232/uart.vhd \
+	$(VHDDIR)/peripherals/pdc_dpc/pdc.vhd \
+	$(VHDDIR)/peripherals/pdc_dpc/dpc.vhd \
+	$(VHDDIR)/peripherals/ps2/ps2reader.vhd \
+	$(VHDDIR)/peripherals/maxon/decoder.vhd \
+	$(VHDDIR)/peripherals/maxon/maxon.vhd \
+	$(VHDDIR)/peripherals/maxon/counter.vhd \
+	$(VHDDIR)/peripherals/trex_comm/trex_comm.vhd \
+	$(VHDDIR)/interrupt/interrupt_controller.vhd \
+	$(VHDDIR)/xs3e/sram-32.vhd \
+	$(VHDDIR)/xs3e/mem_decoder.vhd \
+	$(VHDDIR)/rs232mem.vhd \
+	$(VHDDIR)/data32to8.vhd 
+
+
+X32_SOURCES=$(CONFIG) $(X32_CORE_SOURCES) $(PERIPHERAL_SOURCES)
+
+LIB_X32_SOURCES=$(LIBDIR)/x32.c $(LIBDIR)/get_execution_level.bc \
+	$(LIBDIR)/set_execution_level.bc $(LIBDIR)/lock.c $(LIBDIR)/sleep.c \
+	$(LIBDIR)/combine_stackframe.c $(LIBDIR)/getchar_nb.c \
+	$(LIBDIR)/getchar.c $(LIBDIR)/putchar.c $(LIBDIR)/taskswitch.c \
+	$(LIBDIR)/restore_execution_level.bc \
+	$(LIBDIR)/enable_disable_interrupt.c $(LIBDIR)/clock.c
+
+
+.PHONY : default clean loader all x32-example x32-minimal \
+	x32-minimal-interrupts x32-in4073 x32-in2305 x32-core \
+	%-clean
+
+default : x32-minimal-interrupts
+
+all : x32-example x32-minimal x32-minimal-interrupts x32-in4073 \
+	x32-in2305 x32-rs232debug x32-core x32-in4073-trex
+
+x32-example: x32-example/x32.bit x32-example/x32.h x32-example/x32.cl
+x32-minimal: x32-minimal/x32.bit x32-minimal/x32.h x32-minimal/x32.cl
+x32-minimal-interrupts: x32-minimal-interrupts/x32.bit \
+	x32-minimal-interrupts/x32.h 	x32-minimal-interrupts/x32.cl
+x32-in4073: x32-in4073/x32.bit x32-in4073/x32.h x32-in4073/x32.cl
+x32-in4073-trex: x32-in4073-trex/x32.bit x32-in4073-trex/x32.h x32-in4073-trex/x32.cl
+x32-in2305: x32-in2305/x32.bit x32-in2305/x32.h x32-in2305/x32.cl
+x32-rs232debug: x32-rs232debug/x32.bit x32-rs232debug/x32.h \
+	x32-rs232debug/x32.cl
+x32-core: x32-core/x32.bit x32-core/x32.h x32-core/x32.cl
+
+clean : xilinxclean x32-example-clean x32-minimal-clean \
+	x32-minimal-interrupts-clean x32-in4073-clean x32-in2305-clean \
+	x32-rs232debug-clean x32-core-clean x32-in4073-trex-clean
+
+%-clean :
+	-del $*\x32.dir
+	-del $*\peripherals.vhd
+	-del $*\toplevel.vhd
+	-del $*\rom.dbg
+	-del $*\rom.ce
+	-del $*\rom.vhd
+	-del $*\toplevel.vhd
+	-del $*\x32.bgn
+	-del $*\x32.bit
+	-del $*\x32.bld
+	-del $*\x32.cl
+	-del $*\x32.drc
+	-del $*\x32.ngd
+	-del $*\x32.ncd
+	-del $*\x32.ngc
+	-del $*\x32.pcf
+	-del $*\x32.h
+	-del $*\x32.lso
+	-del $*\x32.pad
+	-del $*\x32.par
+	-del $*\x32.prj
+	-del $*\x32.unroutes
+	-del $*\x32.xpi
+	-del $*\x32.xst.log
+	-del $*\x32.xst-script
+	-del $*\x32_map.mrp
+	-del $*\x32_map.ncd
+	-del $*\x32_map.ngm
+	-del $*\x32_pad.csv
+	-del $*\x32_pad.txt
+
+## NEW MAKEFILE LAYOUT:
+%/rom.ce : $(LOADER_SOURCES) %/x32.h %/x32.cl
+	$(TOOLDIR)/lcc-x32$(EXE) $(C_COMPILE_FLAGS) -Wo-lccdir=$(TOOLDIR) -Wo-base=C0000 $(LOADER_SOURCES) -o $@ -I$* -Wl-lib -Wl$(abspath $*)
+
+%/rom.vhd : %/rom.ce
+	$(TOOLDIR)/bin2vhd $*/rom.ce -o $*/rom.vhd
+
+%/toplevel.vhd : $(VHDDIR)/toplevel._vhd %/config.vh
+	perl filepp/filepp -Mfilepp/modules -m for.pm -m c-comment.pm -m bigfunc.pm -m ppresolve.pm -DCONFIGURATION_FILE="config.vh" $(VHDDIR)/toplevel._vhd -I$* -I$../$(VHDDIR) -o $@
+
+%/peripherals.vhd : $(VHDDIR)/peripherals._vhd %/config.vh
+	perl filepp/filepp -Mfilepp/modules -m for.pm -m c-comment.pm -m bigfunc.pm -m ppresolve.pm -DCONFIGURATION_FILE="config.vh" $(VHDDIR)/peripherals._vhd -I$* -I$../$(VHDDIR) -o $@
+
+%/x32.h : $(LIBDIR)/x32._h %/config.vh
+	perl filepp/filepp -Mfilepp/modules -m for.pm -m c-comment.pm -m bigfunc.pm -m ppresolve.pm -m format.pm  -DCONFIGURATION_FILE="config.vh" $(LIBDIR)/x32._h -I$* -I$../$(VHDDIR) -o $@
+
+%/x32.cl : $(LIB_X32_SOURCES)
+	$(TOOLDIR)/lcc-x32$(EXE) $(C_COMPILE_FLAGS) -Wo-lccdir=$(TOOLDIR) -Wo-buildlib $(LIB_X32_SOURCES) -I$* -o $@
+
+%/x32.prj : $(X32_SOURCES) %/toplevel.vhd %/peripherals.vhd %/rom.vhd
+# if anyone knows a better way...
+	list_args.cmd $*/rom.vhd $*/peripherals.vhd $*/toplevel.vhd $(X32_SOURCES) >> $@
+
+include xilinx-windows.mf
+ 

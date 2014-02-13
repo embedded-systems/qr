@@ -1,0 +1,4 @@
+F FIFO_BUF.VHD;1                                                                                                                                                                                                  	fifo_buffer.vhd
+F RS232IN.VHD;1                                                                                                                                                                                                   	rs232in.vhd
+F RS232OUT.VHD;1                                                                                                                                                                                                  	rs232out.vhd
+F UART.VHD;1                                                                                                                                                                                                      	uart.vhd

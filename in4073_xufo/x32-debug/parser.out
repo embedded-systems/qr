@@ -1,0 +1,3157 @@
+
+
+Unused terminals:
+
+
+Grammar
+
+Rule 1     expression -> expression PLUS expression
+Rule 2     expression -> expression MINUS expression
+Rule 3     expression -> expression MODULO expression
+Rule 4     expression -> expression TIMES expression
+Rule 5     expression -> expression DIVIDE expression
+Rule 6     expression -> expression OR expression
+Rule 7     expression -> expression XOR expression
+Rule 8     expression -> expression AND expression
+Rule 9     expression -> expression LT expression
+Rule 10    expression -> expression LTE expression
+Rule 11    expression -> expression GT expression
+Rule 12    expression -> expression GTE expression
+Rule 13    expression -> expression LSHIFT expression
+Rule 14    expression -> expression RSHIFT expression
+Rule 15    expression -> expression EQUAL expression
+Rule 16    expression -> expression NOT_EQUAL expression
+Rule 17    expression -> expression LOGICAL_AND expression
+Rule 18    expression -> expression LOGICAL_OR expression
+Rule 19    expression -> TIMES expression
+Rule 20    expression -> AND NAME
+Rule 21    expression -> NAME
+Rule 22    expression -> NUMBER
+Rule 23    expression -> HEX_NUMBER
+Rule 24    expression -> PLUS expression
+Rule 25    expression -> MINUS expression
+Rule 26    expression -> LOGICAL_NOT expression
+Rule 27    expression -> HASH expression
+Rule 28    expression -> LPAREN expression RPAREN
+Rule 29    expression -> expression LBRACKET expression RBRACKET
+
+Terminals, with rules where they appear
+
+AND                  : 8 20
+DIVIDE               : 5
+EQUAL                : 15
+GT                   : 11
+GTE                  : 12
+HASH                 : 27
+HEX_NUMBER           : 23
+LBRACKET             : 29
+LOGICAL_AND          : 17
+LOGICAL_NOT          : 26
+LOGICAL_OR           : 18
+LPAREN               : 28
+LSHIFT               : 13
+LT                   : 9
+LTE                  : 10
+MINUS                : 2 25
+MODULO               : 3
+NAME                 : 20 21
+NOT_EQUAL            : 16
+NUMBER               : 22
+OR                   : 6
+PLUS                 : 1 24
+RBRACKET             : 29
+RPAREN               : 28
+RSHIFT               : 14
+TIMES                : 4 19
+XOR                  : 7
+error                : 
+
+Nonterminals, with rules where they appear
+
+expression           : 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 11 11 12 12 13 13 14 14 15 15 16 16 17 17 18 18 19 24 25 26 27 28 29 29 0
+
+
+Parsing method: SLR
+
+
+state 0
+
+    (0) S' -> . expression
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 11
+
+state 1
+
+    (28) expression -> LPAREN . expression RPAREN
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 12
+
+state 2
+
+    (22) expression -> NUMBER .
+
+    $               reduce using rule 22 (expression -> NUMBER .)
+    PLUS            reduce using rule 22 (expression -> NUMBER .)
+    MINUS           reduce using rule 22 (expression -> NUMBER .)
+    MODULO          reduce using rule 22 (expression -> NUMBER .)
+    TIMES           reduce using rule 22 (expression -> NUMBER .)
+    DIVIDE          reduce using rule 22 (expression -> NUMBER .)
+    OR              reduce using rule 22 (expression -> NUMBER .)
+    XOR             reduce using rule 22 (expression -> NUMBER .)
+    AND             reduce using rule 22 (expression -> NUMBER .)
+    LT              reduce using rule 22 (expression -> NUMBER .)
+    LTE             reduce using rule 22 (expression -> NUMBER .)
+    GT              reduce using rule 22 (expression -> NUMBER .)
+    GTE             reduce using rule 22 (expression -> NUMBER .)
+    LSHIFT          reduce using rule 22 (expression -> NUMBER .)
+    RSHIFT          reduce using rule 22 (expression -> NUMBER .)
+    EQUAL           reduce using rule 22 (expression -> NUMBER .)
+    NOT_EQUAL       reduce using rule 22 (expression -> NUMBER .)
+    LOGICAL_AND     reduce using rule 22 (expression -> NUMBER .)
+    LOGICAL_OR      reduce using rule 22 (expression -> NUMBER .)
+    RPAREN          reduce using rule 22 (expression -> NUMBER .)
+    LBRACKET        reduce using rule 22 (expression -> NUMBER .)
+    RBRACKET        reduce using rule 22 (expression -> NUMBER .)
+
+
+
+state 3
+
+    (25) expression -> MINUS . expression
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 13
+
+state 4
+
+    (24) expression -> PLUS . expression
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 14
+
+state 5
+
+    (27) expression -> HASH . expression
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 15
+
+state 6
+
+    (19) expression -> TIMES . expression
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 16
+
+state 7
+
+    (20) expression -> AND . NAME
+
+    NAME            shift and go to state 17
+
+
+
+state 8
+
+    (26) expression -> LOGICAL_NOT . expression
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 18
+
+state 9
+
+    (21) expression -> NAME .
+
+    $               reduce using rule 21 (expression -> NAME .)
+    PLUS            reduce using rule 21 (expression -> NAME .)
+    MINUS           reduce using rule 21 (expression -> NAME .)
+    MODULO          reduce using rule 21 (expression -> NAME .)
+    TIMES           reduce using rule 21 (expression -> NAME .)
+    DIVIDE          reduce using rule 21 (expression -> NAME .)
+    OR              reduce using rule 21 (expression -> NAME .)
+    XOR             reduce using rule 21 (expression -> NAME .)
+    AND             reduce using rule 21 (expression -> NAME .)
+    LT              reduce using rule 21 (expression -> NAME .)
+    LTE             reduce using rule 21 (expression -> NAME .)
+    GT              reduce using rule 21 (expression -> NAME .)
+    GTE             reduce using rule 21 (expression -> NAME .)
+    LSHIFT          reduce using rule 21 (expression -> NAME .)
+    RSHIFT          reduce using rule 21 (expression -> NAME .)
+    EQUAL           reduce using rule 21 (expression -> NAME .)
+    NOT_EQUAL       reduce using rule 21 (expression -> NAME .)
+    LOGICAL_AND     reduce using rule 21 (expression -> NAME .)
+    LOGICAL_OR      reduce using rule 21 (expression -> NAME .)
+    RPAREN          reduce using rule 21 (expression -> NAME .)
+    LBRACKET        reduce using rule 21 (expression -> NAME .)
+    RBRACKET        reduce using rule 21 (expression -> NAME .)
+
+
+
+state 10
+
+    (23) expression -> HEX_NUMBER .
+
+    $               reduce using rule 23 (expression -> HEX_NUMBER .)
+    PLUS            reduce using rule 23 (expression -> HEX_NUMBER .)
+    MINUS           reduce using rule 23 (expression -> HEX_NUMBER .)
+    MODULO          reduce using rule 23 (expression -> HEX_NUMBER .)
+    TIMES           reduce using rule 23 (expression -> HEX_NUMBER .)
+    DIVIDE          reduce using rule 23 (expression -> HEX_NUMBER .)
+    OR              reduce using rule 23 (expression -> HEX_NUMBER .)
+    XOR             reduce using rule 23 (expression -> HEX_NUMBER .)
+    AND             reduce using rule 23 (expression -> HEX_NUMBER .)
+    LT              reduce using rule 23 (expression -> HEX_NUMBER .)
+    LTE             reduce using rule 23 (expression -> HEX_NUMBER .)
+    GT              reduce using rule 23 (expression -> HEX_NUMBER .)
+    GTE             reduce using rule 23 (expression -> HEX_NUMBER .)
+    LSHIFT          reduce using rule 23 (expression -> HEX_NUMBER .)
+    RSHIFT          reduce using rule 23 (expression -> HEX_NUMBER .)
+    EQUAL           reduce using rule 23 (expression -> HEX_NUMBER .)
+    NOT_EQUAL       reduce using rule 23 (expression -> HEX_NUMBER .)
+    LOGICAL_AND     reduce using rule 23 (expression -> HEX_NUMBER .)
+    LOGICAL_OR      reduce using rule 23 (expression -> HEX_NUMBER .)
+    RPAREN          reduce using rule 23 (expression -> HEX_NUMBER .)
+    LBRACKET        reduce using rule 23 (expression -> HEX_NUMBER .)
+    RBRACKET        reduce using rule 23 (expression -> HEX_NUMBER .)
+
+
+
+state 11
+
+    (0) S' -> expression .
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    PLUS            shift and go to state 32
+    MINUS           shift and go to state 36
+    MODULO          shift and go to state 21
+    TIMES           shift and go to state 27
+    DIVIDE          shift and go to state 22
+    OR              shift and go to state 37
+    XOR             shift and go to state 35
+    AND             shift and go to state 19
+    LT              shift and go to state 30
+    LTE             shift and go to state 34
+    GT              shift and go to state 20
+    GTE             shift and go to state 24
+    LSHIFT          shift and go to state 23
+    RSHIFT          shift and go to state 33
+    EQUAL           shift and go to state 25
+    NOT_EQUAL       shift and go to state 31
+    LOGICAL_AND     shift and go to state 26
+    LOGICAL_OR      shift and go to state 29
+    LBRACKET        shift and go to state 28
+
+
+
+state 12
+
+    (28) expression -> LPAREN expression . RPAREN
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    RPAREN          shift and go to state 38
+    PLUS            shift and go to state 32
+    MINUS           shift and go to state 36
+    MODULO          shift and go to state 21
+    TIMES           shift and go to state 27
+    DIVIDE          shift and go to state 22
+    OR              shift and go to state 37
+    XOR             shift and go to state 35
+    AND             shift and go to state 19
+    LT              shift and go to state 30
+    LTE             shift and go to state 34
+    GT              shift and go to state 20
+    GTE             shift and go to state 24
+    LSHIFT          shift and go to state 23
+    RSHIFT          shift and go to state 33
+    EQUAL           shift and go to state 25
+    NOT_EQUAL       shift and go to state 31
+    LOGICAL_AND     shift and go to state 26
+    LOGICAL_OR      shift and go to state 29
+    LBRACKET        shift and go to state 28
+
+
+
+state 13
+
+    (25) expression -> MINUS expression .
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    $               reduce using rule 25 (expression -> MINUS expression .)
+    PLUS            reduce using rule 25 (expression -> MINUS expression .)
+    MINUS           reduce using rule 25 (expression -> MINUS expression .)
+    MODULO          reduce using rule 25 (expression -> MINUS expression .)
+    TIMES           reduce using rule 25 (expression -> MINUS expression .)
+    DIVIDE          reduce using rule 25 (expression -> MINUS expression .)
+    OR              reduce using rule 25 (expression -> MINUS expression .)
+    XOR             reduce using rule 25 (expression -> MINUS expression .)
+    AND             reduce using rule 25 (expression -> MINUS expression .)
+    LT              reduce using rule 25 (expression -> MINUS expression .)
+    LTE             reduce using rule 25 (expression -> MINUS expression .)
+    GT              reduce using rule 25 (expression -> MINUS expression .)
+    GTE             reduce using rule 25 (expression -> MINUS expression .)
+    LSHIFT          reduce using rule 25 (expression -> MINUS expression .)
+    RSHIFT          reduce using rule 25 (expression -> MINUS expression .)
+    EQUAL           reduce using rule 25 (expression -> MINUS expression .)
+    NOT_EQUAL       reduce using rule 25 (expression -> MINUS expression .)
+    LOGICAL_AND     reduce using rule 25 (expression -> MINUS expression .)
+    LOGICAL_OR      reduce using rule 25 (expression -> MINUS expression .)
+    RPAREN          reduce using rule 25 (expression -> MINUS expression .)
+    RBRACKET        reduce using rule 25 (expression -> MINUS expression .)
+    LBRACKET        shift and go to state 28
+
+  ! LBRACKET        [ reduce using rule 25 (expression -> MINUS expression .) ]
+  ! PLUS            [ shift and go to state 32 ]
+  ! MINUS           [ shift and go to state 36 ]
+  ! MODULO          [ shift and go to state 21 ]
+  ! TIMES           [ shift and go to state 27 ]
+  ! DIVIDE          [ shift and go to state 22 ]
+  ! OR              [ shift and go to state 37 ]
+  ! XOR             [ shift and go to state 35 ]
+  ! AND             [ shift and go to state 19 ]
+  ! LT              [ shift and go to state 30 ]
+  ! LTE             [ shift and go to state 34 ]
+  ! GT              [ shift and go to state 20 ]
+  ! GTE             [ shift and go to state 24 ]
+  ! LSHIFT          [ shift and go to state 23 ]
+  ! RSHIFT          [ shift and go to state 33 ]
+  ! EQUAL           [ shift and go to state 25 ]
+  ! NOT_EQUAL       [ shift and go to state 31 ]
+  ! LOGICAL_AND     [ shift and go to state 26 ]
+  ! LOGICAL_OR      [ shift and go to state 29 ]
+
+
+state 14
+
+    (24) expression -> PLUS expression .
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    $               reduce using rule 24 (expression -> PLUS expression .)
+    PLUS            reduce using rule 24 (expression -> PLUS expression .)
+    MINUS           reduce using rule 24 (expression -> PLUS expression .)
+    MODULO          reduce using rule 24 (expression -> PLUS expression .)
+    TIMES           reduce using rule 24 (expression -> PLUS expression .)
+    DIVIDE          reduce using rule 24 (expression -> PLUS expression .)
+    OR              reduce using rule 24 (expression -> PLUS expression .)
+    XOR             reduce using rule 24 (expression -> PLUS expression .)
+    AND             reduce using rule 24 (expression -> PLUS expression .)
+    LT              reduce using rule 24 (expression -> PLUS expression .)
+    LTE             reduce using rule 24 (expression -> PLUS expression .)
+    GT              reduce using rule 24 (expression -> PLUS expression .)
+    GTE             reduce using rule 24 (expression -> PLUS expression .)
+    LSHIFT          reduce using rule 24 (expression -> PLUS expression .)
+    RSHIFT          reduce using rule 24 (expression -> PLUS expression .)
+    EQUAL           reduce using rule 24 (expression -> PLUS expression .)
+    NOT_EQUAL       reduce using rule 24 (expression -> PLUS expression .)
+    LOGICAL_AND     reduce using rule 24 (expression -> PLUS expression .)
+    LOGICAL_OR      reduce using rule 24 (expression -> PLUS expression .)
+    RPAREN          reduce using rule 24 (expression -> PLUS expression .)
+    RBRACKET        reduce using rule 24 (expression -> PLUS expression .)
+    LBRACKET        shift and go to state 28
+
+  ! LBRACKET        [ reduce using rule 24 (expression -> PLUS expression .) ]
+  ! PLUS            [ shift and go to state 32 ]
+  ! MINUS           [ shift and go to state 36 ]
+  ! MODULO          [ shift and go to state 21 ]
+  ! TIMES           [ shift and go to state 27 ]
+  ! DIVIDE          [ shift and go to state 22 ]
+  ! OR              [ shift and go to state 37 ]
+  ! XOR             [ shift and go to state 35 ]
+  ! AND             [ shift and go to state 19 ]
+  ! LT              [ shift and go to state 30 ]
+  ! LTE             [ shift and go to state 34 ]
+  ! GT              [ shift and go to state 20 ]
+  ! GTE             [ shift and go to state 24 ]
+  ! LSHIFT          [ shift and go to state 23 ]
+  ! RSHIFT          [ shift and go to state 33 ]
+  ! EQUAL           [ shift and go to state 25 ]
+  ! NOT_EQUAL       [ shift and go to state 31 ]
+  ! LOGICAL_AND     [ shift and go to state 26 ]
+  ! LOGICAL_OR      [ shift and go to state 29 ]
+
+
+state 15
+
+    (27) expression -> HASH expression .
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    $               reduce using rule 27 (expression -> HASH expression .)
+    PLUS            reduce using rule 27 (expression -> HASH expression .)
+    MINUS           reduce using rule 27 (expression -> HASH expression .)
+    MODULO          reduce using rule 27 (expression -> HASH expression .)
+    TIMES           reduce using rule 27 (expression -> HASH expression .)
+    DIVIDE          reduce using rule 27 (expression -> HASH expression .)
+    OR              reduce using rule 27 (expression -> HASH expression .)
+    XOR             reduce using rule 27 (expression -> HASH expression .)
+    AND             reduce using rule 27 (expression -> HASH expression .)
+    LT              reduce using rule 27 (expression -> HASH expression .)
+    LTE             reduce using rule 27 (expression -> HASH expression .)
+    GT              reduce using rule 27 (expression -> HASH expression .)
+    GTE             reduce using rule 27 (expression -> HASH expression .)
+    LSHIFT          reduce using rule 27 (expression -> HASH expression .)
+    RSHIFT          reduce using rule 27 (expression -> HASH expression .)
+    EQUAL           reduce using rule 27 (expression -> HASH expression .)
+    NOT_EQUAL       reduce using rule 27 (expression -> HASH expression .)
+    LOGICAL_AND     reduce using rule 27 (expression -> HASH expression .)
+    LOGICAL_OR      reduce using rule 27 (expression -> HASH expression .)
+    RPAREN          reduce using rule 27 (expression -> HASH expression .)
+    RBRACKET        reduce using rule 27 (expression -> HASH expression .)
+    LBRACKET        shift and go to state 28
+
+  ! LBRACKET        [ reduce using rule 27 (expression -> HASH expression .) ]
+  ! PLUS            [ shift and go to state 32 ]
+  ! MINUS           [ shift and go to state 36 ]
+  ! MODULO          [ shift and go to state 21 ]
+  ! TIMES           [ shift and go to state 27 ]
+  ! DIVIDE          [ shift and go to state 22 ]
+  ! OR              [ shift and go to state 37 ]
+  ! XOR             [ shift and go to state 35 ]
+  ! AND             [ shift and go to state 19 ]
+  ! LT              [ shift and go to state 30 ]
+  ! LTE             [ shift and go to state 34 ]
+  ! GT              [ shift and go to state 20 ]
+  ! GTE             [ shift and go to state 24 ]
+  ! LSHIFT          [ shift and go to state 23 ]
+  ! RSHIFT          [ shift and go to state 33 ]
+  ! EQUAL           [ shift and go to state 25 ]
+  ! NOT_EQUAL       [ shift and go to state 31 ]
+  ! LOGICAL_AND     [ shift and go to state 26 ]
+  ! LOGICAL_OR      [ shift and go to state 29 ]
+
+
+state 16
+
+    (19) expression -> TIMES expression .
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    $               reduce using rule 19 (expression -> TIMES expression .)
+    PLUS            reduce using rule 19 (expression -> TIMES expression .)
+    MINUS           reduce using rule 19 (expression -> TIMES expression .)
+    MODULO          reduce using rule 19 (expression -> TIMES expression .)
+    TIMES           reduce using rule 19 (expression -> TIMES expression .)
+    DIVIDE          reduce using rule 19 (expression -> TIMES expression .)
+    OR              reduce using rule 19 (expression -> TIMES expression .)
+    XOR             reduce using rule 19 (expression -> TIMES expression .)
+    AND             reduce using rule 19 (expression -> TIMES expression .)
+    LT              reduce using rule 19 (expression -> TIMES expression .)
+    LTE             reduce using rule 19 (expression -> TIMES expression .)
+    GT              reduce using rule 19 (expression -> TIMES expression .)
+    GTE             reduce using rule 19 (expression -> TIMES expression .)
+    LSHIFT          reduce using rule 19 (expression -> TIMES expression .)
+    RSHIFT          reduce using rule 19 (expression -> TIMES expression .)
+    EQUAL           reduce using rule 19 (expression -> TIMES expression .)
+    NOT_EQUAL       reduce using rule 19 (expression -> TIMES expression .)
+    LOGICAL_AND     reduce using rule 19 (expression -> TIMES expression .)
+    LOGICAL_OR      reduce using rule 19 (expression -> TIMES expression .)
+    RPAREN          reduce using rule 19 (expression -> TIMES expression .)
+    RBRACKET        reduce using rule 19 (expression -> TIMES expression .)
+    LBRACKET        shift and go to state 28
+
+  ! LBRACKET        [ reduce using rule 19 (expression -> TIMES expression .) ]
+  ! PLUS            [ shift and go to state 32 ]
+  ! MINUS           [ shift and go to state 36 ]
+  ! MODULO          [ shift and go to state 21 ]
+  ! TIMES           [ shift and go to state 27 ]
+  ! DIVIDE          [ shift and go to state 22 ]
+  ! OR              [ shift and go to state 37 ]
+  ! XOR             [ shift and go to state 35 ]
+  ! AND             [ shift and go to state 19 ]
+  ! LT              [ shift and go to state 30 ]
+  ! LTE             [ shift and go to state 34 ]
+  ! GT              [ shift and go to state 20 ]
+  ! GTE             [ shift and go to state 24 ]
+  ! LSHIFT          [ shift and go to state 23 ]
+  ! RSHIFT          [ shift and go to state 33 ]
+  ! EQUAL           [ shift and go to state 25 ]
+  ! NOT_EQUAL       [ shift and go to state 31 ]
+  ! LOGICAL_AND     [ shift and go to state 26 ]
+  ! LOGICAL_OR      [ shift and go to state 29 ]
+
+
+state 17
+
+    (20) expression -> AND NAME .
+
+    $               reduce using rule 20 (expression -> AND NAME .)
+    PLUS            reduce using rule 20 (expression -> AND NAME .)
+    MINUS           reduce using rule 20 (expression -> AND NAME .)
+    MODULO          reduce using rule 20 (expression -> AND NAME .)
+    TIMES           reduce using rule 20 (expression -> AND NAME .)
+    DIVIDE          reduce using rule 20 (expression -> AND NAME .)
+    OR              reduce using rule 20 (expression -> AND NAME .)
+    XOR             reduce using rule 20 (expression -> AND NAME .)
+    AND             reduce using rule 20 (expression -> AND NAME .)
+    LT              reduce using rule 20 (expression -> AND NAME .)
+    LTE             reduce using rule 20 (expression -> AND NAME .)
+    GT              reduce using rule 20 (expression -> AND NAME .)
+    GTE             reduce using rule 20 (expression -> AND NAME .)
+    LSHIFT          reduce using rule 20 (expression -> AND NAME .)
+    RSHIFT          reduce using rule 20 (expression -> AND NAME .)
+    EQUAL           reduce using rule 20 (expression -> AND NAME .)
+    NOT_EQUAL       reduce using rule 20 (expression -> AND NAME .)
+    LOGICAL_AND     reduce using rule 20 (expression -> AND NAME .)
+    LOGICAL_OR      reduce using rule 20 (expression -> AND NAME .)
+    RPAREN          reduce using rule 20 (expression -> AND NAME .)
+    LBRACKET        reduce using rule 20 (expression -> AND NAME .)
+    RBRACKET        reduce using rule 20 (expression -> AND NAME .)
+
+
+
+state 18
+
+    (26) expression -> LOGICAL_NOT expression .
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    $               reduce using rule 26 (expression -> LOGICAL_NOT expression .)
+    PLUS            reduce using rule 26 (expression -> LOGICAL_NOT expression .)
+    MINUS           reduce using rule 26 (expression -> LOGICAL_NOT expression .)
+    MODULO          reduce using rule 26 (expression -> LOGICAL_NOT expression .)
+    TIMES           reduce using rule 26 (expression -> LOGICAL_NOT expression .)
+    DIVIDE          reduce using rule 26 (expression -> LOGICAL_NOT expression .)
+    OR              reduce using rule 26 (expression -> LOGICAL_NOT expression .)
+    XOR             reduce using rule 26 (expression -> LOGICAL_NOT expression .)
+    AND             reduce using rule 26 (expression -> LOGICAL_NOT expression .)
+    LT              reduce using rule 26 (expression -> LOGICAL_NOT expression .)
+    LTE             reduce using rule 26 (expression -> LOGICAL_NOT expression .)
+    GT              reduce using rule 26 (expression -> LOGICAL_NOT expression .)
+    GTE             reduce using rule 26 (expression -> LOGICAL_NOT expression .)
+    LSHIFT          reduce using rule 26 (expression -> LOGICAL_NOT expression .)
+    RSHIFT          reduce using rule 26 (expression -> LOGICAL_NOT expression .)
+    EQUAL           reduce using rule 26 (expression -> LOGICAL_NOT expression .)
+    NOT_EQUAL       reduce using rule 26 (expression -> LOGICAL_NOT expression .)
+    LOGICAL_AND     reduce using rule 26 (expression -> LOGICAL_NOT expression .)
+    LOGICAL_OR      reduce using rule 26 (expression -> LOGICAL_NOT expression .)
+    RPAREN          reduce using rule 26 (expression -> LOGICAL_NOT expression .)
+    RBRACKET        reduce using rule 26 (expression -> LOGICAL_NOT expression .)
+    LBRACKET        shift and go to state 28
+
+  ! LBRACKET        [ reduce using rule 26 (expression -> LOGICAL_NOT expression .) ]
+  ! PLUS            [ shift and go to state 32 ]
+  ! MINUS           [ shift and go to state 36 ]
+  ! MODULO          [ shift and go to state 21 ]
+  ! TIMES           [ shift and go to state 27 ]
+  ! DIVIDE          [ shift and go to state 22 ]
+  ! OR              [ shift and go to state 37 ]
+  ! XOR             [ shift and go to state 35 ]
+  ! AND             [ shift and go to state 19 ]
+  ! LT              [ shift and go to state 30 ]
+  ! LTE             [ shift and go to state 34 ]
+  ! GT              [ shift and go to state 20 ]
+  ! GTE             [ shift and go to state 24 ]
+  ! LSHIFT          [ shift and go to state 23 ]
+  ! RSHIFT          [ shift and go to state 33 ]
+  ! EQUAL           [ shift and go to state 25 ]
+  ! NOT_EQUAL       [ shift and go to state 31 ]
+  ! LOGICAL_AND     [ shift and go to state 26 ]
+  ! LOGICAL_OR      [ shift and go to state 29 ]
+
+
+state 19
+
+    (8) expression -> expression AND . expression
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 39
+
+state 20
+
+    (11) expression -> expression GT . expression
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 40
+
+state 21
+
+    (3) expression -> expression MODULO . expression
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 41
+
+state 22
+
+    (5) expression -> expression DIVIDE . expression
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 42
+
+state 23
+
+    (13) expression -> expression LSHIFT . expression
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 43
+
+state 24
+
+    (12) expression -> expression GTE . expression
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 44
+
+state 25
+
+    (15) expression -> expression EQUAL . expression
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 45
+
+state 26
+
+    (17) expression -> expression LOGICAL_AND . expression
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 46
+
+state 27
+
+    (4) expression -> expression TIMES . expression
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 47
+
+state 28
+
+    (29) expression -> expression LBRACKET . expression RBRACKET
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 48
+
+state 29
+
+    (18) expression -> expression LOGICAL_OR . expression
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 49
+
+state 30
+
+    (9) expression -> expression LT . expression
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 50
+
+state 31
+
+    (16) expression -> expression NOT_EQUAL . expression
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 51
+
+state 32
+
+    (1) expression -> expression PLUS . expression
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 52
+
+state 33
+
+    (14) expression -> expression RSHIFT . expression
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 53
+
+state 34
+
+    (10) expression -> expression LTE . expression
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 54
+
+state 35
+
+    (7) expression -> expression XOR . expression
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 55
+
+state 36
+
+    (2) expression -> expression MINUS . expression
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 56
+
+state 37
+
+    (6) expression -> expression OR . expression
+    (1) expression -> . expression PLUS expression
+    (2) expression -> . expression MINUS expression
+    (3) expression -> . expression MODULO expression
+    (4) expression -> . expression TIMES expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression OR expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . expression AND expression
+    (9) expression -> . expression LT expression
+    (10) expression -> . expression LTE expression
+    (11) expression -> . expression GT expression
+    (12) expression -> . expression GTE expression
+    (13) expression -> . expression LSHIFT expression
+    (14) expression -> . expression RSHIFT expression
+    (15) expression -> . expression EQUAL expression
+    (16) expression -> . expression NOT_EQUAL expression
+    (17) expression -> . expression LOGICAL_AND expression
+    (18) expression -> . expression LOGICAL_OR expression
+    (19) expression -> . TIMES expression
+    (20) expression -> . AND NAME
+    (21) expression -> . NAME
+    (22) expression -> . NUMBER
+    (23) expression -> . HEX_NUMBER
+    (24) expression -> . PLUS expression
+    (25) expression -> . MINUS expression
+    (26) expression -> . LOGICAL_NOT expression
+    (27) expression -> . HASH expression
+    (28) expression -> . LPAREN expression RPAREN
+    (29) expression -> . expression LBRACKET expression RBRACKET
+
+    TIMES           shift and go to state 6
+    AND             shift and go to state 7
+    NAME            shift and go to state 9
+    NUMBER          shift and go to state 2
+    HEX_NUMBER      shift and go to state 10
+    PLUS            shift and go to state 4
+    MINUS           shift and go to state 3
+    LOGICAL_NOT     shift and go to state 8
+    HASH            shift and go to state 5
+    LPAREN          shift and go to state 1
+
+
+    expression                     shift and go to state 57
+
+state 38
+
+    (28) expression -> LPAREN expression RPAREN .
+
+    $               reduce using rule 28 (expression -> LPAREN expression RPAREN .)
+    PLUS            reduce using rule 28 (expression -> LPAREN expression RPAREN .)
+    MINUS           reduce using rule 28 (expression -> LPAREN expression RPAREN .)
+    MODULO          reduce using rule 28 (expression -> LPAREN expression RPAREN .)
+    TIMES           reduce using rule 28 (expression -> LPAREN expression RPAREN .)
+    DIVIDE          reduce using rule 28 (expression -> LPAREN expression RPAREN .)
+    OR              reduce using rule 28 (expression -> LPAREN expression RPAREN .)
+    XOR             reduce using rule 28 (expression -> LPAREN expression RPAREN .)
+    AND             reduce using rule 28 (expression -> LPAREN expression RPAREN .)
+    LT              reduce using rule 28 (expression -> LPAREN expression RPAREN .)
+    LTE             reduce using rule 28 (expression -> LPAREN expression RPAREN .)
+    GT              reduce using rule 28 (expression -> LPAREN expression RPAREN .)
+    GTE             reduce using rule 28 (expression -> LPAREN expression RPAREN .)
+    LSHIFT          reduce using rule 28 (expression -> LPAREN expression RPAREN .)
+    RSHIFT          reduce using rule 28 (expression -> LPAREN expression RPAREN .)
+    EQUAL           reduce using rule 28 (expression -> LPAREN expression RPAREN .)
+    NOT_EQUAL       reduce using rule 28 (expression -> LPAREN expression RPAREN .)
+    LOGICAL_AND     reduce using rule 28 (expression -> LPAREN expression RPAREN .)
+    LOGICAL_OR      reduce using rule 28 (expression -> LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 28 (expression -> LPAREN expression RPAREN .)
+    LBRACKET        reduce using rule 28 (expression -> LPAREN expression RPAREN .)
+    RBRACKET        reduce using rule 28 (expression -> LPAREN expression RPAREN .)
+
+
+
+state 39
+
+    (8) expression -> expression AND expression .
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    $               reduce using rule 8 (expression -> expression AND expression .)
+    OR              reduce using rule 8 (expression -> expression AND expression .)
+    XOR             reduce using rule 8 (expression -> expression AND expression .)
+    AND             reduce using rule 8 (expression -> expression AND expression .)
+    LOGICAL_AND     reduce using rule 8 (expression -> expression AND expression .)
+    LOGICAL_OR      reduce using rule 8 (expression -> expression AND expression .)
+    RPAREN          reduce using rule 8 (expression -> expression AND expression .)
+    RBRACKET        reduce using rule 8 (expression -> expression AND expression .)
+    PLUS            shift and go to state 32
+    MINUS           shift and go to state 36
+    MODULO          shift and go to state 21
+    TIMES           shift and go to state 27
+    DIVIDE          shift and go to state 22
+    LT              shift and go to state 30
+    LTE             shift and go to state 34
+    GT              shift and go to state 20
+    GTE             shift and go to state 24
+    LSHIFT          shift and go to state 23
+    RSHIFT          shift and go to state 33
+    EQUAL           shift and go to state 25
+    NOT_EQUAL       shift and go to state 31
+    LBRACKET        shift and go to state 28
+
+  ! PLUS            [ reduce using rule 8 (expression -> expression AND expression .) ]
+  ! MINUS           [ reduce using rule 8 (expression -> expression AND expression .) ]
+  ! MODULO          [ reduce using rule 8 (expression -> expression AND expression .) ]
+  ! TIMES           [ reduce using rule 8 (expression -> expression AND expression .) ]
+  ! DIVIDE          [ reduce using rule 8 (expression -> expression AND expression .) ]
+  ! LT              [ reduce using rule 8 (expression -> expression AND expression .) ]
+  ! LTE             [ reduce using rule 8 (expression -> expression AND expression .) ]
+  ! GT              [ reduce using rule 8 (expression -> expression AND expression .) ]
+  ! GTE             [ reduce using rule 8 (expression -> expression AND expression .) ]
+  ! LSHIFT          [ reduce using rule 8 (expression -> expression AND expression .) ]
+  ! RSHIFT          [ reduce using rule 8 (expression -> expression AND expression .) ]
+  ! EQUAL           [ reduce using rule 8 (expression -> expression AND expression .) ]
+  ! NOT_EQUAL       [ reduce using rule 8 (expression -> expression AND expression .) ]
+  ! LBRACKET        [ reduce using rule 8 (expression -> expression AND expression .) ]
+  ! OR              [ shift and go to state 37 ]
+  ! XOR             [ shift and go to state 35 ]
+  ! AND             [ shift and go to state 19 ]
+  ! LOGICAL_AND     [ shift and go to state 26 ]
+  ! LOGICAL_OR      [ shift and go to state 29 ]
+
+
+state 40
+
+    (11) expression -> expression GT expression .
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    $               reduce using rule 11 (expression -> expression GT expression .)
+    OR              reduce using rule 11 (expression -> expression GT expression .)
+    XOR             reduce using rule 11 (expression -> expression GT expression .)
+    AND             reduce using rule 11 (expression -> expression GT expression .)
+    LT              reduce using rule 11 (expression -> expression GT expression .)
+    LTE             reduce using rule 11 (expression -> expression GT expression .)
+    GT              reduce using rule 11 (expression -> expression GT expression .)
+    GTE             reduce using rule 11 (expression -> expression GT expression .)
+    EQUAL           reduce using rule 11 (expression -> expression GT expression .)
+    NOT_EQUAL       reduce using rule 11 (expression -> expression GT expression .)
+    LOGICAL_AND     reduce using rule 11 (expression -> expression GT expression .)
+    LOGICAL_OR      reduce using rule 11 (expression -> expression GT expression .)
+    RPAREN          reduce using rule 11 (expression -> expression GT expression .)
+    RBRACKET        reduce using rule 11 (expression -> expression GT expression .)
+    PLUS            shift and go to state 32
+    MINUS           shift and go to state 36
+    MODULO          shift and go to state 21
+    TIMES           shift and go to state 27
+    DIVIDE          shift and go to state 22
+    LSHIFT          shift and go to state 23
+    RSHIFT          shift and go to state 33
+    LBRACKET        shift and go to state 28
+
+  ! PLUS            [ reduce using rule 11 (expression -> expression GT expression .) ]
+  ! MINUS           [ reduce using rule 11 (expression -> expression GT expression .) ]
+  ! MODULO          [ reduce using rule 11 (expression -> expression GT expression .) ]
+  ! TIMES           [ reduce using rule 11 (expression -> expression GT expression .) ]
+  ! DIVIDE          [ reduce using rule 11 (expression -> expression GT expression .) ]
+  ! LSHIFT          [ reduce using rule 11 (expression -> expression GT expression .) ]
+  ! RSHIFT          [ reduce using rule 11 (expression -> expression GT expression .) ]
+  ! LBRACKET        [ reduce using rule 11 (expression -> expression GT expression .) ]
+  ! OR              [ shift and go to state 37 ]
+  ! XOR             [ shift and go to state 35 ]
+  ! AND             [ shift and go to state 19 ]
+  ! LT              [ shift and go to state 30 ]
+  ! LTE             [ shift and go to state 34 ]
+  ! GT              [ shift and go to state 20 ]
+  ! GTE             [ shift and go to state 24 ]
+  ! EQUAL           [ shift and go to state 25 ]
+  ! NOT_EQUAL       [ shift and go to state 31 ]
+  ! LOGICAL_AND     [ shift and go to state 26 ]
+  ! LOGICAL_OR      [ shift and go to state 29 ]
+
+
+state 41
+
+    (3) expression -> expression MODULO expression .
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    $               reduce using rule 3 (expression -> expression MODULO expression .)
+    PLUS            reduce using rule 3 (expression -> expression MODULO expression .)
+    MINUS           reduce using rule 3 (expression -> expression MODULO expression .)
+    MODULO          reduce using rule 3 (expression -> expression MODULO expression .)
+    TIMES           reduce using rule 3 (expression -> expression MODULO expression .)
+    DIVIDE          reduce using rule 3 (expression -> expression MODULO expression .)
+    OR              reduce using rule 3 (expression -> expression MODULO expression .)
+    XOR             reduce using rule 3 (expression -> expression MODULO expression .)
+    AND             reduce using rule 3 (expression -> expression MODULO expression .)
+    LT              reduce using rule 3 (expression -> expression MODULO expression .)
+    LTE             reduce using rule 3 (expression -> expression MODULO expression .)
+    GT              reduce using rule 3 (expression -> expression MODULO expression .)
+    GTE             reduce using rule 3 (expression -> expression MODULO expression .)
+    LSHIFT          reduce using rule 3 (expression -> expression MODULO expression .)
+    RSHIFT          reduce using rule 3 (expression -> expression MODULO expression .)
+    EQUAL           reduce using rule 3 (expression -> expression MODULO expression .)
+    NOT_EQUAL       reduce using rule 3 (expression -> expression MODULO expression .)
+    LOGICAL_AND     reduce using rule 3 (expression -> expression MODULO expression .)
+    LOGICAL_OR      reduce using rule 3 (expression -> expression MODULO expression .)
+    RPAREN          reduce using rule 3 (expression -> expression MODULO expression .)
+    RBRACKET        reduce using rule 3 (expression -> expression MODULO expression .)
+    LBRACKET        shift and go to state 28
+
+  ! LBRACKET        [ reduce using rule 3 (expression -> expression MODULO expression .) ]
+  ! PLUS            [ shift and go to state 32 ]
+  ! MINUS           [ shift and go to state 36 ]
+  ! MODULO          [ shift and go to state 21 ]
+  ! TIMES           [ shift and go to state 27 ]
+  ! DIVIDE          [ shift and go to state 22 ]
+  ! OR              [ shift and go to state 37 ]
+  ! XOR             [ shift and go to state 35 ]
+  ! AND             [ shift and go to state 19 ]
+  ! LT              [ shift and go to state 30 ]
+  ! LTE             [ shift and go to state 34 ]
+  ! GT              [ shift and go to state 20 ]
+  ! GTE             [ shift and go to state 24 ]
+  ! LSHIFT          [ shift and go to state 23 ]
+  ! RSHIFT          [ shift and go to state 33 ]
+  ! EQUAL           [ shift and go to state 25 ]
+  ! NOT_EQUAL       [ shift and go to state 31 ]
+  ! LOGICAL_AND     [ shift and go to state 26 ]
+  ! LOGICAL_OR      [ shift and go to state 29 ]
+
+
+state 42
+
+    (5) expression -> expression DIVIDE expression .
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    $               reduce using rule 5 (expression -> expression DIVIDE expression .)
+    PLUS            reduce using rule 5 (expression -> expression DIVIDE expression .)
+    MINUS           reduce using rule 5 (expression -> expression DIVIDE expression .)
+    MODULO          reduce using rule 5 (expression -> expression DIVIDE expression .)
+    TIMES           reduce using rule 5 (expression -> expression DIVIDE expression .)
+    DIVIDE          reduce using rule 5 (expression -> expression DIVIDE expression .)
+    OR              reduce using rule 5 (expression -> expression DIVIDE expression .)
+    XOR             reduce using rule 5 (expression -> expression DIVIDE expression .)
+    AND             reduce using rule 5 (expression -> expression DIVIDE expression .)
+    LT              reduce using rule 5 (expression -> expression DIVIDE expression .)
+    LTE             reduce using rule 5 (expression -> expression DIVIDE expression .)
+    GT              reduce using rule 5 (expression -> expression DIVIDE expression .)
+    GTE             reduce using rule 5 (expression -> expression DIVIDE expression .)
+    LSHIFT          reduce using rule 5 (expression -> expression DIVIDE expression .)
+    RSHIFT          reduce using rule 5 (expression -> expression DIVIDE expression .)
+    EQUAL           reduce using rule 5 (expression -> expression DIVIDE expression .)
+    NOT_EQUAL       reduce using rule 5 (expression -> expression DIVIDE expression .)
+    LOGICAL_AND     reduce using rule 5 (expression -> expression DIVIDE expression .)
+    LOGICAL_OR      reduce using rule 5 (expression -> expression DIVIDE expression .)
+    RPAREN          reduce using rule 5 (expression -> expression DIVIDE expression .)
+    RBRACKET        reduce using rule 5 (expression -> expression DIVIDE expression .)
+    LBRACKET        shift and go to state 28
+
+  ! LBRACKET        [ reduce using rule 5 (expression -> expression DIVIDE expression .) ]
+  ! PLUS            [ shift and go to state 32 ]
+  ! MINUS           [ shift and go to state 36 ]
+  ! MODULO          [ shift and go to state 21 ]
+  ! TIMES           [ shift and go to state 27 ]
+  ! DIVIDE          [ shift and go to state 22 ]
+  ! OR              [ shift and go to state 37 ]
+  ! XOR             [ shift and go to state 35 ]
+  ! AND             [ shift and go to state 19 ]
+  ! LT              [ shift and go to state 30 ]
+  ! LTE             [ shift and go to state 34 ]
+  ! GT              [ shift and go to state 20 ]
+  ! GTE             [ shift and go to state 24 ]
+  ! LSHIFT          [ shift and go to state 23 ]
+  ! RSHIFT          [ shift and go to state 33 ]
+  ! EQUAL           [ shift and go to state 25 ]
+  ! NOT_EQUAL       [ shift and go to state 31 ]
+  ! LOGICAL_AND     [ shift and go to state 26 ]
+  ! LOGICAL_OR      [ shift and go to state 29 ]
+
+
+state 43
+
+    (13) expression -> expression LSHIFT expression .
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    $               reduce using rule 13 (expression -> expression LSHIFT expression .)
+    OR              reduce using rule 13 (expression -> expression LSHIFT expression .)
+    XOR             reduce using rule 13 (expression -> expression LSHIFT expression .)
+    AND             reduce using rule 13 (expression -> expression LSHIFT expression .)
+    LT              reduce using rule 13 (expression -> expression LSHIFT expression .)
+    LTE             reduce using rule 13 (expression -> expression LSHIFT expression .)
+    GT              reduce using rule 13 (expression -> expression LSHIFT expression .)
+    GTE             reduce using rule 13 (expression -> expression LSHIFT expression .)
+    LSHIFT          reduce using rule 13 (expression -> expression LSHIFT expression .)
+    RSHIFT          reduce using rule 13 (expression -> expression LSHIFT expression .)
+    EQUAL           reduce using rule 13 (expression -> expression LSHIFT expression .)
+    NOT_EQUAL       reduce using rule 13 (expression -> expression LSHIFT expression .)
+    LOGICAL_AND     reduce using rule 13 (expression -> expression LSHIFT expression .)
+    LOGICAL_OR      reduce using rule 13 (expression -> expression LSHIFT expression .)
+    RPAREN          reduce using rule 13 (expression -> expression LSHIFT expression .)
+    RBRACKET        reduce using rule 13 (expression -> expression LSHIFT expression .)
+    PLUS            shift and go to state 32
+    MINUS           shift and go to state 36
+    MODULO          shift and go to state 21
+    TIMES           shift and go to state 27
+    DIVIDE          shift and go to state 22
+    LBRACKET        shift and go to state 28
+
+  ! PLUS            [ reduce using rule 13 (expression -> expression LSHIFT expression .) ]
+  ! MINUS           [ reduce using rule 13 (expression -> expression LSHIFT expression .) ]
+  ! MODULO          [ reduce using rule 13 (expression -> expression LSHIFT expression .) ]
+  ! TIMES           [ reduce using rule 13 (expression -> expression LSHIFT expression .) ]
+  ! DIVIDE          [ reduce using rule 13 (expression -> expression LSHIFT expression .) ]
+  ! LBRACKET        [ reduce using rule 13 (expression -> expression LSHIFT expression .) ]
+  ! OR              [ shift and go to state 37 ]
+  ! XOR             [ shift and go to state 35 ]
+  ! AND             [ shift and go to state 19 ]
+  ! LT              [ shift and go to state 30 ]
+  ! LTE             [ shift and go to state 34 ]
+  ! GT              [ shift and go to state 20 ]
+  ! GTE             [ shift and go to state 24 ]
+  ! LSHIFT          [ shift and go to state 23 ]
+  ! RSHIFT          [ shift and go to state 33 ]
+  ! EQUAL           [ shift and go to state 25 ]
+  ! NOT_EQUAL       [ shift and go to state 31 ]
+  ! LOGICAL_AND     [ shift and go to state 26 ]
+  ! LOGICAL_OR      [ shift and go to state 29 ]
+
+
+state 44
+
+    (12) expression -> expression GTE expression .
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    $               reduce using rule 12 (expression -> expression GTE expression .)
+    OR              reduce using rule 12 (expression -> expression GTE expression .)
+    XOR             reduce using rule 12 (expression -> expression GTE expression .)
+    AND             reduce using rule 12 (expression -> expression GTE expression .)
+    LT              reduce using rule 12 (expression -> expression GTE expression .)
+    LTE             reduce using rule 12 (expression -> expression GTE expression .)
+    GT              reduce using rule 12 (expression -> expression GTE expression .)
+    GTE             reduce using rule 12 (expression -> expression GTE expression .)
+    EQUAL           reduce using rule 12 (expression -> expression GTE expression .)
+    NOT_EQUAL       reduce using rule 12 (expression -> expression GTE expression .)
+    LOGICAL_AND     reduce using rule 12 (expression -> expression GTE expression .)
+    LOGICAL_OR      reduce using rule 12 (expression -> expression GTE expression .)
+    RPAREN          reduce using rule 12 (expression -> expression GTE expression .)
+    RBRACKET        reduce using rule 12 (expression -> expression GTE expression .)
+    PLUS            shift and go to state 32
+    MINUS           shift and go to state 36
+    MODULO          shift and go to state 21
+    TIMES           shift and go to state 27
+    DIVIDE          shift and go to state 22
+    LSHIFT          shift and go to state 23
+    RSHIFT          shift and go to state 33
+    LBRACKET        shift and go to state 28
+
+  ! PLUS            [ reduce using rule 12 (expression -> expression GTE expression .) ]
+  ! MINUS           [ reduce using rule 12 (expression -> expression GTE expression .) ]
+  ! MODULO          [ reduce using rule 12 (expression -> expression GTE expression .) ]
+  ! TIMES           [ reduce using rule 12 (expression -> expression GTE expression .) ]
+  ! DIVIDE          [ reduce using rule 12 (expression -> expression GTE expression .) ]
+  ! LSHIFT          [ reduce using rule 12 (expression -> expression GTE expression .) ]
+  ! RSHIFT          [ reduce using rule 12 (expression -> expression GTE expression .) ]
+  ! LBRACKET        [ reduce using rule 12 (expression -> expression GTE expression .) ]
+  ! OR              [ shift and go to state 37 ]
+  ! XOR             [ shift and go to state 35 ]
+  ! AND             [ shift and go to state 19 ]
+  ! LT              [ shift and go to state 30 ]
+  ! LTE             [ shift and go to state 34 ]
+  ! GT              [ shift and go to state 20 ]
+  ! GTE             [ shift and go to state 24 ]
+  ! EQUAL           [ shift and go to state 25 ]
+  ! NOT_EQUAL       [ shift and go to state 31 ]
+  ! LOGICAL_AND     [ shift and go to state 26 ]
+  ! LOGICAL_OR      [ shift and go to state 29 ]
+
+
+state 45
+
+    (15) expression -> expression EQUAL expression .
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    $               reduce using rule 15 (expression -> expression EQUAL expression .)
+    OR              reduce using rule 15 (expression -> expression EQUAL expression .)
+    XOR             reduce using rule 15 (expression -> expression EQUAL expression .)
+    AND             reduce using rule 15 (expression -> expression EQUAL expression .)
+    EQUAL           reduce using rule 15 (expression -> expression EQUAL expression .)
+    NOT_EQUAL       reduce using rule 15 (expression -> expression EQUAL expression .)
+    LOGICAL_AND     reduce using rule 15 (expression -> expression EQUAL expression .)
+    LOGICAL_OR      reduce using rule 15 (expression -> expression EQUAL expression .)
+    RPAREN          reduce using rule 15 (expression -> expression EQUAL expression .)
+    RBRACKET        reduce using rule 15 (expression -> expression EQUAL expression .)
+    PLUS            shift and go to state 32
+    MINUS           shift and go to state 36
+    MODULO          shift and go to state 21
+    TIMES           shift and go to state 27
+    DIVIDE          shift and go to state 22
+    LT              shift and go to state 30
+    LTE             shift and go to state 34
+    GT              shift and go to state 20
+    GTE             shift and go to state 24
+    LSHIFT          shift and go to state 23
+    RSHIFT          shift and go to state 33
+    LBRACKET        shift and go to state 28
+
+  ! PLUS            [ reduce using rule 15 (expression -> expression EQUAL expression .) ]
+  ! MINUS           [ reduce using rule 15 (expression -> expression EQUAL expression .) ]
+  ! MODULO          [ reduce using rule 15 (expression -> expression EQUAL expression .) ]
+  ! TIMES           [ reduce using rule 15 (expression -> expression EQUAL expression .) ]
+  ! DIVIDE          [ reduce using rule 15 (expression -> expression EQUAL expression .) ]
+  ! LT              [ reduce using rule 15 (expression -> expression EQUAL expression .) ]
+  ! LTE             [ reduce using rule 15 (expression -> expression EQUAL expression .) ]
+  ! GT              [ reduce using rule 15 (expression -> expression EQUAL expression .) ]
+  ! GTE             [ reduce using rule 15 (expression -> expression EQUAL expression .) ]
+  ! LSHIFT          [ reduce using rule 15 (expression -> expression EQUAL expression .) ]
+  ! RSHIFT          [ reduce using rule 15 (expression -> expression EQUAL expression .) ]
+  ! LBRACKET        [ reduce using rule 15 (expression -> expression EQUAL expression .) ]
+  ! OR              [ shift and go to state 37 ]
+  ! XOR             [ shift and go to state 35 ]
+  ! AND             [ shift and go to state 19 ]
+  ! EQUAL           [ shift and go to state 25 ]
+  ! NOT_EQUAL       [ shift and go to state 31 ]
+  ! LOGICAL_AND     [ shift and go to state 26 ]
+  ! LOGICAL_OR      [ shift and go to state 29 ]
+
+
+state 46
+
+    (17) expression -> expression LOGICAL_AND expression .
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    $               reduce using rule 17 (expression -> expression LOGICAL_AND expression .)
+    LOGICAL_AND     reduce using rule 17 (expression -> expression LOGICAL_AND expression .)
+    LOGICAL_OR      reduce using rule 17 (expression -> expression LOGICAL_AND expression .)
+    RPAREN          reduce using rule 17 (expression -> expression LOGICAL_AND expression .)
+    RBRACKET        reduce using rule 17 (expression -> expression LOGICAL_AND expression .)
+    PLUS            shift and go to state 32
+    MINUS           shift and go to state 36
+    MODULO          shift and go to state 21
+    TIMES           shift and go to state 27
+    DIVIDE          shift and go to state 22
+    OR              shift and go to state 37
+    XOR             shift and go to state 35
+    AND             shift and go to state 19
+    LT              shift and go to state 30
+    LTE             shift and go to state 34
+    GT              shift and go to state 20
+    GTE             shift and go to state 24
+    LSHIFT          shift and go to state 23
+    RSHIFT          shift and go to state 33
+    EQUAL           shift and go to state 25
+    NOT_EQUAL       shift and go to state 31
+    LBRACKET        shift and go to state 28
+
+  ! PLUS            [ reduce using rule 17 (expression -> expression LOGICAL_AND expression .) ]
+  ! MINUS           [ reduce using rule 17 (expression -> expression LOGICAL_AND expression .) ]
+  ! MODULO          [ reduce using rule 17 (expression -> expression LOGICAL_AND expression .) ]
+  ! TIMES           [ reduce using rule 17 (expression -> expression LOGICAL_AND expression .) ]
+  ! DIVIDE          [ reduce using rule 17 (expression -> expression LOGICAL_AND expression .) ]
+  ! OR              [ reduce using rule 17 (expression -> expression LOGICAL_AND expression .) ]
+  ! XOR             [ reduce using rule 17 (expression -> expression LOGICAL_AND expression .) ]
+  ! AND             [ reduce using rule 17 (expression -> expression LOGICAL_AND expression .) ]
+  ! LT              [ reduce using rule 17 (expression -> expression LOGICAL_AND expression .) ]
+  ! LTE             [ reduce using rule 17 (expression -> expression LOGICAL_AND expression .) ]
+  ! GT              [ reduce using rule 17 (expression -> expression LOGICAL_AND expression .) ]
+  ! GTE             [ reduce using rule 17 (expression -> expression LOGICAL_AND expression .) ]
+  ! LSHIFT          [ reduce using rule 17 (expression -> expression LOGICAL_AND expression .) ]
+  ! RSHIFT          [ reduce using rule 17 (expression -> expression LOGICAL_AND expression .) ]
+  ! EQUAL           [ reduce using rule 17 (expression -> expression LOGICAL_AND expression .) ]
+  ! NOT_EQUAL       [ reduce using rule 17 (expression -> expression LOGICAL_AND expression .) ]
+  ! LBRACKET        [ reduce using rule 17 (expression -> expression LOGICAL_AND expression .) ]
+  ! LOGICAL_AND     [ shift and go to state 26 ]
+  ! LOGICAL_OR      [ shift and go to state 29 ]
+
+
+state 47
+
+    (4) expression -> expression TIMES expression .
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    $               reduce using rule 4 (expression -> expression TIMES expression .)
+    PLUS            reduce using rule 4 (expression -> expression TIMES expression .)
+    MINUS           reduce using rule 4 (expression -> expression TIMES expression .)
+    MODULO          reduce using rule 4 (expression -> expression TIMES expression .)
+    TIMES           reduce using rule 4 (expression -> expression TIMES expression .)
+    DIVIDE          reduce using rule 4 (expression -> expression TIMES expression .)
+    OR              reduce using rule 4 (expression -> expression TIMES expression .)
+    XOR             reduce using rule 4 (expression -> expression TIMES expression .)
+    AND             reduce using rule 4 (expression -> expression TIMES expression .)
+    LT              reduce using rule 4 (expression -> expression TIMES expression .)
+    LTE             reduce using rule 4 (expression -> expression TIMES expression .)
+    GT              reduce using rule 4 (expression -> expression TIMES expression .)
+    GTE             reduce using rule 4 (expression -> expression TIMES expression .)
+    LSHIFT          reduce using rule 4 (expression -> expression TIMES expression .)
+    RSHIFT          reduce using rule 4 (expression -> expression TIMES expression .)
+    EQUAL           reduce using rule 4 (expression -> expression TIMES expression .)
+    NOT_EQUAL       reduce using rule 4 (expression -> expression TIMES expression .)
+    LOGICAL_AND     reduce using rule 4 (expression -> expression TIMES expression .)
+    LOGICAL_OR      reduce using rule 4 (expression -> expression TIMES expression .)
+    RPAREN          reduce using rule 4 (expression -> expression TIMES expression .)
+    RBRACKET        reduce using rule 4 (expression -> expression TIMES expression .)
+    LBRACKET        shift and go to state 28
+
+  ! LBRACKET        [ reduce using rule 4 (expression -> expression TIMES expression .) ]
+  ! PLUS            [ shift and go to state 32 ]
+  ! MINUS           [ shift and go to state 36 ]
+  ! MODULO          [ shift and go to state 21 ]
+  ! TIMES           [ shift and go to state 27 ]
+  ! DIVIDE          [ shift and go to state 22 ]
+  ! OR              [ shift and go to state 37 ]
+  ! XOR             [ shift and go to state 35 ]
+  ! AND             [ shift and go to state 19 ]
+  ! LT              [ shift and go to state 30 ]
+  ! LTE             [ shift and go to state 34 ]
+  ! GT              [ shift and go to state 20 ]
+  ! GTE             [ shift and go to state 24 ]
+  ! LSHIFT          [ shift and go to state 23 ]
+  ! RSHIFT          [ shift and go to state 33 ]
+  ! EQUAL           [ shift and go to state 25 ]
+  ! NOT_EQUAL       [ shift and go to state 31 ]
+  ! LOGICAL_AND     [ shift and go to state 26 ]
+  ! LOGICAL_OR      [ shift and go to state 29 ]
+
+
+state 48
+
+    (29) expression -> expression LBRACKET expression . RBRACKET
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    RBRACKET        shift and go to state 58
+    PLUS            shift and go to state 32
+    MINUS           shift and go to state 36
+    MODULO          shift and go to state 21
+    TIMES           shift and go to state 27
+    DIVIDE          shift and go to state 22
+    OR              shift and go to state 37
+    XOR             shift and go to state 35
+    AND             shift and go to state 19
+    LT              shift and go to state 30
+    LTE             shift and go to state 34
+    GT              shift and go to state 20
+    GTE             shift and go to state 24
+    LSHIFT          shift and go to state 23
+    RSHIFT          shift and go to state 33
+    EQUAL           shift and go to state 25
+    NOT_EQUAL       shift and go to state 31
+    LOGICAL_AND     shift and go to state 26
+    LOGICAL_OR      shift and go to state 29
+    LBRACKET        shift and go to state 28
+
+
+
+state 49
+
+    (18) expression -> expression LOGICAL_OR expression .
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    $               reduce using rule 18 (expression -> expression LOGICAL_OR expression .)
+    LOGICAL_OR      reduce using rule 18 (expression -> expression LOGICAL_OR expression .)
+    RPAREN          reduce using rule 18 (expression -> expression LOGICAL_OR expression .)
+    RBRACKET        reduce using rule 18 (expression -> expression LOGICAL_OR expression .)
+    PLUS            shift and go to state 32
+    MINUS           shift and go to state 36
+    MODULO          shift and go to state 21
+    TIMES           shift and go to state 27
+    DIVIDE          shift and go to state 22
+    OR              shift and go to state 37
+    XOR             shift and go to state 35
+    AND             shift and go to state 19
+    LT              shift and go to state 30
+    LTE             shift and go to state 34
+    GT              shift and go to state 20
+    GTE             shift and go to state 24
+    LSHIFT          shift and go to state 23
+    RSHIFT          shift and go to state 33
+    EQUAL           shift and go to state 25
+    NOT_EQUAL       shift and go to state 31
+    LOGICAL_AND     shift and go to state 26
+    LBRACKET        shift and go to state 28
+
+  ! PLUS            [ reduce using rule 18 (expression -> expression LOGICAL_OR expression .) ]
+  ! MINUS           [ reduce using rule 18 (expression -> expression LOGICAL_OR expression .) ]
+  ! MODULO          [ reduce using rule 18 (expression -> expression LOGICAL_OR expression .) ]
+  ! TIMES           [ reduce using rule 18 (expression -> expression LOGICAL_OR expression .) ]
+  ! DIVIDE          [ reduce using rule 18 (expression -> expression LOGICAL_OR expression .) ]
+  ! OR              [ reduce using rule 18 (expression -> expression LOGICAL_OR expression .) ]
+  ! XOR             [ reduce using rule 18 (expression -> expression LOGICAL_OR expression .) ]
+  ! AND             [ reduce using rule 18 (expression -> expression LOGICAL_OR expression .) ]
+  ! LT              [ reduce using rule 18 (expression -> expression LOGICAL_OR expression .) ]
+  ! LTE             [ reduce using rule 18 (expression -> expression LOGICAL_OR expression .) ]
+  ! GT              [ reduce using rule 18 (expression -> expression LOGICAL_OR expression .) ]
+  ! GTE             [ reduce using rule 18 (expression -> expression LOGICAL_OR expression .) ]
+  ! LSHIFT          [ reduce using rule 18 (expression -> expression LOGICAL_OR expression .) ]
+  ! RSHIFT          [ reduce using rule 18 (expression -> expression LOGICAL_OR expression .) ]
+  ! EQUAL           [ reduce using rule 18 (expression -> expression LOGICAL_OR expression .) ]
+  ! NOT_EQUAL       [ reduce using rule 18 (expression -> expression LOGICAL_OR expression .) ]
+  ! LOGICAL_AND     [ reduce using rule 18 (expression -> expression LOGICAL_OR expression .) ]
+  ! LBRACKET        [ reduce using rule 18 (expression -> expression LOGICAL_OR expression .) ]
+  ! LOGICAL_OR      [ shift and go to state 29 ]
+
+
+state 50
+
+    (9) expression -> expression LT expression .
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    $               reduce using rule 9 (expression -> expression LT expression .)
+    OR              reduce using rule 9 (expression -> expression LT expression .)
+    XOR             reduce using rule 9 (expression -> expression LT expression .)
+    AND             reduce using rule 9 (expression -> expression LT expression .)
+    LT              reduce using rule 9 (expression -> expression LT expression .)
+    LTE             reduce using rule 9 (expression -> expression LT expression .)
+    GT              reduce using rule 9 (expression -> expression LT expression .)
+    GTE             reduce using rule 9 (expression -> expression LT expression .)
+    EQUAL           reduce using rule 9 (expression -> expression LT expression .)
+    NOT_EQUAL       reduce using rule 9 (expression -> expression LT expression .)
+    LOGICAL_AND     reduce using rule 9 (expression -> expression LT expression .)
+    LOGICAL_OR      reduce using rule 9 (expression -> expression LT expression .)
+    RPAREN          reduce using rule 9 (expression -> expression LT expression .)
+    RBRACKET        reduce using rule 9 (expression -> expression LT expression .)
+    PLUS            shift and go to state 32
+    MINUS           shift and go to state 36
+    MODULO          shift and go to state 21
+    TIMES           shift and go to state 27
+    DIVIDE          shift and go to state 22
+    LSHIFT          shift and go to state 23
+    RSHIFT          shift and go to state 33
+    LBRACKET        shift and go to state 28
+
+  ! PLUS            [ reduce using rule 9 (expression -> expression LT expression .) ]
+  ! MINUS           [ reduce using rule 9 (expression -> expression LT expression .) ]
+  ! MODULO          [ reduce using rule 9 (expression -> expression LT expression .) ]
+  ! TIMES           [ reduce using rule 9 (expression -> expression LT expression .) ]
+  ! DIVIDE          [ reduce using rule 9 (expression -> expression LT expression .) ]
+  ! LSHIFT          [ reduce using rule 9 (expression -> expression LT expression .) ]
+  ! RSHIFT          [ reduce using rule 9 (expression -> expression LT expression .) ]
+  ! LBRACKET        [ reduce using rule 9 (expression -> expression LT expression .) ]
+  ! OR              [ shift and go to state 37 ]
+  ! XOR             [ shift and go to state 35 ]
+  ! AND             [ shift and go to state 19 ]
+  ! LT              [ shift and go to state 30 ]
+  ! LTE             [ shift and go to state 34 ]
+  ! GT              [ shift and go to state 20 ]
+  ! GTE             [ shift and go to state 24 ]
+  ! EQUAL           [ shift and go to state 25 ]
+  ! NOT_EQUAL       [ shift and go to state 31 ]
+  ! LOGICAL_AND     [ shift and go to state 26 ]
+  ! LOGICAL_OR      [ shift and go to state 29 ]
+
+
+state 51
+
+    (16) expression -> expression NOT_EQUAL expression .
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    $               reduce using rule 16 (expression -> expression NOT_EQUAL expression .)
+    OR              reduce using rule 16 (expression -> expression NOT_EQUAL expression .)
+    XOR             reduce using rule 16 (expression -> expression NOT_EQUAL expression .)
+    AND             reduce using rule 16 (expression -> expression NOT_EQUAL expression .)
+    EQUAL           reduce using rule 16 (expression -> expression NOT_EQUAL expression .)
+    NOT_EQUAL       reduce using rule 16 (expression -> expression NOT_EQUAL expression .)
+    LOGICAL_AND     reduce using rule 16 (expression -> expression NOT_EQUAL expression .)
+    LOGICAL_OR      reduce using rule 16 (expression -> expression NOT_EQUAL expression .)
+    RPAREN          reduce using rule 16 (expression -> expression NOT_EQUAL expression .)
+    RBRACKET        reduce using rule 16 (expression -> expression NOT_EQUAL expression .)
+    PLUS            shift and go to state 32
+    MINUS           shift and go to state 36
+    MODULO          shift and go to state 21
+    TIMES           shift and go to state 27
+    DIVIDE          shift and go to state 22
+    LT              shift and go to state 30
+    LTE             shift and go to state 34
+    GT              shift and go to state 20
+    GTE             shift and go to state 24
+    LSHIFT          shift and go to state 23
+    RSHIFT          shift and go to state 33
+    LBRACKET        shift and go to state 28
+
+  ! PLUS            [ reduce using rule 16 (expression -> expression NOT_EQUAL expression .) ]
+  ! MINUS           [ reduce using rule 16 (expression -> expression NOT_EQUAL expression .) ]
+  ! MODULO          [ reduce using rule 16 (expression -> expression NOT_EQUAL expression .) ]
+  ! TIMES           [ reduce using rule 16 (expression -> expression NOT_EQUAL expression .) ]
+  ! DIVIDE          [ reduce using rule 16 (expression -> expression NOT_EQUAL expression .) ]
+  ! LT              [ reduce using rule 16 (expression -> expression NOT_EQUAL expression .) ]
+  ! LTE             [ reduce using rule 16 (expression -> expression NOT_EQUAL expression .) ]
+  ! GT              [ reduce using rule 16 (expression -> expression NOT_EQUAL expression .) ]
+  ! GTE             [ reduce using rule 16 (expression -> expression NOT_EQUAL expression .) ]
+  ! LSHIFT          [ reduce using rule 16 (expression -> expression NOT_EQUAL expression .) ]
+  ! RSHIFT          [ reduce using rule 16 (expression -> expression NOT_EQUAL expression .) ]
+  ! LBRACKET        [ reduce using rule 16 (expression -> expression NOT_EQUAL expression .) ]
+  ! OR              [ shift and go to state 37 ]
+  ! XOR             [ shift and go to state 35 ]
+  ! AND             [ shift and go to state 19 ]
+  ! EQUAL           [ shift and go to state 25 ]
+  ! NOT_EQUAL       [ shift and go to state 31 ]
+  ! LOGICAL_AND     [ shift and go to state 26 ]
+  ! LOGICAL_OR      [ shift and go to state 29 ]
+
+
+state 52
+
+    (1) expression -> expression PLUS expression .
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    $               reduce using rule 1 (expression -> expression PLUS expression .)
+    PLUS            reduce using rule 1 (expression -> expression PLUS expression .)
+    MINUS           reduce using rule 1 (expression -> expression PLUS expression .)
+    OR              reduce using rule 1 (expression -> expression PLUS expression .)
+    XOR             reduce using rule 1 (expression -> expression PLUS expression .)
+    AND             reduce using rule 1 (expression -> expression PLUS expression .)
+    LT              reduce using rule 1 (expression -> expression PLUS expression .)
+    LTE             reduce using rule 1 (expression -> expression PLUS expression .)
+    GT              reduce using rule 1 (expression -> expression PLUS expression .)
+    GTE             reduce using rule 1 (expression -> expression PLUS expression .)
+    LSHIFT          reduce using rule 1 (expression -> expression PLUS expression .)
+    RSHIFT          reduce using rule 1 (expression -> expression PLUS expression .)
+    EQUAL           reduce using rule 1 (expression -> expression PLUS expression .)
+    NOT_EQUAL       reduce using rule 1 (expression -> expression PLUS expression .)
+    LOGICAL_AND     reduce using rule 1 (expression -> expression PLUS expression .)
+    LOGICAL_OR      reduce using rule 1 (expression -> expression PLUS expression .)
+    RPAREN          reduce using rule 1 (expression -> expression PLUS expression .)
+    RBRACKET        reduce using rule 1 (expression -> expression PLUS expression .)
+    MODULO          shift and go to state 21
+    TIMES           shift and go to state 27
+    DIVIDE          shift and go to state 22
+    LBRACKET        shift and go to state 28
+
+  ! MODULO          [ reduce using rule 1 (expression -> expression PLUS expression .) ]
+  ! TIMES           [ reduce using rule 1 (expression -> expression PLUS expression .) ]
+  ! DIVIDE          [ reduce using rule 1 (expression -> expression PLUS expression .) ]
+  ! LBRACKET        [ reduce using rule 1 (expression -> expression PLUS expression .) ]
+  ! PLUS            [ shift and go to state 32 ]
+  ! MINUS           [ shift and go to state 36 ]
+  ! OR              [ shift and go to state 37 ]
+  ! XOR             [ shift and go to state 35 ]
+  ! AND             [ shift and go to state 19 ]
+  ! LT              [ shift and go to state 30 ]
+  ! LTE             [ shift and go to state 34 ]
+  ! GT              [ shift and go to state 20 ]
+  ! GTE             [ shift and go to state 24 ]
+  ! LSHIFT          [ shift and go to state 23 ]
+  ! RSHIFT          [ shift and go to state 33 ]
+  ! EQUAL           [ shift and go to state 25 ]
+  ! NOT_EQUAL       [ shift and go to state 31 ]
+  ! LOGICAL_AND     [ shift and go to state 26 ]
+  ! LOGICAL_OR      [ shift and go to state 29 ]
+
+
+state 53
+
+    (14) expression -> expression RSHIFT expression .
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    $               reduce using rule 14 (expression -> expression RSHIFT expression .)
+    OR              reduce using rule 14 (expression -> expression RSHIFT expression .)
+    XOR             reduce using rule 14 (expression -> expression RSHIFT expression .)
+    AND             reduce using rule 14 (expression -> expression RSHIFT expression .)
+    LT              reduce using rule 14 (expression -> expression RSHIFT expression .)
+    LTE             reduce using rule 14 (expression -> expression RSHIFT expression .)
+    GT              reduce using rule 14 (expression -> expression RSHIFT expression .)
+    GTE             reduce using rule 14 (expression -> expression RSHIFT expression .)
+    LSHIFT          reduce using rule 14 (expression -> expression RSHIFT expression .)
+    RSHIFT          reduce using rule 14 (expression -> expression RSHIFT expression .)
+    EQUAL           reduce using rule 14 (expression -> expression RSHIFT expression .)
+    NOT_EQUAL       reduce using rule 14 (expression -> expression RSHIFT expression .)
+    LOGICAL_AND     reduce using rule 14 (expression -> expression RSHIFT expression .)
+    LOGICAL_OR      reduce using rule 14 (expression -> expression RSHIFT expression .)
+    RPAREN          reduce using rule 14 (expression -> expression RSHIFT expression .)
+    RBRACKET        reduce using rule 14 (expression -> expression RSHIFT expression .)
+    PLUS            shift and go to state 32
+    MINUS           shift and go to state 36
+    MODULO          shift and go to state 21
+    TIMES           shift and go to state 27
+    DIVIDE          shift and go to state 22
+    LBRACKET        shift and go to state 28
+
+  ! PLUS            [ reduce using rule 14 (expression -> expression RSHIFT expression .) ]
+  ! MINUS           [ reduce using rule 14 (expression -> expression RSHIFT expression .) ]
+  ! MODULO          [ reduce using rule 14 (expression -> expression RSHIFT expression .) ]
+  ! TIMES           [ reduce using rule 14 (expression -> expression RSHIFT expression .) ]
+  ! DIVIDE          [ reduce using rule 14 (expression -> expression RSHIFT expression .) ]
+  ! LBRACKET        [ reduce using rule 14 (expression -> expression RSHIFT expression .) ]
+  ! OR              [ shift and go to state 37 ]
+  ! XOR             [ shift and go to state 35 ]
+  ! AND             [ shift and go to state 19 ]
+  ! LT              [ shift and go to state 30 ]
+  ! LTE             [ shift and go to state 34 ]
+  ! GT              [ shift and go to state 20 ]
+  ! GTE             [ shift and go to state 24 ]
+  ! LSHIFT          [ shift and go to state 23 ]
+  ! RSHIFT          [ shift and go to state 33 ]
+  ! EQUAL           [ shift and go to state 25 ]
+  ! NOT_EQUAL       [ shift and go to state 31 ]
+  ! LOGICAL_AND     [ shift and go to state 26 ]
+  ! LOGICAL_OR      [ shift and go to state 29 ]
+
+
+state 54
+
+    (10) expression -> expression LTE expression .
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    $               reduce using rule 10 (expression -> expression LTE expression .)
+    OR              reduce using rule 10 (expression -> expression LTE expression .)
+    XOR             reduce using rule 10 (expression -> expression LTE expression .)
+    AND             reduce using rule 10 (expression -> expression LTE expression .)
+    LT              reduce using rule 10 (expression -> expression LTE expression .)
+    LTE             reduce using rule 10 (expression -> expression LTE expression .)
+    GT              reduce using rule 10 (expression -> expression LTE expression .)
+    GTE             reduce using rule 10 (expression -> expression LTE expression .)
+    EQUAL           reduce using rule 10 (expression -> expression LTE expression .)
+    NOT_EQUAL       reduce using rule 10 (expression -> expression LTE expression .)
+    LOGICAL_AND     reduce using rule 10 (expression -> expression LTE expression .)
+    LOGICAL_OR      reduce using rule 10 (expression -> expression LTE expression .)
+    RPAREN          reduce using rule 10 (expression -> expression LTE expression .)
+    RBRACKET        reduce using rule 10 (expression -> expression LTE expression .)
+    PLUS            shift and go to state 32
+    MINUS           shift and go to state 36
+    MODULO          shift and go to state 21
+    TIMES           shift and go to state 27
+    DIVIDE          shift and go to state 22
+    LSHIFT          shift and go to state 23
+    RSHIFT          shift and go to state 33
+    LBRACKET        shift and go to state 28
+
+  ! PLUS            [ reduce using rule 10 (expression -> expression LTE expression .) ]
+  ! MINUS           [ reduce using rule 10 (expression -> expression LTE expression .) ]
+  ! MODULO          [ reduce using rule 10 (expression -> expression LTE expression .) ]
+  ! TIMES           [ reduce using rule 10 (expression -> expression LTE expression .) ]
+  ! DIVIDE          [ reduce using rule 10 (expression -> expression LTE expression .) ]
+  ! LSHIFT          [ reduce using rule 10 (expression -> expression LTE expression .) ]
+  ! RSHIFT          [ reduce using rule 10 (expression -> expression LTE expression .) ]
+  ! LBRACKET        [ reduce using rule 10 (expression -> expression LTE expression .) ]
+  ! OR              [ shift and go to state 37 ]
+  ! XOR             [ shift and go to state 35 ]
+  ! AND             [ shift and go to state 19 ]
+  ! LT              [ shift and go to state 30 ]
+  ! LTE             [ shift and go to state 34 ]
+  ! GT              [ shift and go to state 20 ]
+  ! GTE             [ shift and go to state 24 ]
+  ! EQUAL           [ shift and go to state 25 ]
+  ! NOT_EQUAL       [ shift and go to state 31 ]
+  ! LOGICAL_AND     [ shift and go to state 26 ]
+  ! LOGICAL_OR      [ shift and go to state 29 ]
+
+
+state 55
+
+    (7) expression -> expression XOR expression .
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    $               reduce using rule 7 (expression -> expression XOR expression .)
+    OR              reduce using rule 7 (expression -> expression XOR expression .)
+    XOR             reduce using rule 7 (expression -> expression XOR expression .)
+    LOGICAL_AND     reduce using rule 7 (expression -> expression XOR expression .)
+    LOGICAL_OR      reduce using rule 7 (expression -> expression XOR expression .)
+    RPAREN          reduce using rule 7 (expression -> expression XOR expression .)
+    RBRACKET        reduce using rule 7 (expression -> expression XOR expression .)
+    PLUS            shift and go to state 32
+    MINUS           shift and go to state 36
+    MODULO          shift and go to state 21
+    TIMES           shift and go to state 27
+    DIVIDE          shift and go to state 22
+    AND             shift and go to state 19
+    LT              shift and go to state 30
+    LTE             shift and go to state 34
+    GT              shift and go to state 20
+    GTE             shift and go to state 24
+    LSHIFT          shift and go to state 23
+    RSHIFT          shift and go to state 33
+    EQUAL           shift and go to state 25
+    NOT_EQUAL       shift and go to state 31
+    LBRACKET        shift and go to state 28
+
+  ! PLUS            [ reduce using rule 7 (expression -> expression XOR expression .) ]
+  ! MINUS           [ reduce using rule 7 (expression -> expression XOR expression .) ]
+  ! MODULO          [ reduce using rule 7 (expression -> expression XOR expression .) ]
+  ! TIMES           [ reduce using rule 7 (expression -> expression XOR expression .) ]
+  ! DIVIDE          [ reduce using rule 7 (expression -> expression XOR expression .) ]
+  ! AND             [ reduce using rule 7 (expression -> expression XOR expression .) ]
+  ! LT              [ reduce using rule 7 (expression -> expression XOR expression .) ]
+  ! LTE             [ reduce using rule 7 (expression -> expression XOR expression .) ]
+  ! GT              [ reduce using rule 7 (expression -> expression XOR expression .) ]
+  ! GTE             [ reduce using rule 7 (expression -> expression XOR expression .) ]
+  ! LSHIFT          [ reduce using rule 7 (expression -> expression XOR expression .) ]
+  ! RSHIFT          [ reduce using rule 7 (expression -> expression XOR expression .) ]
+  ! EQUAL           [ reduce using rule 7 (expression -> expression XOR expression .) ]
+  ! NOT_EQUAL       [ reduce using rule 7 (expression -> expression XOR expression .) ]
+  ! LBRACKET        [ reduce using rule 7 (expression -> expression XOR expression .) ]
+  ! OR              [ shift and go to state 37 ]
+  ! XOR             [ shift and go to state 35 ]
+  ! LOGICAL_AND     [ shift and go to state 26 ]
+  ! LOGICAL_OR      [ shift and go to state 29 ]
+
+
+state 56
+
+    (2) expression -> expression MINUS expression .
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    $               reduce using rule 2 (expression -> expression MINUS expression .)
+    PLUS            reduce using rule 2 (expression -> expression MINUS expression .)
+    MINUS           reduce using rule 2 (expression -> expression MINUS expression .)
+    OR              reduce using rule 2 (expression -> expression MINUS expression .)
+    XOR             reduce using rule 2 (expression -> expression MINUS expression .)
+    AND             reduce using rule 2 (expression -> expression MINUS expression .)
+    LT              reduce using rule 2 (expression -> expression MINUS expression .)
+    LTE             reduce using rule 2 (expression -> expression MINUS expression .)
+    GT              reduce using rule 2 (expression -> expression MINUS expression .)
+    GTE             reduce using rule 2 (expression -> expression MINUS expression .)
+    LSHIFT          reduce using rule 2 (expression -> expression MINUS expression .)
+    RSHIFT          reduce using rule 2 (expression -> expression MINUS expression .)
+    EQUAL           reduce using rule 2 (expression -> expression MINUS expression .)
+    NOT_EQUAL       reduce using rule 2 (expression -> expression MINUS expression .)
+    LOGICAL_AND     reduce using rule 2 (expression -> expression MINUS expression .)
+    LOGICAL_OR      reduce using rule 2 (expression -> expression MINUS expression .)
+    RPAREN          reduce using rule 2 (expression -> expression MINUS expression .)
+    RBRACKET        reduce using rule 2 (expression -> expression MINUS expression .)
+    MODULO          shift and go to state 21
+    TIMES           shift and go to state 27
+    DIVIDE          shift and go to state 22
+    LBRACKET        shift and go to state 28
+
+  ! MODULO          [ reduce using rule 2 (expression -> expression MINUS expression .) ]
+  ! TIMES           [ reduce using rule 2 (expression -> expression MINUS expression .) ]
+  ! DIVIDE          [ reduce using rule 2 (expression -> expression MINUS expression .) ]
+  ! LBRACKET        [ reduce using rule 2 (expression -> expression MINUS expression .) ]
+  ! PLUS            [ shift and go to state 32 ]
+  ! MINUS           [ shift and go to state 36 ]
+  ! OR              [ shift and go to state 37 ]
+  ! XOR             [ shift and go to state 35 ]
+  ! AND             [ shift and go to state 19 ]
+  ! LT              [ shift and go to state 30 ]
+  ! LTE             [ shift and go to state 34 ]
+  ! GT              [ shift and go to state 20 ]
+  ! GTE             [ shift and go to state 24 ]
+  ! LSHIFT          [ shift and go to state 23 ]
+  ! RSHIFT          [ shift and go to state 33 ]
+  ! EQUAL           [ shift and go to state 25 ]
+  ! NOT_EQUAL       [ shift and go to state 31 ]
+  ! LOGICAL_AND     [ shift and go to state 26 ]
+  ! LOGICAL_OR      [ shift and go to state 29 ]
+
+
+state 57
+
+    (6) expression -> expression OR expression .
+    (1) expression -> expression . PLUS expression
+    (2) expression -> expression . MINUS expression
+    (3) expression -> expression . MODULO expression
+    (4) expression -> expression . TIMES expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . OR expression
+    (7) expression -> expression . XOR expression
+    (8) expression -> expression . AND expression
+    (9) expression -> expression . LT expression
+    (10) expression -> expression . LTE expression
+    (11) expression -> expression . GT expression
+    (12) expression -> expression . GTE expression
+    (13) expression -> expression . LSHIFT expression
+    (14) expression -> expression . RSHIFT expression
+    (15) expression -> expression . EQUAL expression
+    (16) expression -> expression . NOT_EQUAL expression
+    (17) expression -> expression . LOGICAL_AND expression
+    (18) expression -> expression . LOGICAL_OR expression
+    (29) expression -> expression . LBRACKET expression RBRACKET
+
+    $               reduce using rule 6 (expression -> expression OR expression .)
+    OR              reduce using rule 6 (expression -> expression OR expression .)
+    LOGICAL_AND     reduce using rule 6 (expression -> expression OR expression .)
+    LOGICAL_OR      reduce using rule 6 (expression -> expression OR expression .)
+    RPAREN          reduce using rule 6 (expression -> expression OR expression .)
+    RBRACKET        reduce using rule 6 (expression -> expression OR expression .)
+    PLUS            shift and go to state 32
+    MINUS           shift and go to state 36
+    MODULO          shift and go to state 21
+    TIMES           shift and go to state 27
+    DIVIDE          shift and go to state 22
+    XOR             shift and go to state 35
+    AND             shift and go to state 19
+    LT              shift and go to state 30
+    LTE             shift and go to state 34
+    GT              shift and go to state 20
+    GTE             shift and go to state 24
+    LSHIFT          shift and go to state 23
+    RSHIFT          shift and go to state 33
+    EQUAL           shift and go to state 25
+    NOT_EQUAL       shift and go to state 31
+    LBRACKET        shift and go to state 28
+
+  ! PLUS            [ reduce using rule 6 (expression -> expression OR expression .) ]
+  ! MINUS           [ reduce using rule 6 (expression -> expression OR expression .) ]
+  ! MODULO          [ reduce using rule 6 (expression -> expression OR expression .) ]
+  ! TIMES           [ reduce using rule 6 (expression -> expression OR expression .) ]
+  ! DIVIDE          [ reduce using rule 6 (expression -> expression OR expression .) ]
+  ! XOR             [ reduce using rule 6 (expression -> expression OR expression .) ]
+  ! AND             [ reduce using rule 6 (expression -> expression OR expression .) ]
+  ! LT              [ reduce using rule 6 (expression -> expression OR expression .) ]
+  ! LTE             [ reduce using rule 6 (expression -> expression OR expression .) ]
+  ! GT              [ reduce using rule 6 (expression -> expression OR expression .) ]
+  ! GTE             [ reduce using rule 6 (expression -> expression OR expression .) ]
+  ! LSHIFT          [ reduce using rule 6 (expression -> expression OR expression .) ]
+  ! RSHIFT          [ reduce using rule 6 (expression -> expression OR expression .) ]
+  ! EQUAL           [ reduce using rule 6 (expression -> expression OR expression .) ]
+  ! NOT_EQUAL       [ reduce using rule 6 (expression -> expression OR expression .) ]
+  ! LBRACKET        [ reduce using rule 6 (expression -> expression OR expression .) ]
+  ! OR              [ shift and go to state 37 ]
+  ! LOGICAL_AND     [ shift and go to state 26 ]
+  ! LOGICAL_OR      [ shift and go to state 29 ]
+
+
+state 58
+
+    (29) expression -> expression LBRACKET expression RBRACKET .
+
+    $               reduce using rule 29 (expression -> expression LBRACKET expression RBRACKET .)
+    PLUS            reduce using rule 29 (expression -> expression LBRACKET expression RBRACKET .)
+    MINUS           reduce using rule 29 (expression -> expression LBRACKET expression RBRACKET .)
+    MODULO          reduce using rule 29 (expression -> expression LBRACKET expression RBRACKET .)
+    TIMES           reduce using rule 29 (expression -> expression LBRACKET expression RBRACKET .)
+    DIVIDE          reduce using rule 29 (expression -> expression LBRACKET expression RBRACKET .)
+    OR              reduce using rule 29 (expression -> expression LBRACKET expression RBRACKET .)
+    XOR             reduce using rule 29 (expression -> expression LBRACKET expression RBRACKET .)
+    AND             reduce using rule 29 (expression -> expression LBRACKET expression RBRACKET .)
+    LT              reduce using rule 29 (expression -> expression LBRACKET expression RBRACKET .)
+    LTE             reduce using rule 29 (expression -> expression LBRACKET expression RBRACKET .)
+    GT              reduce using rule 29 (expression -> expression LBRACKET expression RBRACKET .)
+    GTE             reduce using rule 29 (expression -> expression LBRACKET expression RBRACKET .)
+    LSHIFT          reduce using rule 29 (expression -> expression LBRACKET expression RBRACKET .)
+    RSHIFT          reduce using rule 29 (expression -> expression LBRACKET expression RBRACKET .)
+    EQUAL           reduce using rule 29 (expression -> expression LBRACKET expression RBRACKET .)
+    NOT_EQUAL       reduce using rule 29 (expression -> expression LBRACKET expression RBRACKET .)
+    LOGICAL_AND     reduce using rule 29 (expression -> expression LBRACKET expression RBRACKET .)
+    LOGICAL_OR      reduce using rule 29 (expression -> expression LBRACKET expression RBRACKET .)
+    RPAREN          reduce using rule 29 (expression -> expression LBRACKET expression RBRACKET .)
+    LBRACKET        reduce using rule 29 (expression -> expression LBRACKET expression RBRACKET .)
+    RBRACKET        reduce using rule 29 (expression -> expression LBRACKET expression RBRACKET .)
+
+

@@ -1,0 +1,1807 @@
+filepp/filepp -Mfilepp/modules -m for.pm -m c-comment.pm -m bigfunc.pm -m ppresolve.pm -DCONFIGURATION_FILE="config.vh" vhdl/toplevel._vhd -Ix32-in4073-xufo -I./vhdl -o x32-in4073-xufo/toplevel.vhd
+filepp/filepp -Mfilepp/modules -m for.pm -m c-comment.pm -m bigfunc.pm -m ppresolve.pm -DCONFIGURATION_FILE="config.vh" vhdl/peripherals._vhd -Ix32-in4073-xufo -I./vhdl -o x32-in4073-xufo/peripherals.vhd
+../x32-tools/bin/lcc-x32  -Wo-lccdir=../x32-tools/bin -Wo-base=C0000 loader/loader.c loader/loader_helper.bc loader/shell.c -o x32-in4073-xufo/rom.ce -Ix32-in4073-xufo -Wl-lib -Wl/home/marc/workspace/x32/x32/x32-in4073-xufo
+loader/loader.c:
+loader/loader_helper.bc:
+loader/shell.c:
+../x32-tools/bin/bin2vhd x32-in4073-xufo/rom.ce -o x32-in4073-xufo/rom.vhd
+xst -intstyle xflow -ifn x32-in4073-xufo/x32.xst-script -ofn x32-in4073-xufo/x32.xst.log
+make: *** [x32-in4073-xufo/x32.ngc] Interrupt
+make: *** Deleting intermediate file `x32-in4073-xufo/peripherals.vhd'
+make: *** Deleting intermediate file `x32-in4073-xufo/rom.vhd'
+make: *** Deleting intermediate file `x32-in4073-xufo/toplevel.vhd'
+make: *** Deleting intermediate file `x32-in4073-xufo/x32.prj'
+make: *** Deleting intermediate file `x32-in4073-xufo/x32.xst-script'
+make: *** Deleting intermediate file `x32-in4073-xufo/rom.ce'
+make: *** Deleting intermediate file `x32-in4073-xufo/x32.lso'
+filepp/filepp -Mfilepp/modules -m for.pm -m c-comment.pm -m bigfunc.pm -m ppresolve.pm -DCONFIGURATION_FILE="config.vh" vhdl/toplevel._vhd -Ix32-in4073-xufo -I./vhdl -o x32-in4073-xufo/toplevel.vhd
+filepp/filepp -Mfilepp/modules -m for.pm -m c-comment.pm -m bigfunc.pm -m ppresolve.pm -DCONFIGURATION_FILE="config.vh" vhdl/peripherals._vhd -Ix32-in4073-xufo -I./vhdl -o x32-in4073-xufo/peripherals.vhd
+../x32-tools/bin/lcc-x32  -Wo-lccdir=../x32-tools/bin -Wo-base=C0000 loader/loader.c loader/loader_helper.bc loader/shell.c -o x32-in4073-xufo/rom.ce -Ix32-in4073-xufo -Wl-lib -Wl/home/marc/workspace/x32/x32/x32-in4073-xufo
+loader/loader.c:
+loader/loader_helper.bc:
+loader/shell.c:
+../x32-tools/bin/bin2vhd x32-in4073-xufo/rom.ce -o x32-in4073-xufo/rom.vhd
+xst -intstyle xflow -ifn x32-in4073-xufo/x32.xst-script -ofn x32-in4073-xufo/x32.xst.log
+Reading design: x32-in4073-xufo/x32.prj
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/timer.vhd" in Library work.
+Architecture behaviour of Entity timer is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/peripherals/rs232/rs232in.vhd" in Library work.
+Architecture behaviour of Entity rs232in is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/peripherals/rs232/rs232out.vhd" in Library work.
+Architecture behaviour of Entity rs232out is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/peripherals/4x7seg/bin2hex.vhd" in Library work.
+Architecture behaviour of Entity bin2hex is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/peripherals/rs232/fifo_buffer.vhd" in Library work.
+Architecture behaviour of Entity fifo_buffer is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/types.vhd" in Library work.
+Architecture types of Entity types is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/comperator_signed.vhd" in Library work.
+Architecture behaviour of Entity signed_comperator is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/comperator_unsigned.vhd" in Library work.
+Architecture behaviour of Entity unsigned_comperator is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/alu_addsub.vhd" in Library work.
+Architecture behaviour of Entity addsub is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/alu_multiplier.vhd" in Library work.
+Architecture behaviour of Entity multiplier is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/alu_divider.vhd" in Library work.
+Architecture behaviour of Entity divider is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/alu_leftshifter.vhd" in Library work.
+Architecture behaviour of Entity left_shifter is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/alu_rightshifter.vhd" in Library work.
+Architecture behaviour of Entity right_shifter is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/register.vhd" in Library work.
+Architecture behaviour of Entity reg is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/peripherals/rs232/uart.vhd" in Library work.
+Architecture behaviour of Entity uart is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/register_init.vhd" in Library work.
+Architecture behaviour of Entity reg_init is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/peripherals/4x7seg/disp.vhd" in Library work.
+Architecture behaviour of Entity disp7seg is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/peripherals/xufo_comm/xufo_comm.vhd" in Library work.
+Architecture behavioral of Entity xufo_comm is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/xs3e/mem_decoder.vhd" in Library work.
+Architecture behaviour of Entity mem_decoder is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/decoder.vhd" in Library work.
+Architecture behaviour of Entity decoder is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/alu.vhd" in Library work.
+Architecture behaviour of Entity alu is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/comperator.vhd" in Library work.
+Architecture behaviour of Entity comperator is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/controller.vhd" in Library work.
+Architecture behaviour of Entity controller is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/peripherals/maxon/decoder.vhd" in Library work.
+Architecture behavior of Entity maxdecoder is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/peripherals/maxon/counter.vhd" in Library work.
+Architecture behavior of Entity udcounter is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/data32to8.vhd" in Library work.
+Architecture behaviour of Entity data32to8 is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/core.vhd" in Library work.
+Architecture behaviour of Entity x32_core is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/rom.vhd" in Library work.
+Entity <rom> compiled.
+Entity <rom> (Architecture <behaviour>) compiled.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/xs3e/sram-32.vhd" in Library work.
+Architecture behaviour of Entity sram32 is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" in Library work.
+Entity <peripherals> compiled.
+WARNING:HDLParsers:3350 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" Line 272. Null range: 31 downto 32
+WARNING:HDLParsers:3350 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" Line 280. Null range: 31 downto 32
+WARNING:HDLParsers:3350 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" Line 288. Null range: 31 downto 32
+WARNING:HDLParsers:3350 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" Line 296. Null range: 31 downto 32
+Entity <peripherals> (Architecture <behaviour>) compiled.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/interrupt/interrupt_controller.vhd" in Library work.
+Architecture behaviour of Entity interrupt_controller is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/toplevel.vhd" in Library work.
+Entity <x32> compiled.
+Entity <x32> (Architecture <behaviour>) compiled.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/rs232mem.vhd" in Library work.
+Architecture behaviour of Entity rs232mem is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/peripherals/trex_comm/trex_comm.vhd" in Library work.
+Architecture behavioral of Entity trex_comm is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/peripherals/maxon/maxon.vhd" in Library work.
+Architecture behaviour of Entity maxon is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/peripherals/ps2/ps2reader.vhd" in Library work.
+Architecture behaviour of Entity ps2reader is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/peripherals/pdc_dpc/dpc.vhd" in Library work.
+Architecture behaviour of Entity dpc is up to date.
+Compiling vhdl file "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/peripherals/pdc_dpc/pdc.vhd" in Library work.
+Architecture behaviour of Entity pdc is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <x32> in library <work> (architecture <behaviour>).
+
+Analyzing hierarchy for entity <x32_core> in library <work> (architecture <behaviour>) with generics.
+	size_integer = 32
+	size_long = 32
+	size_pointer = 32
+	size_short = 16
+	use_buffer = true
+
+Analyzing hierarchy for entity <rom> in library <work> (architecture <behaviour>).
+
+Analyzing hierarchy for entity <sram32> in library <work> (architecture <behaviour>).
+
+Analyzing hierarchy for entity <peripherals> in library <work> (architecture <behaviour>).
+
+Analyzing hierarchy for entity <interrupt_controller> in library <work> (architecture <behaviour>) with generics.
+	address_bits = 5
+	critical_interrupt = 5
+	devices = 16
+	size = 32
+
+Analyzing hierarchy for entity <reg> in library <work> (architecture <behaviour>) with generics.
+	size = 32
+
+Analyzing hierarchy for entity <reg_init> in library <work> (architecture <behaviour>) with generics.
+	size = 32
+
+Analyzing hierarchy for entity <reg> in library <work> (architecture <behaviour>) with generics.
+	size = 16
+
+Analyzing hierarchy for entity <decoder> in library <work> (architecture <behaviour>).
+
+Analyzing hierarchy for entity <alu> in library <work> (architecture <behaviour>) with generics.
+	size = 32
+
+Analyzing hierarchy for entity <comperator> in library <work> (architecture <behaviour>) with generics.
+	size = 32
+
+Analyzing hierarchy for entity <controller> in library <work> (architecture <behaviour>).
+
+Analyzing hierarchy for entity <mem_decoder> in library <work> (architecture <behaviour>).
+
+Analyzing hierarchy for entity <reg> in library <work> (architecture <behaviour>) with generics.
+	size = 8
+
+Analyzing hierarchy for entity <uart> in library <work> (architecture <behaviour>) with generics.
+	clocks_per_bit = 434
+	in_buffer_size = 8
+	out_buffer_size = 8
+
+Analyzing hierarchy for entity <reg_init> in library <work> (architecture <behaviour>) with generics.
+	size = 16
+
+Analyzing hierarchy for entity <disp7seg> in library <work> (architecture <behaviour>).
+
+Analyzing hierarchy for entity <timer> in library <work> (architecture <behaviour>) with generics.
+	size = 16
+
+Analyzing hierarchy for entity <reg> in library <work> (architecture <behaviour>) with generics.
+	size = 32
+
+Analyzing hierarchy for entity <timer> in library <work> (architecture <behaviour>) with generics.
+	size = 32
+
+Analyzing hierarchy for entity <timer> in library <work> (architecture <behaviour>) with generics.
+	size = 6
+
+Analyzing hierarchy for entity <reg> in library <work> (architecture <behaviour>) with generics.
+	size = 4
+
+Analyzing hierarchy for entity <xufo_comm> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <reg> in library <work> (architecture <behaviour>) with generics.
+	size = 17
+
+Analyzing hierarchy for entity <addsub> in library <work> (architecture <behaviour>) with generics.
+	size = 32
+
+Analyzing hierarchy for entity <multiplier> in library <work> (architecture <behaviour>) with generics.
+	size = 32
+
+Analyzing hierarchy for entity <divider> in library <work> (architecture <behaviour>) with generics.
+	size = 32
+
+Analyzing hierarchy for entity <left_shifter> in library <work> (architecture <behaviour>) with generics.
+	size = 32
+
+Analyzing hierarchy for entity <right_shifter> in library <work> (architecture <behaviour>) with generics.
+	size = 32
+
+Analyzing hierarchy for entity <signed_comperator> in library <work> (architecture <behaviour>) with generics.
+	size = 32
+
+Analyzing hierarchy for entity <unsigned_comperator> in library <work> (architecture <behaviour>) with generics.
+	size = 32
+
+Analyzing hierarchy for entity <rs232in> in library <work> (architecture <behaviour>) with generics.
+	clocks_per_bit = 434
+
+Analyzing hierarchy for entity <fifo_buffer> in library <work> (architecture <behaviour>) with generics.
+	item_count = 8
+	item_size = 8
+
+Analyzing hierarchy for entity <rs232out> in library <work> (architecture <behaviour>) with generics.
+	clocks_per_bit = 434
+
+Analyzing hierarchy for entity <bin2hex> in library <work> (architecture <behaviour>).
+
+Analyzing hierarchy for entity <rs232in> in library <work> (architecture <behaviour>) with generics.
+	clocks_per_bit = 100
+
+Analyzing hierarchy for entity <rs232out> in library <work> (architecture <behaviour>) with generics.
+	clocks_per_bit = 100
+
+Analyzing hierarchy for entity <timer> in library <work> (architecture <behaviour>) with generics.
+	size = 16
+
+INFO:Xst:2555 - '-hierarchy_separator' switch is being deprecated in a future release.
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <x32> in library <work> (Architecture <behaviour>).
+    Set user-defined property "LOC =  K13 K14 J13 J14 H13 H14 G12 F12" for signal <pin_switches> in unit <x32>.
+    Set user-defined property "LOC =  L14 L13 M14 M13" for signal <pin_buttons> in unit <x32>.
+    Set user-defined property "LOC =  P11 P12 N12 P13 N14 L12 P14 K12" for signal <pin_leds> in unit <x32>.
+    Set user-defined property "LOC =  T13" for signal <pin_primary_rx> in unit <x32>.
+    Set user-defined property "LOC =  R13" for signal <pin_primary_tx> in unit <x32>.
+    Set user-defined property "LOC =  E13 F14 G14 D14" for signal <pin_display_control> in unit <x32>.
+    Set user-defined property "LOC =  E14 G13 N15 P15 R16 F13 N16 P16" for signal <pin_display_data> in unit <x32>.
+    Set user-defined property "LOC =  C15 D15 E15 F15" for signal <pin_custom> in unit <x32>.
+    Set user-defined property "LOC =  P10" for signal <pin_xufo_rx> in unit <x32>.
+    Set user-defined property "LOC =  R10" for signal <pin_xufo_tx> in unit <x32>.
+    Set user-defined property "LOC =  L3 K5 K3 J3 J4 H4 H3 G5 E4 E3 F4 F3 G4 L4 M3 M4 N3 L5" for signal <sram_address> in unit <x32>.
+    Set user-defined property "LOC =  R1 P1 L2 J2 H1 F2 P8 D3 B1 C1 C2 R5 T5 R6 T8 N7" for signal <sram_data1> in unit <x32>.
+    Set user-defined property "LOC =  N1 M1 K2 C3 F5 G1 E2 D2 D1 E1 G2 J1 K1 M2 N2 P2" for signal <sram_data2> in unit <x32>.
+    Set user-defined property "LOC =  P7" for signal <sram_ce1> in unit <x32>.
+    Set user-defined property "LOC =  T4" for signal <sram_ub1> in unit <x32>.
+    Set user-defined property "LOC =  P6" for signal <sram_lb1> in unit <x32>.
+    Set user-defined property "LOC =  N5" for signal <sram_ce2> in unit <x32>.
+    Set user-defined property "LOC =  R4" for signal <sram_ub2> in unit <x32>.
+    Set user-defined property "LOC =  P5" for signal <sram_lb2> in unit <x32>.
+    Set user-defined property "LOC =  K4" for signal <sram_oe> in unit <x32>.
+    Set user-defined property "LOC =  G3" for signal <sram_we> in unit <x32>.
+    Set user-defined property "LOC =  T9" for signal <clk> in unit <x32>.
+Entity <x32> analyzed. Unit <x32> generated.
+
+Analyzing generic Entity <x32_core> in library <work> (Architecture <behaviour>).
+	size_integer = 32
+	size_long = 32
+	size_pointer = 32
+	size_short = 16
+	use_buffer = true
+WARNING:Xst:2096 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/core.vhd" line 401: Use of null array slice on signal <control_reg_in> is not supported.
+WARNING:Xst:2096 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/core.vhd" line 667: Use of null array slice on signal <i_mem_data_out> is not supported.
+WARNING:Xst:2096 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/core.vhd" line 681: Use of null array slice on signal <alu_in_1> is not supported.
+WARNING:Xst:2096 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/core.vhd" line 699: Use of null array slice on signal <opcode_reg> is not supported.
+Entity <x32_core> analyzed. Unit <x32_core> generated.
+
+Analyzing generic Entity <reg.1> in library <work> (Architecture <behaviour>).
+	size = 32
+Entity <reg.1> analyzed. Unit <reg.1> generated.
+
+Analyzing generic Entity <reg_init.1> in library <work> (Architecture <behaviour>).
+	size = 32
+Entity <reg_init.1> analyzed. Unit <reg_init.1> generated.
+
+Analyzing generic Entity <reg.2> in library <work> (Architecture <behaviour>).
+	size = 16
+Entity <reg.2> analyzed. Unit <reg.2> generated.
+
+Analyzing Entity <decoder> in library <work> (Architecture <behaviour>).
+Entity <decoder> analyzed. Unit <decoder> generated.
+
+Analyzing generic Entity <alu> in library <work> (Architecture <behaviour>).
+	size = 32
+Entity <alu> analyzed. Unit <alu> generated.
+
+Analyzing generic Entity <addsub> in library <work> (Architecture <behaviour>).
+	size = 32
+Entity <addsub> analyzed. Unit <addsub> generated.
+
+Analyzing generic Entity <multiplier> in library <work> (Architecture <behaviour>).
+	size = 32
+Entity <multiplier> analyzed. Unit <multiplier> generated.
+
+Analyzing generic Entity <divider> in library <work> (Architecture <behaviour>).
+	size = 32
+Entity <divider> analyzed. Unit <divider> generated.
+
+Analyzing generic Entity <left_shifter> in library <work> (Architecture <behaviour>).
+	size = 32
+WARNING:Xst:2096 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/alu_leftshifter.vhd" line 63: Use of null array slice on signal <all_results<0>> is not supported.
+WARNING:Xst:790 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/alu_leftshifter.vhd" line 69: Index value(s) does not match array range, simulation mismatch.
+INFO:Xst:1607 - Contents of array <all_results> may be accessed with an index that does not cover the full array size.
+Entity <left_shifter> analyzed. Unit <left_shifter> generated.
+
+Analyzing generic Entity <right_shifter> in library <work> (Architecture <behaviour>).
+	size = 32
+WARNING:Xst:790 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/alu_rightshifter.vhd" line 69: Index value(s) does not match array range, simulation mismatch.
+INFO:Xst:1607 - Contents of array <all_results> may be accessed with an index that does not cover the full array size.
+Entity <right_shifter> analyzed. Unit <right_shifter> generated.
+
+Analyzing generic Entity <comperator> in library <work> (Architecture <behaviour>).
+	size = 32
+Entity <comperator> analyzed. Unit <comperator> generated.
+
+Analyzing generic Entity <signed_comperator> in library <work> (Architecture <behaviour>).
+	size = 32
+Entity <signed_comperator> analyzed. Unit <signed_comperator> generated.
+
+Analyzing generic Entity <unsigned_comperator> in library <work> (Architecture <behaviour>).
+	size = 32
+Entity <unsigned_comperator> analyzed. Unit <unsigned_comperator> generated.
+
+Analyzing Entity <controller> in library <work> (Architecture <behaviour>).
+Entity <controller> analyzed. Unit <controller> generated.
+
+Analyzing Entity <rom> in library <work> (Architecture <behaviour>).
+Entity <rom> analyzed. Unit <rom> generated.
+
+Analyzing Entity <sram32> in library <work> (Architecture <behaviour>).
+Entity <sram32> analyzed. Unit <sram32> generated.
+
+Analyzing Entity <mem_decoder> in library <work> (Architecture <behaviour>).
+Entity <mem_decoder> analyzed. Unit <mem_decoder> generated.
+
+Analyzing Entity <peripherals> in library <work> (Architecture <behaviour>).
+WARNING:Xst:1748 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 213: VHDL Assertion Statement with non constant condition is ignored.
+WARNING:Xst:1748 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 222: VHDL Assertion Statement with non constant condition is ignored.
+WARNING:Xst:1748 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 230: VHDL Assertion Statement with non constant condition is ignored.
+WARNING:Xst:1748 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 238: VHDL Assertion Statement with non constant condition is ignored.
+WARNING:Xst:1748 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 246: VHDL Assertion Statement with non constant condition is ignored.
+WARNING:Xst:1748 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 253: VHDL Assertion Statement with non constant condition is ignored.
+WARNING:Xst:1748 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 261: VHDL Assertion Statement with non constant condition is ignored.
+WARNING:Xst:1748 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 269: VHDL Assertion Statement with non constant condition is ignored.
+WARNING:Xst:2096 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 272: Use of null array slice on signal <data_out> is not supported.
+WARNING:Xst:1748 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 277: VHDL Assertion Statement with non constant condition is ignored.
+WARNING:Xst:2096 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 280: Use of null array slice on signal <data_out> is not supported.
+WARNING:Xst:1748 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 285: VHDL Assertion Statement with non constant condition is ignored.
+WARNING:Xst:2096 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 288: Use of null array slice on signal <data_out> is not supported.
+WARNING:Xst:1748 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 293: VHDL Assertion Statement with non constant condition is ignored.
+WARNING:Xst:2096 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 296: Use of null array slice on signal <data_out> is not supported.
+WARNING:Xst:1748 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 301: VHDL Assertion Statement with non constant condition is ignored.
+WARNING:Xst:1748 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 309: VHDL Assertion Statement with non constant condition is ignored.
+WARNING:Xst:1748 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 316: VHDL Assertion Statement with non constant condition is ignored.
+WARNING:Xst:1748 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 323: VHDL Assertion Statement with non constant condition is ignored.
+WARNING:Xst:1748 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 330: VHDL Assertion Statement with non constant condition is ignored.
+WARNING:Xst:1748 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 337: VHDL Assertion Statement with non constant condition is ignored.
+WARNING:Xst:1748 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 344: VHDL Assertion Statement with non constant condition is ignored.
+WARNING:Xst:1748 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 351: VHDL Assertion Statement with non constant condition is ignored.
+WARNING:Xst:1748 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 358: VHDL Assertion Statement with non constant condition is ignored.
+WARNING:Xst:1748 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 365: VHDL Assertion Statement with non constant condition is ignored.
+WARNING:Xst:1748 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 372: VHDL Assertion Statement with non constant condition is ignored.
+WARNING:Xst:819 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd" line 188: The following signals are missing in the process sensitivity list:
+   instruction_counter, procstate_buff, ie_buff, switches, buttons, leds_reg, primary_out, primary_control, display_reg, ms_clock_buff, timer1_period, timer2_period, us_clock_buff, custom_reg, xufo_count, xufo_timestamp, xufo_s0, xufo_s1, xufo_s2, xufo_s3, xufo_s4, xufo_s5, xufo_s6, xufo_A.
+Entity <peripherals> analyzed. Unit <peripherals> generated.
+
+Analyzing generic Entity <reg.3> in library <work> (Architecture <behaviour>).
+	size = 8
+Entity <reg.3> analyzed. Unit <reg.3> generated.
+
+Analyzing generic Entity <uart> in library <work> (Architecture <behaviour>).
+	clocks_per_bit = 434
+	in_buffer_size = 8
+	out_buffer_size = 8
+WARNING:Xst:753 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/peripherals/rs232/uart.vhd" line 54: Unconnected output port 'buffer_full' of component 'fifo_buffer'.
+WARNING:Xst:753 - "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/peripherals/rs232/uart.vhd" line 86: Unconnected output port 'busy' of component 'rs232out'.
+Entity <uart> analyzed. Unit <uart> generated.
+
+Analyzing generic Entity <rs232in.1> in library <work> (Architecture <behaviour>).
+	clocks_per_bit = 434
+Entity <rs232in.1> analyzed. Unit <rs232in.1> generated.
+
+Analyzing generic Entity <timer.4> in library <work> (Architecture <behaviour>).
+	size = 16
+Entity <timer.4> analyzed. Unit <timer.4> generated.
+
+Analyzing generic Entity <fifo_buffer> in library <work> (Architecture <behaviour>).
+	item_count = 8
+	item_size = 8
+Entity <fifo_buffer> analyzed. Unit <fifo_buffer> generated.
+
+Analyzing generic Entity <rs232out.1> in library <work> (Architecture <behaviour>).
+	clocks_per_bit = 434
+Entity <rs232out.1> analyzed. Unit <rs232out.1> generated.
+
+Analyzing generic Entity <reg_init.2> in library <work> (Architecture <behaviour>).
+	size = 16
+Entity <reg_init.2> analyzed. Unit <reg_init.2> generated.
+
+Analyzing Entity <disp7seg> in library <work> (Architecture <behaviour>).
+Entity <disp7seg> analyzed. Unit <disp7seg> generated.
+
+Analyzing Entity <bin2hex> in library <work> (Architecture <behaviour>).
+Entity <bin2hex> analyzed. Unit <bin2hex> generated.
+
+Analyzing generic Entity <timer.1> in library <work> (Architecture <behaviour>).
+	size = 16
+Entity <timer.1> analyzed. Unit <timer.1> generated.
+
+Analyzing generic Entity <reg.4> in library <work> (Architecture <behaviour>).
+	size = 32
+Entity <reg.4> analyzed. Unit <reg.4> generated.
+
+Analyzing generic Entity <timer.2> in library <work> (Architecture <behaviour>).
+	size = 32
+Entity <timer.2> analyzed. Unit <timer.2> generated.
+
+Analyzing generic Entity <timer.3> in library <work> (Architecture <behaviour>).
+	size = 6
+Entity <timer.3> analyzed. Unit <timer.3> generated.
+
+Analyzing generic Entity <reg.5> in library <work> (Architecture <behaviour>).
+	size = 4
+Entity <reg.5> analyzed. Unit <reg.5> generated.
+
+Analyzing Entity <xufo_comm> in library <work> (Architecture <Behavioral>).
+Entity <xufo_comm> analyzed. Unit <xufo_comm> generated.
+
+Analyzing generic Entity <rs232in.2> in library <work> (Architecture <behaviour>).
+	clocks_per_bit = 100
+Entity <rs232in.2> analyzed. Unit <rs232in.2> generated.
+
+Analyzing generic Entity <rs232out.2> in library <work> (Architecture <behaviour>).
+	clocks_per_bit = 100
+Entity <rs232out.2> analyzed. Unit <rs232out.2> generated.
+
+Analyzing generic Entity <reg.6> in library <work> (Architecture <behaviour>).
+	size = 17
+Entity <reg.6> analyzed. Unit <reg.6> generated.
+
+Analyzing generic Entity <interrupt_controller> in library <work> (Architecture <behaviour>).
+	address_bits = 5
+	critical_interrupt = 5
+	devices = 16
+	size = 32
+Entity <interrupt_controller> analyzed. Unit <interrupt_controller> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <rom>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/rom.vhd".
+    Found 5288x32-bit ROM for signal <data_i>.
+    Found 32-bit register for signal <data>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred  32 D-type flip-flop(s).
+Unit <rom> synthesized.
+
+
+Synthesizing Unit <interrupt_controller>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/interrupt/interrupt_controller.vhd".
+    Found 16x32-bit single-port RAM <Mram_vector_memory> for signal <vector_memory>.
+    Found 16x32-bit single-port RAM <Mram_priority_memory> for signal <priority_memory>.
+    Found finite state machine <FSM_0> for signal <state_o>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 11                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 5                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | reset_state                                    |
+    | Power Up State     | reset_state                                    |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit 16-to-1 multiplexer for signal <$varindex0000> created at line 145.
+    Found 4-bit up counter for signal <current_device>.
+    Found 16-bit register for signal <irq_reg>.
+    Found 32-bit comparator greater for signal <raise_interrupt$cmp_gt0000> created at line 145.
+    Found 4-bit comparator less for signal <raise_interrupt$cmp_lt0000> created at line 145.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   2 RAM(s).
+	inferred   1 Counter(s).
+	inferred  16 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <interrupt_controller> synthesized.
+
+
+Synthesizing Unit <reg_1>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/register.vhd".
+    Found 32-bit register for signal <data_out>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+Unit <reg_1> synthesized.
+
+
+Synthesizing Unit <reg_init_1>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/register_init.vhd".
+    Found 32-bit register for signal <data_out>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+Unit <reg_init_1> synthesized.
+
+
+Synthesizing Unit <reg_2>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/register.vhd".
+    Found 16-bit register for signal <data_out>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+Unit <reg_2> synthesized.
+
+
+Synthesizing Unit <decoder>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/decoder.vhd".
+WARNING:Xst:646 - Signal <decoder_rom<2>> is assigned but never used.
+    Found 4x2-bit ROM for signal <ex_alu_in_2_i>.
+    Found 2-bit register for signal <ex_alu_in_1>.
+    Found 2-bit register for signal <ex_alu_in_2>.
+    Found 1-bit register for signal <ex_alu_opcode<0>>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   5 D-type flip-flop(s).
+Unit <decoder> synthesized.
+
+
+Synthesizing Unit <controller>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/controller.vhd".
+    Found finite state machine <FSM_1> for signal <state_o>.
+    -----------------------------------------------------------------------
+    | States             | 31                                             |
+    | Transitions        | 73                                             |
+    | Inputs             | 16                                             |
+    | Outputs            | 46                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | reset_state                                    |
+    | Power Up State     | reset_state                                    |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <controller> synthesized.
+
+
+Synthesizing Unit <addsub>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/alu_addsub.vhd".
+WARNING:Xst:2734 - Property "use_dsp48" is not applicable for this technology.
+    Found 33-bit addsub for signal <addsub_result>.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <addsub> synthesized.
+
+
+Synthesizing Unit <multiplier>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/alu_multiplier.vhd".
+    Found 1-bit register for signal <ready>.
+    Found 64-bit register for signal <mult_result>.
+    Found 32x32-bit multiplier for signal <mult_result$mult0000> created at line 106.
+    Summary:
+	inferred  65 D-type flip-flop(s).
+	inferred   1 Multiplier(s).
+Unit <multiplier> synthesized.
+
+
+Synthesizing Unit <divider>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/alu_divider.vhd".
+WARNING:Xst:646 - Signal <result_i<32>> is assigned but never used.
+    Found finite state machine <FSM_2> for signal <state_o>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | idle                                           |
+    | Power Up State     | idle                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+WARNING:Xst:2734 - Property "use_dsp48" is not applicable for this technology.
+WARNING:Xst:2734 - Property "use_dsp48" is not applicable for this technology.
+    Found 65-bit addsub for signal <adder_result>.
+    Found 32-bit register for signal <counter>.
+    Found 32-bit register for signal <p>.
+    Found 1-bit xor2 for signal <p_i$xor0000> created at line 149.
+    Found 33-bit addsub for signal <result_i$addsub0000>.
+    Found 32-bit register for signal <result_o>.
+    Found 1-bit xor2 for signal <s_i_9$xor0000> created at line 177.
+    Found 65-bit register for signal <s_o>.
+    Found 65-bit comparator equal for signal <s_zero$cmp_eq0000> created at line 116.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred 161 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <divider> synthesized.
+
+
+Synthesizing Unit <left_shifter>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/alu_leftshifter.vhd".
+WARNING:Xst:647 - Input <signed> is never used.
+    Found 32-bit 32-to-1 multiplexer for signal <$varindex0000> created at line 69.
+    Found 32-bit comparator less for signal <result$cmp_lt0000> created at line 68.
+    Summary:
+	inferred   1 Comparator(s).
+	inferred  32 Multiplexer(s).
+Unit <left_shifter> synthesized.
+
+
+Synthesizing Unit <right_shifter>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/alu_rightshifter.vhd".
+    Found 32-bit 32-to-1 multiplexer for signal <$varindex0000> created at line 69.
+    Found 32-bit comparator less for signal <result$cmp_lt0000> created at line 68.
+    Summary:
+	inferred   1 Comparator(s).
+	inferred  32 Multiplexer(s).
+Unit <right_shifter> synthesized.
+
+
+Synthesizing Unit <signed_comperator>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/comperator_signed.vhd".
+    Found 32-bit comparator greater for signal <greater$cmp_gt0000> created at line 58.
+    Summary:
+	inferred   1 Comparator(s).
+Unit <signed_comperator> synthesized.
+
+
+Synthesizing Unit <unsigned_comperator>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/comperator_unsigned.vhd".
+    Found 32-bit comparator greater for signal <greater$cmp_gt0000> created at line 58.
+    Summary:
+	inferred   1 Comparator(s).
+Unit <unsigned_comperator> synthesized.
+
+
+Synthesizing Unit <mem_decoder>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/xs3e/mem_decoder.vhd".
+    Found 1-bit xor2 for signal <overflow_16_signed$xor0000> created at line 106.
+    Found 1-bit xor2 for signal <overflow_8_signed$xor0000> created at line 112.
+Unit <mem_decoder> synthesized.
+
+
+Synthesizing Unit <reg_3>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/register.vhd".
+    Found 8-bit register for signal <data_out>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <reg_3> synthesized.
+
+
+Synthesizing Unit <reg_init_2>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/register_init.vhd".
+    Found 16-bit register for signal <data_out>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+Unit <reg_init_2> synthesized.
+
+
+Synthesizing Unit <timer_1>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/timer.vhd".
+WARNING:Xst:2734 - Property "use_dsp48" is not applicable for this technology.
+    Found 16-bit register for signal <counter>.
+    Found 16-bit adder for signal <counter$add0000> created at line 87.
+    Found 16-bit comparator greater for signal <counter_reset$cmp_gt0000> created at line 73.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <timer_1> synthesized.
+
+
+Synthesizing Unit <reg_4>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/register.vhd".
+    Found 32-bit register for signal <data_out>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+Unit <reg_4> synthesized.
+
+
+Synthesizing Unit <timer_2>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/timer.vhd".
+WARNING:Xst:2734 - Property "use_dsp48" is not applicable for this technology.
+    Found 32-bit register for signal <counter>.
+    Found 32-bit adder for signal <counter$add0000> created at line 87.
+    Found 32-bit comparator greater for signal <counter_reset$cmp_gt0000> created at line 73.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <timer_2> synthesized.
+
+
+Synthesizing Unit <timer_3>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/timer.vhd".
+WARNING:Xst:2734 - Property "use_dsp48" is not applicable for this technology.
+    Found 6-bit register for signal <counter>.
+    Found 6-bit adder for signal <counter$add0000> created at line 87.
+    Found 6-bit comparator greater for signal <counter_reset$cmp_gt0000> created at line 73.
+    Summary:
+	inferred   6 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <timer_3> synthesized.
+
+
+Synthesizing Unit <reg_5>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/register.vhd".
+    Found 4-bit register for signal <data_out>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <reg_5> synthesized.
+
+
+Synthesizing Unit <reg_6>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/register.vhd".
+    Found 17-bit register for signal <data_out>.
+    Summary:
+	inferred  17 D-type flip-flop(s).
+Unit <reg_6> synthesized.
+
+
+Synthesizing Unit <fifo_buffer>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/peripherals/rs232/fifo_buffer.vhd".
+    Found 64-bit register for signal <buff>.
+    Found 8-bit register for signal <valid>.
+    Summary:
+	inferred  72 D-type flip-flop(s).
+Unit <fifo_buffer> synthesized.
+
+
+Synthesizing Unit <timer_4>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/timer.vhd".
+    Found 16-bit register for signal <counter>.
+    Found 16-bit adder for signal <counter$add0000> created at line 87.
+    Found 16-bit comparator greater for signal <counter_reset$cmp_gt0000> created at line 73.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <timer_4> synthesized.
+
+
+Synthesizing Unit <bin2hex>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/peripherals/4x7seg/bin2hex.vhd".
+    Found 16x7-bit ROM for signal <hexlsw>.
+    Found 16x7-bit ROM for signal <hexmsw>.
+    Summary:
+	inferred   2 ROM(s).
+Unit <bin2hex> synthesized.
+
+
+Synthesizing Unit <sram32>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/xs3e/sram-32.vhd".
+    Found finite state machine <FSM_3> for signal <state_o>.
+    -----------------------------------------------------------------------
+    | States             | 9                                              |
+    | Transitions        | 13                                             |
+    | Inputs             | 3                                              |
+    | Outputs            | 11                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | reset_state                                    |
+    | Power Up State     | reset_state                                    |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+WARNING:Xst:2734 - Property "use_dsp48" is not applicable for this technology.
+    Found 16-bit tristate buffer for signal <sram_data1>.
+    Found 16-bit tristate buffer for signal <sram_data2>.
+    Found 4-bit register for signal <bytes_enable1_o>.
+    Found 4-bit register for signal <bytes_enable2_o>.
+    Found 18-bit register for signal <mem_address1>.
+    Found 18-bit register for signal <mem_address2>.
+    Found 18-bit adder for signal <mem_address2$add0000> created at line 416.
+    Found 2-bit register for signal <mem_address_offset>.
+    Found 32-bit register for signal <mem_data_in1>.
+    Found 24-bit register for signal <mem_data_in2>.
+    Found 32-bit register for signal <mem_data_out1_o>.
+    Found 32-bit register for signal <mem_data_out2_o>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred 166 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  32 Tristate(s).
+Unit <sram32> synthesized.
+
+
+Synthesizing Unit <alu>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/alu.vhd".
+    Found 1-bit register for signal <delayed_start>.
+    Found 32-bit register for signal <operand1>.
+    Found 32-bit register for signal <operand2>.
+    Found 32-bit adder for signal <result$addsub0000> created at line 179.
+    Found 32-bit xor2 for signal <result$xor0000> created at line 179.
+    Summary:
+	inferred  65 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <alu> synthesized.
+
+
+Synthesizing Unit <comperator>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/comperator.vhd".
+    Found 32-bit comparator equal for signal <equal$cmp_eq0000> created at line 113.
+    Summary:
+	inferred   1 Comparator(s).
+Unit <comperator> synthesized.
+
+
+Synthesizing Unit <disp7seg>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/peripherals/4x7seg/disp.vhd".
+    Found 4x4-bit ROM for signal <control>.
+    Found 7-bit 4-to-1 multiplexer for signal <data<7:1>>.
+    Found 16-bit up counter for signal <cntr>.
+    Found 7-bit register for signal <disp1_o>.
+    Found 7-bit register for signal <disp2_o>.
+    Found 7-bit register for signal <disp3_o>.
+    Found 7-bit register for signal <disp4_o>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   1 Counter(s).
+	inferred  28 D-type flip-flop(s).
+	inferred   7 Multiplexer(s).
+Unit <disp7seg> synthesized.
+
+
+Synthesizing Unit <rs232in_1>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/peripherals/rs232/rs232in.vhd".
+    Found finite state machine <FSM_4> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 7                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | resetstate                                     |
+    | Power Up State     | resetstate                                     |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit register for signal <data_o>.
+    Found 11-bit register for signal <shift_reg>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  19 D-type flip-flop(s).
+Unit <rs232in_1> synthesized.
+
+
+Synthesizing Unit <rs232out_1>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/peripherals/rs232/rs232out.vhd".
+    Found finite state machine <FSM_5> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 14                                             |
+    | Transitions        | 26                                             |
+    | Inputs             | 2                                              |
+    | Outputs            | 15                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | reset_state                                    |
+    | Power Up State     | reset_state                                    |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit register for signal <datareg>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   8 D-type flip-flop(s).
+Unit <rs232out_1> synthesized.
+
+
+Synthesizing Unit <rs232in_2>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/peripherals/rs232/rs232in.vhd".
+    Found finite state machine <FSM_6> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 7                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Power Up State     | resetstate                                     |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit register for signal <data_o>.
+    Found 11-bit register for signal <shift_reg>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  19 D-type flip-flop(s).
+Unit <rs232in_2> synthesized.
+
+
+Synthesizing Unit <rs232out_2>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/peripherals/rs232/rs232out.vhd".
+    Found finite state machine <FSM_7> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 14                                             |
+    | Transitions        | 26                                             |
+    | Inputs             | 2                                              |
+    | Outputs            | 15                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Power Up State     | reset_state                                    |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit register for signal <datareg>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   8 D-type flip-flop(s).
+Unit <rs232out_2> synthesized.
+
+
+Synthesizing Unit <x32_core>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/core/core.vhd".
+WARNING:Xst:646 - Signal <zeroes> is assigned but never used.
+WARNING:Xst:646 - Signal <ones> is assigned but never used.
+WARNING:Xst:2734 - Property "use_dsp48" is not applicable for this technology.
+    Found 32-bit 4-to-1 multiplexer for signal <alu_in_1>.
+    Found 32-bit 4-to-1 multiplexer for signal <alu_in_2>.
+    Found 32-bit addsub for signal <cra_out>.
+    Found 32-bit up counter for signal <instr_cntr>.
+    Found 1-bit register for signal <interrupting>.
+    Found 1-bit register for signal <isvalid_buffer>.
+    Found 1-bit xor2 for signal <sign_conversion_overflow$xor0000> created at line 383.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   2 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  64 Multiplexer(s).
+Unit <x32_core> synthesized.
+
+
+Synthesizing Unit <uart>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/peripherals/rs232/uart.vhd".
+WARNING:Xst:1780 - Signal <in_buff_full> is never used or assigned.
+Unit <uart> synthesized.
+
+
+Synthesizing Unit <xufo_comm>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/../vhdl/peripherals/xufo_comm/xufo_comm.vhd".
+WARNING:Xst:646 - Signal <sig_ready> is assigned but never used.
+WARNING:Xst:1780 - Signal <tx_send_buf> is never used or assigned.
+WARNING:Xst:646 - Signal <secondbyte<7>> is assigned but never used.
+WARNING:Xst:646 - Signal <firstbyte<7>> is assigned but never used.
+    Found finite state machine <FSM_8> for signal <rc_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 2                                              |
+    | Outputs            | 4                                              |
+    | Clock              | CLK (rising_edge)                              |
+    | Clock enable       | rc_state$not0000 (positive)                    |
+    | Reset              | reset (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | rc_first                                       |
+    | Power Up State     | rc_first                                       |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 18-bit register for signal <s0>.
+    Found 18-bit register for signal <s1>.
+    Found 18-bit register for signal <s2>.
+    Found 18-bit register for signal <s3>.
+    Found 18-bit register for signal <s4>.
+    Found 18-bit register for signal <s5>.
+    Found 18-bit register for signal <s6>.
+    Found 31-bit register for signal <count>.
+    Found 31-bit register for signal <timestamp>.
+    Found 31-bit up counter for signal <buf_count>.
+    Found 18-bit register for signal <buf_s0>.
+    Found 18-bit register for signal <buf_s1>.
+    Found 18-bit register for signal <buf_s2>.
+    Found 18-bit register for signal <buf_s3>.
+    Found 18-bit register for signal <buf_s4>.
+    Found 18-bit register for signal <buf_s5>.
+    Found 18-bit register for signal <buf_s6>.
+    Found 8-bit register for signal <firstbyte>.
+    Found 8-bit register for signal <secondbyte>.
+    Found 1-bit register for signal <sig_int>.
+    Found 1-bit register for signal <sig_send>.
+    Found 31-bit register for signal <sig_timer>.
+    Found 8-bit register for signal <sig_tx_data>.
+    Found 31-bit up counter for signal <timer>.
+    Found 1-bit register for signal <tx_state<0>>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   2 Counter(s).
+	inferred 372 D-type flip-flop(s).
+Unit <xufo_comm> synthesized.
+
+
+Synthesizing Unit <peripherals>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/peripherals.vhd".
+WARNING:Xst:647 - Input <address<30:10>> is never used.
+WARNING:Xst:647 - Input <address<1:0>> is never used.
+WARNING:Xst:1305 - Output <irqs<14:11>> is never assigned. Tied to value 0000.
+    Found 1-bit register for signal <block_reset>.
+    Found 4-bit register for signal <buttons>.
+    Found 4-bit register for signal <buttons_prev>.
+    Found 4-bit comparator equal for signal <irqs_7$cmp_eq0000> created at line 404.
+    Found 8-bit comparator equal for signal <irqs_8$cmp_eq0000> created at line 388.
+    Found 32-bit adder for signal <ms_clock_buff_in>.
+    Found 1-bit register for signal <primary_rx<0>>.
+    Found 8-bit register for signal <procstate_buff>.
+    Found 8-bit register for signal <switches>.
+    Found 8-bit register for signal <switches_prev>.
+    Found 32-bit adder for signal <us_clock_buff_in>.
+    Found 1-bit register for signal <xufo_rx<0>>.
+    Summary:
+	inferred  35 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <peripherals> synthesized.
+
+
+Synthesizing Unit <x32>.
+    Related source file is "/home/marc/workspace/x32/x32/x32-in4073-xufo/toplevel.vhd".
+WARNING:Xst:646 - Signal <execute> is assigned but never used.
+WARNING:Xst:646 - Signal <mem_data_address<31:20>> is assigned but never used.
+    Found finite state machine <FSM_9> for signal <state_o>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 7                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | reset_state                                    |
+    | Power Up State     | reset_state                                    |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit up accumulator for signal <counter>.
+    Found 32-bit comparator greater for signal <out_of_memory$cmp_gt0000> created at line 268.
+    Found 32-bit comparator less for signal <out_of_memory$cmp_lt0000> created at line 268.
+    Found 32-bit comparator equal for signal <state_o$cmp_eq0000> created at line 206.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Accumulator(s).
+	inferred   3 Comparator(s).
+Unit <x32> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 16x32-bit single-port RAM                             : 2
+# ROMs                                                 : 7
+ 16x7-bit ROM                                          : 4
+ 4x2-bit ROM                                           : 1
+ 4x4-bit ROM                                           : 1
+ 5288x32-bit ROM                                       : 1
+# Multipliers                                          : 1
+ 32x32-bit multiplier                                  : 1
+# Adders/Subtractors                                   : 16
+ 16-bit adder                                          : 5
+ 18-bit adder                                          : 1
+ 32-bit adder                                          : 5
+ 32-bit addsub                                         : 1
+ 33-bit addsub                                         : 2
+ 6-bit adder                                           : 1
+ 65-bit addsub                                         : 1
+# Counters                                             : 5
+ 16-bit up counter                                     : 1
+ 31-bit up counter                                     : 2
+ 32-bit up counter                                     : 1
+ 4-bit up counter                                      : 1
+# Accumulators                                         : 1
+ 32-bit up accumulator                                 : 1
+# Registers                                            : 426
+ 1-bit register                                        : 343
+ 16-bit register                                       : 2
+ 17-bit register                                       : 1
+ 18-bit register                                       : 16
+ 2-bit register                                        : 3
+ 31-bit register                                       : 3
+ 32-bit register                                       : 20
+ 4-bit register                                        : 5
+ 64-bit register                                       : 1
+ 65-bit register                                       : 1
+ 7-bit register                                        : 4
+ 8-bit register                                        : 27
+# Comparators                                          : 21
+ 16-bit comparator greater                             : 5
+ 32-bit comparator equal                               : 2
+ 32-bit comparator greater                             : 6
+ 32-bit comparator less                                : 3
+ 4-bit comparator equal                                : 1
+ 4-bit comparator less                                 : 1
+ 6-bit comparator greater                              : 1
+ 65-bit comparator equal                               : 1
+ 8-bit comparator equal                                : 1
+# Multiplexers                                         : 12
+ 1-bit 16-to-1 multiplexer                             : 1
+ 1-bit 4-to-1 multiplexer                              : 7
+ 32-bit 32-to-1 multiplexer                            : 2
+ 32-bit 4-to-1 multiplexer                             : 2
+# Tristates                                            : 2
+ 16-bit tristate buffer                                : 2
+# Xors                                                 : 6
+ 1-bit xor2                                            : 5
+ 32-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_9> for best encoding.
+Optimizing FSM <state_o> on signal <state_o[1:2]> with gray encoding.
+------------------------------
+ State            | Encoding
+------------------------------
+ reset_state      | 00
+ copying          | 01
+ proc_reset_state | 11
+ proc_active      | 10
+------------------------------
+Analyzing FSM <FSM_8> for best encoding.
+Optimizing FSM <l_peripherals/l_xufo/rc_state> on signal <rc_state[1:2]> with gray encoding.
+-----------------------
+ State     | Encoding
+-----------------------
+ rc_first  | 00
+ rc_second | 01
+ rc_third  | 11
+ rc_next   | 10
+-----------------------
+Analyzing FSM <FSM_7> for best encoding.
+Optimizing FSM <l_peripherals/l_xufo/rsout/state> on signal <state[1:4]> with gray encoding.
+-------------------------
+ State       | Encoding
+-------------------------
+ reset_state | 0000
+ idle        | 0001
+ copy        | 0011
+ startbit    | 0010
+ bit7        | 1110
+ bit6        | 1111
+ bit5        | 1101
+ bit4        | 1100
+ bit3        | 0100
+ bit2        | 0101
+ bit1        | 0111
+ bit0        | 0110
+ stopbit     | 1010
+ ready_state | 1011
+-------------------------
+Analyzing FSM <FSM_6> for best encoding.
+Optimizing FSM <l_peripherals/l_xufo/rsin/state> on signal <state[1:3]> with sequential encoding.
+-------------------------
+ State       | Encoding
+-------------------------
+ resetstate  | 000
+ lineidle    | 001
+ waithalf    | 010
+ reading     | 011
+ readystate1 | 100
+ readystate2 | 101
+-------------------------
+Analyzing FSM <FSM_5> for best encoding.
+Optimizing FSM <l_peripherals/l_primary/rs232_transmitter/state> on signal <state[1:4]> with gray encoding.
+-------------------------
+ State       | Encoding
+-------------------------
+ reset_state | 0000
+ idle        | 0001
+ copy        | 0011
+ startbit    | 0010
+ bit7        | 1110
+ bit6        | 1111
+ bit5        | 1101
+ bit4        | 1100
+ bit3        | 0100
+ bit2        | 0101
+ bit1        | 0111
+ bit0        | 0110
+ stopbit     | 1010
+ ready_state | 1011
+-------------------------
+Analyzing FSM <FSM_4> for best encoding.
+Optimizing FSM <l_peripherals/l_primary/rs232_receiver/state> on signal <state[1:3]> with sequential encoding.
+-------------------------
+ State       | Encoding
+-------------------------
+ resetstate  | 000
+ lineidle    | 001
+ waithalf    | 010
+ reading     | 011
+ readystate1 | 100
+ readystate2 | 101
+-------------------------
+Analyzing FSM <FSM_3> for best encoding.
+Optimizing FSM <l_memory/state_o> on signal <state_o[1:4]> with sequential encoding.
+-------------------------------
+ State             | Encoding
+-------------------------------
+ reset_state       | 0000
+ idle              | 0001
+ read_word1b       | 0010
+ read_word2a       | 0101
+ read_word2b       | 0110
+ write_word1       | 0111
+ write_word2       | 1000
+ align_output_data | 0011
+ align_input_data  | 0100
+-------------------------------
+Analyzing FSM <FSM_2> for best encoding.
+Optimizing FSM <l_processor/l_alu/l_divider/state_o> on signal <state_o[1:2]> with gray encoding.
+-------------------------
+ State       | Encoding
+-------------------------
+ idle        | 00
+ calculating | 01
+ correct     | 11
+ ready_state | 10
+-------------------------
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <l_processor/l_controller/state_o> on signal <state_o[1:31]> with one-hot encoding.
+-------------------------------------------------------
+ State              | Encoding
+-------------------------------------------------------
+ reset_state        | 0000000000000000000000000000001
+ instruction_fetch  | 0000000000000000000000000000010
+ instruction_decode | 0000000000000000000000000001000
+ param_fetch        | 0000000000000000000001000000000
+ operand2_fetch     | 0000000000000000000000010000000
+ operand1_fetch     | 0000000000000000000000100000000
+ fetch              | 0000000000000000000010000000000
+ execute            | 0000000000000000000000000100000
+ push_result        | 0000000000000000010000000000000
+ write_result       | 0000000000000000100000000000000
+ interrupt_1        | 0000000000000000000000000000100
+ interrupt_2        | 0000000000000000000000000010000
+ trapped            | 0000000000000000000000001000000
+ restore            | 0000000000000000000100000000000
+ restore_pc1        | 0000000000000001000000000000000
+ restore_pc2        | 0000000000000010000000000000000
+ restore_el1        | 0000000000000100000000000000000
+ restore_el2        | 0000000000001000000000000000000
+ restore_ap1        | 0000000000010000000000000000000
+ restore_ap2        | 0000000000100000000000000000000
+ restore_lp1        | 0000000001000000000000000000000
+ restore_lp2        | 0000000010000000000000000000000
+ restore_fp1        | 0000000100000000000000000000000
+ restore_fp2        | 0000001000000000000000000000000
+ savera             | 0000000000000000001000000000000
+ saveel             | 0000010000000000000000000000000
+ saveap             | 0000100000000000000000000000000
+ savelp             | 0001000000000000000000000000000
+ savefp             | 0010000000000000000000000000000
+ newframe1          | 0100000000000000000000000000000
+ newframe2          | 1000000000000000000000000000000
+-------------------------------------------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <l_ic/state_o> on signal <state_o[1:3]> with sequential encoding.
+--------------------------
+ State        | Encoding
+--------------------------
+ reset_state  | 000
+ checking     | 001
+ interrupting | 100
+ write        | 011
+ ready        | 010
+--------------------------
+Loading device for application Rf_Device from file '3s400.nph' in environment /home/marc/Xilinx92i.
+INFO:Xst:2694 - Unit <rom> : The ROM <Mrom_data_i> will be implemented as a read-only BLOCK RAM, absorbing the register: <data>.
+INFO:Xst:2506 - Unit <decoder> : In order to maximize performance and save block RAM resources, the small ROM <Mrom_ex_alu_in_2_i> will be implemented on LUT. If you want to force its implementation on block, use option/constraint rom_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 5288-word x 32-bit                  |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <size>          | high     |
+    |     addrA          | connected to signal <address>       |          |
+    |     diA            | connected to signal <size>          |          |
+    |     doA            | connected to signal <data>          |          |
+    -----------------------------------------------------------------------
+    | optimisation       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:2664 - HDL ADVISOR - Unit <interrupt_controller> : The RAM <Mram_vector_memory> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 32-bit                    |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <ram_address>   | low      |
+    |     addrA          | connected to signal <current_device> |          |
+    |     diA            | connected to signal <ram_in>        |          |
+    |     doA            | connected to signal <handler_address> |          |
+    -----------------------------------------------------------------------
+INFO:Xst:2664 - HDL ADVISOR - Unit <interrupt_controller> : The RAM <Mram_priority_memory> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 32-bit                    |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <ram_address>   | high     |
+    |     addrA          | connected to signal <current_device> |          |
+    |     diA            | connected to signal <ram_in>        |          |
+    |     doA            | connected to signal <priority>      |          |
+    -----------------------------------------------------------------------
+
+Synthesizing (advanced) Unit <multiplier>.
+	Found pipelined multiplier on signal <mult_result_mult0000>:
+		- 1 pipeline level(s) found in a register connected to the multiplier macro output.
+		Pushing register(s) into the multiplier macro.
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_mult_result_mult0000 by adding 2 register level(s).
+Unit <multiplier> synthesized (advanced).
+WARNING:Xst:2677 - Node <firstbyte_7> of sequential type is unconnected in block <xufo_comm>.
+WARNING:Xst:2677 - Node <secondbyte_7> of sequential type is unconnected in block <xufo_comm>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 10
+# RAMs                                                 : 3
+ 16x32-bit single-port distributed RAM                 : 2
+ 5288x32-bit single-port block RAM                     : 1
+# ROMs                                                 : 6
+ 16x7-bit ROM                                          : 4
+ 4x2-bit ROM                                           : 1
+ 4x4-bit ROM                                           : 1
+# Multipliers                                          : 1
+ 32x32-bit registered multiplier                       : 1
+# Adders/Subtractors                                   : 16
+ 16-bit adder                                          : 5
+ 18-bit adder                                          : 1
+ 32-bit adder                                          : 5
+ 32-bit addsub                                         : 1
+ 33-bit addsub                                         : 2
+ 6-bit adder                                           : 1
+ 65-bit addsub                                         : 1
+# Counters                                             : 5
+ 16-bit up counter                                     : 1
+ 31-bit up counter                                     : 2
+ 32-bit up counter                                     : 1
+ 4-bit up counter                                      : 1
+# Accumulators                                         : 1
+ 32-bit up accumulator                                 : 1
+# Registers                                            : 1772
+ Flip-Flops                                            : 1772
+# Comparators                                          : 21
+ 16-bit comparator greater                             : 5
+ 32-bit comparator equal                               : 2
+ 32-bit comparator greater                             : 6
+ 32-bit comparator less                                : 3
+ 4-bit comparator equal                                : 1
+ 4-bit comparator less                                 : 1
+ 6-bit comparator greater                              : 1
+ 65-bit comparator equal                               : 1
+ 8-bit comparator equal                                : 1
+# Multiplexers                                         : 12
+ 1-bit 16-to-1 multiplexer                             : 1
+ 1-bit 4-to-1 multiplexer                              : 7
+ 32-bit 32-to-1 multiplexer                            : 2
+ 32-bit 4-to-1 multiplexer                             : 2
+# Xors                                                 : 6
+ 1-bit xor2                                            : 5
+ 32-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1426 - The value init of the FF/Latch block_reset hinder the constant cleaning in the block peripherals.
+   You should achieve better results by setting this init to 1.
+INFO:Xst:2261 - The FF/Latch <procstate_buff_1> in Unit <peripherals> is equivalent to the following 2 FFs/Latches, which will be removed : <procstate_buff_2> <procstate_buff_5> 
+WARNING:Xst:1710 - FF/Latch  <procstate_buff_1> (without init value) has a constant value of 0 in block <peripherals>.
+WARNING:Xst:2677 - Node <p_31> of sequential type is unconnected in block <divider>.
+WARNING:Xst:1710 - FF/Latch  <counter_0> (without init value) has a constant value of 0 in block <x32>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <counter_1> (without init value) has a constant value of 0 in block <x32>.
+
+Optimizing unit <x32> ...
+
+Optimizing unit <interrupt_controller> ...
+
+Optimizing unit <reg_1> ...
+
+Optimizing unit <reg_init_1> ...
+
+Optimizing unit <decoder> ...
+
+Optimizing unit <controller> ...
+
+Optimizing unit <multiplier> ...
+
+Optimizing unit <divider> ...
+
+Optimizing unit <right_shifter> ...
+
+Optimizing unit <mem_decoder> ...
+
+Optimizing unit <timer_1> ...
+
+Optimizing unit <reg_4> ...
+
+Optimizing unit <timer_2> ...
+
+Optimizing unit <fifo_buffer> ...
+
+Optimizing unit <timer_4> ...
+
+Optimizing unit <alu> ...
+
+Optimizing unit <disp7seg> ...
+
+Optimizing unit <rs232in_1> ...
+
+Optimizing unit <rs232in_2> ...
+
+Optimizing unit <x32_core> ...
+
+Optimizing unit <xufo_comm> ...
+
+Optimizing unit <peripherals> ...
+WARNING:Xst:1710 - FF/Latch  <l_ic_irq_reg_14> (without init value) has a constant value of 0 in block <x32>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <l_ic_irq_reg_13> (without init value) has a constant value of 0 in block <x32>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <l_ic_irq_reg_11> (without init value) has a constant value of 0 in block <x32>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <l_ic_irq_reg_12> (without init value) has a constant value of 0 in block <x32>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <l_memory_mem_data_out2_o_7> in Unit <x32> is equivalent to the following 8 FFs/Latches, which will be removed : <l_memory_mem_data_out2_o_6> <l_memory_mem_data_out2_o_5> <l_memory_mem_data_out2_o_4> <l_memory_mem_data_out2_o_3> <l_memory_mem_data_out2_o_2> <l_memory_mem_data_out2_o_1> <l_memory_mem_data_out2_o_0> <l_memory_bytes_enable2_o_0> 
+Found area constraint ratio of 100 (+ 0) on block x32, actual ratio is 65.
+FlipFlop l_ic_current_device_0 has been replicated 4 time(s)
+FlipFlop l_ic_current_device_1 has been replicated 4 time(s)
+FlipFlop l_ic_current_device_2 has been replicated 4 time(s)
+FlipFlop l_ic_current_device_3 has been replicated 4 time(s)
+FlipFlop l_processor_l_controller_state_o_FFd17 has been replicated 1 time(s)
+FlipFlop l_processor_l_controller_state_o_FFd21 has been replicated 1 time(s)
+FlipFlop l_processor_l_controller_state_o_FFd6 has been replicated 1 time(s)
+FlipFlop l_processor_l_instruction_reg_data_out_10 has been replicated 1 time(s)
+FlipFlop l_processor_l_instruction_reg_data_out_11 has been replicated 1 time(s)
+FlipFlop l_processor_l_instruction_reg_data_out_8 has been replicated 1 time(s)
+FlipFlop l_processor_l_instruction_reg_data_out_9 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+Processing Unit <x32> :
+	Found 2-bit shift register for signal <l_peripherals_l_xufo_s6_0>.
+	Found 2-bit shift register for signal <l_peripherals_l_xufo_s6_1>.
+	Found 2-bit shift register for signal <l_peripherals_l_xufo_s6_2>.
+	Found 2-bit shift register for signal <l_peripherals_l_xufo_s6_3>.
+	Found 2-bit shift register for signal <l_peripherals_l_xufo_s6_4>.
+	Found 2-bit shift register for signal <l_peripherals_l_xufo_s6_5>.
+	Found 2-bit shift register for signal <l_peripherals_l_xufo_s6_6>.
+	Found 2-bit shift register for signal <l_peripherals_l_xufo_s6_7>.
+	Found 2-bit shift register for signal <l_peripherals_l_xufo_s6_8>.
+	Found 2-bit shift register for signal <l_peripherals_l_xufo_s6_9>.
+	Found 2-bit shift register for signal <l_peripherals_l_xufo_s6_10>.
+	Found 2-bit shift register for signal <l_peripherals_l_xufo_s6_11>.
+	Found 2-bit shift register for signal <l_peripherals_l_xufo_s6_12>.
+	Found 2-bit shift register for signal <l_peripherals_l_xufo_s6_13>.
+	Found 2-bit shift register for signal <l_peripherals_l_xufo_s6_14>.
+	Found 2-bit shift register for signal <l_peripherals_l_xufo_s6_15>.
+	Found 2-bit shift register for signal <l_peripherals_l_xufo_s6_16>.
+	Found 2-bit shift register for signal <l_peripherals_l_xufo_s6_17>.
+INFO:Xst:741 - HDL ADVISOR - A 31-bit shift register was found for signal <l_processor_l_alu_l_divider_counter_31> and currently occupies 31 logic cells (15 slices). Removing the set/reset logic would take advantage of SRL16 (and derived) primitives and reduce this to 1 logic cells (1 slices). Evaluate if the set/reset can be removed for this simple shift register. The majority of simple pipeline structures do not need to be set/reset operationally.
+Unit <x32> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 1951
+ Flip-Flops                                            : 1951
+# Shift Registers                                      : 18
+ 2-bit shift register                                  : 18
+
+=========================================================================
+
+=========================================================================
+*                          Partition Report                             *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 2051  |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 19.399ns (Maximum Frequency: 51.549MHz)
+   Minimum input arrival time before clock: 1.901ns
+   Maximum output required time after clock: 22.907ns
+   Maximum combinational path delay: No path found
+
+=========================================================================
+rm -f -r work
+rm -f -r dump.xst
+ngdbuild -intstyle xflow -dd _ngo -aul -p xc3s400-ft256-4 x32-in4073-xufo/x32.ngc x32-in4073-xufo/x32.ngd
+
+Command Line: ngdbuild -intstyle xflow -dd _ngo -aul -p xc3s400-ft256-4
+x32-in4073-xufo/x32.ngc x32-in4073-xufo/x32.ngd
+
+Reading NGO file "/home/marc/workspace/x32/x32/x32-in4073-xufo/x32.ngc" ...
+
+Applying constraints in "x32.ucf" to the design...
+
+Checking timing specifications ...
+Checking expanded design ...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Writing NGD file "x32-in4073-xufo/x32.ngd" ...
+
+Writing NGDBUILD log file "x32-in4073-xufo/x32.bld"...
+
+NGDBUILD done.
+map -intstyle xflow -ol high -p xc3s400-ft256-4 -cm area -pr b -k 4 -c 100 -tx off -o x32-in4073-xufo/x32_map.ncd x32-in4073-xufo/x32.ngd x32-in4073-xufo/x32.pcf 
+Using target part "3s400ft256-4".
+Mapping design into LUTs...
+Running directed packing...
+Running delay-based LUT packing...
+Running related packing...
+
+Design Summary:
+Number of errors:      0
+Number of warnings:    2
+Logic Utilization:
+  Number of Slice Flip Flops:       1,923 out of   7,168   26%
+  Number of 4 input LUTs:           3,909 out of   7,168   54%
+Logic Distribution:
+  Number of occupied Slices:                        2,758 out of   3,584   76%
+    Number of Slices containing only related logic:   2,758 out of   2,758  100%
+    Number of Slices containing unrelated logic:          0 out of   2,758    0%
+      *See NOTES below for an explanation of the effects of unrelated logic
+Total Number of 4 input LUTs:          4,359 out of   7,168   60%
+  Number used as logic:              3,909
+  Number used as a route-thru:         368
+  Number used as 16x1 RAMs:             64
+  Number used as Shift registers:       18
+  Number of bonded IOBs:               99 out of     173   57%
+    IOB Flip Flops:                    46
+  Number of Block RAMs:               16 out of      16  100%
+  Number of MULT18X18s:                4 out of      16   25%
+  Number of GCLKs:                     1 out of       8   12%
+
+Total equivalent gate count for design:  1,118,639
+Additional JTAG gate count for IOBs:  4,752
+Peak Memory Usage:  155 MB
+Total REAL time to MAP completion:  19 secs 
+Total CPU time to MAP completion:   17 secs 
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity - e.g. two
+   LUTs are "related" if they share common inputs.  When assembling slices,
+   Map gives priority to combine logic that is related.  Doing so results in
+   the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin packing
+   unrelated logic into a slice once 99% of the slices are occupied through
+   related logic packing.
+
+   Note that once logic distribution reaches the 99% level through related
+   logic packing, this does not mean the device is completely utilized.
+   Unrelated logic packing will then begin, continuing until all usable LUTs
+   and FFs are occupied.  Depending on your timing budget, increased levels of
+   unrelated logic packing may adversely affect the overall timing performance
+   of your design.
+
+Mapping completed.
+See MAP report file "x32-in4073-xufo/x32_map.mrp" for details.
+rm -f -r _ngo
+par -w -intstyle xflow -ol high -t 1 -xe n x32-in4073-xufo/x32_map.ncd x32-in4073-xufo/x32.ncd x32-in4073-xufo/x32.pcf
+
+
+
+Constraints file: x32-in4073-xufo/x32.pcf.
+Loading device for application Rf_Device from file '3s400.nph' in environment /home/marc/Xilinx92i.
+   "x32" is an NCD, version 3.1, device xc3s400, package ft256, speed -4
+
+Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
+Initializing voltage to 1.140 Volts. (default - Range: 1.140 to 1.260 Volts)
+WARNING:Par:236 - Voltage and/or Temperature prorating constraints have been defined for this design but they are not
+   yet supported for this architecture.
+
+
+Device speed data version:  "PRODUCTION 1.39 2007-08-14".
+
+
+Device Utilization Summary:
+
+   Number of BUFGMUXs                        1 out of 8      12%
+   Number of External IOBs                  99 out of 173    57%
+      Number of LOCed IOBs                  99 out of 99    100%
+
+   Number of MULT18X18s                      4 out of 16     25%
+   Number of RAMB16s                        16 out of 16    100%
+   Number of Slices                       2758 out of 3584   76%
+      Number of SLICEMs                     43 out of 1792    2%
+
+
+
+Overall effort level (-ol):   High 
+Placer effort level (-pl):    High 
+Placer cost table entry (-t): 1
+Router effort level (-rl):    High 
+Extra effort level (-xe):     Normal 
+
+Starting initial Timing Analysis.  REAL time: 8 secs 
+Finished initial Timing Analysis.  REAL time: 8 secs 
+
+
+Starting Placer
+
+Phase 1.1
+Phase 1.1 (Checksum:994095) REAL time: 13 secs 
+
+Phase 2.7
+Phase 2.7 (Checksum:1312cfe) REAL time: 13 secs 
+
+Phase 3.31
+Phase 3.31 (Checksum:1c9c37d) REAL time: 13 secs 
+
+Phase 4.2
+.
+Phase 4.2 (Checksum:26259fc) REAL time: 16 secs 
+
+Phase 5.8
+................................
+.........
+......................................
+........
+.......
+..........
+Phase 5.8 (Checksum:f9ca08) REAL time: 1 mins 30 secs 
+
+Phase 6.5
+Phase 6.5 (Checksum:39386fa) REAL time: 1 mins 30 secs 
+
+Phase 7.18
+Phase 7.18 (Checksum:42c1d79) REAL time: 2 mins 5 secs 
+
+Phase 8.5
+Phase 8.5 (Checksum:4c4b3f8) REAL time: 2 mins 5 secs 
+
+REAL time consumed by placer: 2 mins 9 secs 
+CPU  time consumed by placer: 2 mins 4 secs 
+Writing design to file x32-in4073-xufo/x32.ncd
+
+
+Total REAL time to Placer completion: 2 mins 10 secs 
+Total CPU time to Placer completion: 2 mins 5 secs 
+
+Starting Router
+
+Phase 1: 19477 unrouted;       REAL time: 2 mins 11 secs 
+
+Phase 2: 18064 unrouted;       REAL time: 2 mins 12 secs 
+
+Phase 3: 9846 unrouted;       REAL time: 2 mins 20 secs 
+
+Phase 4: 9846 unrouted; (127)      REAL time: 2 mins 23 secs 
+
+Phase 5: 9845 unrouted; (0)      REAL time: 2 mins 25 secs 
+
+Phase 6: 9845 unrouted; (0)      REAL time: 2 mins 27 secs 
+
+Phase 7: 0 unrouted; (8060)      REAL time: 4 mins 12 secs 
+
+Phase 8: 0 unrouted; (8060)      REAL time: 4 mins 18 secs 
+
+Updating file: x32-in4073-xufo/x32.ncd with current fully routed design.
+
+Phase 9: 0 unrouted; (8060)      REAL time: 23 mins 12 secs 
+
+Phase 10: 0 unrouted; (6338)      REAL time: 24 mins 21 secs 
+
+Phase 11: 0 unrouted; (0)      REAL time: 24 mins 41 secs 
+
+Phase 12: 0 unrouted; (0)      REAL time: 24 mins 46 secs 
+
+
+Total REAL time to Router completion: 24 mins 54 secs 
+Total CPU time to Router completion: 23 mins 21 secs 
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Generating "PAR" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++---------------------+--------------+------+------+------------+-------------+
+|        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
++---------------------+--------------+------+------+------------+-------------+
+|           clk_BUFGP |      BUFGMUX0| No   | 1252 |  0.060     |  1.074      |
++---------------------+--------------+------+------+------------+-------------+
+
+* Net Skew is the difference between the minimum and maximum routing
+only delays for the net. Note this is different from Clock Skew which
+is reported in TRCE timing report. Clock Skew is the difference between
+the minimum and maximum path delays which includes logic delays.
+
+Timing Score: 0
+
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+------------------------------------------------------------------------------------------------------
+  Constraint                                |  Check  | Worst Case |  Best Case | Timing |   Timing   
+                                            |         |    Slack   | Achievable | Errors |    Score   
+------------------------------------------------------------------------------------------------------
+  TS_clk = PERIOD TIMEGRP "clk" 20 ns HIGH  | SETUP   |     0.003ns|    19.997ns|       0|           0
+  50%                                       | HOLD    |     0.452ns|            |       0|           0
+------------------------------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 25 mins 4 secs 
+Total CPU time to PAR completion: 23 mins 29 secs 
+
+Peak Memory Usage:  180 MB
+
+Placement: Completed - No errors found.
+Routing: Completed - No errors found.
+Timing: Completed - No errors found.
+
+Number of error messages: 0
+Number of warning messages: 1
+Number of info messages: 0
+
+Writing design to file x32-in4073-xufo/x32.ncd
+
+
+
+PAR done!
+bitgen -intstyle xflow -w -g DebugBitstream:No -g Binary:no -g CRC:Enable -g ConfigRate:6 -g CclkPin:PullUp -g M0Pin:PullUp -g M1Pin:PullUp -g M2Pin:PullUp -g ProgPin:PullUp -g DonePin:PullUp -g TckPin:PullUp -g TdiPin:PullUp -g TdoPin:PullUp -g TmsPin:PullUp -g UnusedPin:PullDown -g UserID:0xFFFFFFFF -g DCMShutDown:Disable -g DONE_cycle:4 -g GTS_cycle:5 -g GWE_cycle:6 -g LCK_cycle:NoWait -g Match_cycle:Auto -g Security:None -g DonePipe:No -g DriveDone:No x32-in4073-xufo/x32.ncd
+rm x32-in4073-xufo/peripherals.vhd x32-in4073-xufo/x32.pcf x32-in4073-xufo/x32.ngc x32-in4073-xufo/rom.vhd x32-in4073-xufo/toplevel.vhd x32-in4073-xufo/x32.ngd x32-in4073-xufo/x32.ncd x32-in4073-xufo/x32.prj x32-in4073-xufo/x32.xst-script x32-in4073-xufo/rom.ce x32-in4073-xufo/x32.lso

@@ -1,0 +1,58 @@
+#define PIN_SWITCHES "R17 N17 L13 L14 K17 K18 H18 G18"
+#define PIN_BUTTONS "H13 E18 D18 B18"
+#define PIN_LEDS "P4 E4 P16 E16 K14 K15 J15 J14"
+#define PIN_PRIMARY_TX "P9"
+#define PIN_PRIMARY_RX "U6"
+#define PIN_DISPLAY_CONTROL "F15 C18 H17 F17"
+#define PIN_DISPLAY_DATA "L18 F18 D17 D16 G14 J17 H14 C17"
+#define PIN_CLOCK_50MHZ "B8"
+#define PIN_CLOCK_SOCKET "U9"
+
+#define PIN_MEM_OE "T2"
+#define PIN_MEM_WE "N7"
+#define PIN_MEM_ADV "J4"
+#define PIN_MEM_CE "R6"
+#define PIN_MEM_CLK "H5"
+#define PIN_MEM_CRE "P7"
+#define PIN_MEM_LB "K5"
+#define PIN_MEM_UB "K4"
+#define PIN_MEM_WAIT "F5"
+
+#define PIN_MEM_ADR "K6 D1 K3 D2 C1 C2 E2 M5 E1 F2 G4 G5 G6 G3 F1 H6 H3 J5 H2 H1 H4 J2 J1"
+#define PIN_MEM_DQ "T1 R3 N4 L2 M6 M3 L5 L3 R2 P2 P1 N5 M4 L6 L4 L1"
+
+#define PIN_PMOD_A1  "L15"
+#define PIN_PMOD_A2  "K12"
+#define PIN_PMOD_A3  "L17"
+#define PIN_PMOD_A4  "M15"
+#define PIN_PMOD_A7  "K13"
+#define PIN_PMOD_A8  "L16"
+#define PIN_PMOD_A9  "M14"
+#define PIN_PMOD_A10 "M16"
+
+#define PIN_PMOD_B1  "M13"
+#define PIN_PMOD_B2  "R18"
+#define PIN_PMOD_B3  "R15"
+#define PIN_PMOD_B4  "T17"
+#define PIN_PMOD_B7  "P17"
+#define PIN_PMOD_B8  "R16"
+#define PIN_PMOD_B9  "T18"
+#define PIN_PMOD_B10 "U18"
+
+#define PIN_PMOD_C1  "G15"
+#define PIN_PMOD_C2  "J16"
+#define PIN_PMOD_C3  "G13"
+#define PIN_PMOD_C4  "H16"
+#define PIN_PMOD_C7  "H15"
+#define PIN_PMOD_C8  "F14"
+#define PIN_PMOD_C9  "G16"
+#define PIN_PMOD_C10 "J12"
+
+#define PIN_PMOD_D1  "J13"
+#define PIN_PMOD_D2  "M18"
+#define PIN_PMOD_D3  "N18"
+#define PIN_PMOD_D4  "P18"
+#define PIN_PMOD_D7  "K14" // shared with led 3
+#define PIN_PMOD_D8  "K15" // shared with led 2
+#define PIN_PMOD_D9  "J15" // shared with led 1
+#define PIN_PMOD_D10 "J14" // shared with led 0

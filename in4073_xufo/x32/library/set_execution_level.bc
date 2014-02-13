@@ -1,0 +1,22 @@
+code
+export set_execution_level 
+label set_execution_level 
+	# note that setting the execution level directly is useless, it will
+	# reset immediatly when returning from this function. Instead, alter
+	# the stackframe:
+
+	# generate el address on stack
+	SAVEFPP4
+	CNSTP4 16
+	SUBP4
+
+	# generate new el:
+	ADDRFP4 0
+	INDIRU4
+	# convert to pointer (unneccessary instruction actually...)
+	CVUP4 4
+	
+	# asign:
+	ASGNP4
+
+	RETV

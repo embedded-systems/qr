@@ -1,0 +1,79 @@
+typedef: unsigned long:unsigned[4]
+local: main:c <int*> @ 0x00000034
+typedef: unsigned char:unsigned[1]
+local: main:e <int[4]> @ 0x00000004
+typedef: long int:integer[4]
+local: main:d <int**> @ 0x00000038
+local: main:f <int[2][2]> @ 0x00000014
+local: main:a <int> @ 0x00000024
+local: main:b <int> @ 0x00000028
+typedef: void:void[0]
+typedef: unsigned long long:unsigned[4]
+typedef: float:float[4]
+local: main:i <int> @ 0x00000000
+typedef: long long int:integer[4]
+typedef: int:integer[4]
+typedef: short:integer[2]
+line: "ex2.c":8 @ 0x000000F4
+typedef: double:float[8]
+file: "ex2.c" @ 0x00000078
+line: "ex2.c":7 @ 0x00000084
+line: "ex2.c":2 @ 0x00000078
+local: main:x <char> @ 0x00000032
+typedef: char:integer[1]
+typedef: signed char:integer[1]
+typedef: long double:float[8]
+line: "ex2.c":48 @ 0x00000421
+line: "ex2.c":59 @ 0x0000047F
+line: "ex2.c":49 @ 0x00000437
+line: "ex2.c":18 @ 0x00000161
+line: "ex2.c":28 @ 0x00000295
+line: "ex2.c":39 @ 0x00000367
+line: "ex2.c":29 @ 0x00000295
+line: "ex2.c":38 @ 0x0000034F
+local: main:g <char[6]> @ 0x0000002C
+line: "ex2.c":15 @ 0x00000137
+line: "ex2.c":37 @ 0x0000034F
+line: "ex2.c":40 @ 0x0000037B
+typedef: unsigned short:unsigned[2]
+line: "ex2.c":36 @ 0x00000341
+line: "ex2.c":50 @ 0x0000044F
+line: "ex2.c":17 @ 0x00000153
+line: "ex2.c":24 @ 0x00000249
+line: "ex2.c":42 @ 0x00000383
+line: "ex2.c":53 @ 0x0000044F
+line: "ex2.c":16 @ 0x00000145
+line: "ex2.c":25 @ 0x00000261
+line: "ex2.c":34 @ 0x00000305
+line: "ex2.c":52 @ 0x0000044F
+line: "ex2.c":11 @ 0x0000010D
+line: "ex2.c":44 @ 0x000003BF
+line: "ex2.c":55 @ 0x00000467
+line: "ex2.c":10 @ 0x000000FF
+line: "ex2.c":23 @ 0x0000023B
+line: "ex2.c":32 @ 0x000002C9
+line: "ex2.c":45 @ 0x000003CD
+function: main <int> @ 0x00000078
+line: "ex2.c":13 @ 0x00000129
+line: "ex2.c":20 @ 0x0000016F
+line: "ex2.c":31 @ 0x000002C1
+line: "ex2.c":46 @ 0x000003E5
+line: "ex2.c":12 @ 0x0000011B
+line: "ex2.c":21 @ 0x000001D5
+line: "ex2.c":30 @ 0x000002AD
+typedef: unsigned int:unsigned[4]
+function: _va_init <0> @ 0x000005D8
+function: _va_next <0> @ 0x000005FE
+function: printf <0> @ 0x000004BA
+function: $appstart <0> @ 0x00000000
+global: _symbols @ <0> 0x00001FF8
+function: $main <0> @ 0x00000060
+function: _xprintf <0> @ 0x0000078C
+global: $endprog @ <0> 0x00002008
+function: vprintf <0> @ 0x00000574
+global: $main_fp @ <0> 0x00001FF4
+function: putchar <0> @ 0x00001F20
+function: _va_end <0> @ 0x00000682
+function: tolower <0> @ 0x00000688
+function: toupper <0> @ 0x0000070A
+global: peripherals @ <0> 0x00002000

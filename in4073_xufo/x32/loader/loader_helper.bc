@@ -1,0 +1,49 @@
+#
+# LOADER_HELPER.BC
+#			This bytecode file contains several functions which allow the
+#			X32 loader to access some processor functionalities which can
+#			not be accessed directly from C.
+#
+#	Exported functions:
+#			void* get_version()
+#				returns the core version
+#			void jump(void* address)
+#				jumps to address
+
+code
+
+export get_version
+label get_version
+	SAVEVRP4
+	RETP4
+
+export jump
+label jump 
+	ADDRFP4 0
+	INDIRP4
+	JUMPP4
+
+export trace_ra
+label trace_ra
+	# get the frame pointer
+	SAVEFPP4
+	# get fp of caller function:
+	CNSTP4 4
+	SUBP4
+	# fetch
+	INDIRP4
+	# get ra of caller function:
+	CNSTP4 20
+	SUBP4
+	# fetch
+	INDIRP4
+	# return
+	RETP4
+
+import $appstart
+export start_address
+label start_address
+	# $appstart is a label pointing to the very first instruction in the 
+	#	bootstrap
+	ADDRGP4 $appstart
+	RETP4

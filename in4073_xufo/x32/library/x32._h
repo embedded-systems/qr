@@ -1,0 +1,136 @@
+#include CONFIGURATION_FILE
+
+printf("#ifndef X32_H")
+printf("#define X32_H")
+
+printf("#define ADDR_PERIPHERALS							0x80000000")
+printf("#define PERIPHERAL_INT_VECT_BASE			0x10000000")
+printf("#define CLOCKS_PER_MS									(CLOCKSPEED/1000)")
+printf("#define PERIPHERAL_VERSION						PERIPHERAL_ID")
+
+#ifdef INTERRUPTS_ENABLE
+	printf("#define INTERRUPT_MAX									(INTERRUPT_COUNT-1)") 
+	printf("#define INTERRUPT_GLOBAL							INTERRUPT_COUNT")
+	printf("#define PERIPHERAL_INT_ENABLE 				INTERRUPT_ENABLE_INDEX")
+	#ifdef TRAP_IRQ
+		printf("#define INTERRUPT_TRAP 								TRAP_IRQ")
+	#endif
+	#ifdef OVERFLOW_IRQ
+		printf("#define INTERRUPT_OVERFLOW 						OVERFLOW_IRQ")
+	#endif
+	#ifdef DIV0_IRQ
+		printf("#define INTERRUPT_DIVISION_BY_ZERO 		DIV0_IRQ")
+	#endif
+	#ifdef OOM_IRQ
+		printf("#define INTERRUPT_OUT_OF_MEMORY 			OOM_IRQ")
+	#endif
+#endif
+	printf("#define PERIPHERAL_UID								0x00")
+#ifdef PROCSTATE_REGISTER_INDEX
+	printf("#define PERIPHERAL_PROCSTATE					PROCSTATE_REGISTER_INDEX")
+#endif
+#ifdef INSTRUCTION_COUNTER_INDEX
+	printf("#define PERIPHERAL_INSTRCNTR					INSTRUCTION_COUNTER_INDEX")
+#endif
+
+#define __IN_HEADER
+	#include CONFIGURATION_FILE
+#undef __IN_HEADER
+
+extern int* peripherals;
+
+/* thread safe execution level, should be the maximum possible */
+printf("#define THREAD_SAFE_EXECUTION_LEVEL		0xFFFFFFFF")
+
+typedef unsigned short INSTRUCTION;
+
+/* some macro's for using the com state register */
+printf("#define COM_CLEAR_TO_SEND(value) (peripherals[value] & 0x01)")
+printf("#define COM_BYTE_AVAILABLE(value) (peripherals[value] & 0x02)")
+
+#ifndef LIBCODE_X32_MS_CLOCK
+	#error LIBCODE_X32_MS_CLOCK not defined!
+#endif
+#ifndef LIBCODE_X32_US_CLOCK
+	#error X32_US_CLOCK not defined!
+#endif
+#ifndef LIBCODE_X32_STDOUT
+	#error X32_STDOUT not defined!
+#endif
+#ifndef LIBCODE_X32_STDOUT_STATUS
+	#error X32_STDOUT_STATUS not defined!
+#endif
+#ifndef LIBCODE_X32_STDIN
+	#error X32_STDIN not defined!
+#endif
+#ifndef LIBCODE_X32_STDIN_STATUS
+	#error X32_STDIN_STATUS not defined!
+#endif
+
+
+printf("#define X32_MS_CLOCK LIBCODE_X32_MS_CLOCK")
+printf("#define X32_US_CLOCK LIBCODE_X32_US_CLOCK")
+printf("#define X32_STDOUT LIBCODE_X32_STDOUT")
+printf("#define X32_STDOUT_STATUS LIBCODE_X32_STDOUT_STATUS")
+printf("#define X32_STDIN LIBCODE_X32_STDIN")
+printf("#define X32_STDIN_STATUS LIBCODE_X32_STDIN_STATUS")
+
+
+/* some macro's for using interrupts */
+#ifdef INTERRUPTS_ENABLE
+	printf("#define INTERRUPT_VECTOR(index) (*(void(**)(void))&peripherals[PERIPHERAL_INT_VECT_BASE+(index<<1)])")
+	printf("#define INTERRUPT_PRIORITY(index) (peripherals[PERIPHERAL_INT_VECT_BASE+(index<<1)+1])")
+	printf("#define ENABLE_INTERRUPT(index) enable_interrupt(index)")
+	printf("#define DISABLE_INTERRUPT(index) disable_interrupt(index)")
+	printf("#define SET_INTERRUPT_VECTOR(index, value) (INTERRUPT_VECTOR(index) = value)")
+	printf("#define SET_INTERRUPT_PRIORITY(index, value) (INTERRUPT_PRIORITY(index) = value)")
+#endif
+printf("#define STATE_BOOTING (peripherals[PERIPHERAL_PROCSTATE] & 0x01)")
+printf("#define STATE_DIVISION_BY_ZERO (peripherals[PERIPHERAL_PROCSTATE] & 0x08)")
+printf("#define STATE_OVERFLOW (peripherals[PERIPHERAL_PROCSTATE] & 0x10)")
+printf("#define STATE_OUT_OF_MEMORY (peripherals[PERIPHERAL_PROCSTATE] & 0x40)")
+printf("#define STATE_TRAPPED (peripherals[PERIPHERAL_PROCSTATE] & 0x80)")
+printf("#define STATE_SIMULATOR (peripherals[PERIPHERAL_PROCSTATE] & 0x02)")
+
+/* enable/disable interrupts */
+#ifdef INTERRUPTS_ENABLE
+	void enable_interrupt(int);
+	void disable_interrupt(int);
+#endif
+
+/* get current execution level */
+unsigned get_execution_level();
+/* set current execution level */
+void set_execution_level(unsigned);
+/* restore current execution level */
+void restore_execution_level();
+/* combine a stackframe with the previous stackframe */
+void combine_stackframe();
+
+/* initialize a new stack */
+void** init_stack(void**, void*, void*);
+/* switch between contexts */
+void context_switch(void**, void***);
+
+typedef int clock_t;
+clock_t clock();
+
+int putchar(int);
+int getchar();
+int getchar_nb();
+
+
+#define CLOCKS_PER_SEC 1000000
+
+void sleep(unsigned);
+void usleep(unsigned);
+
+typedef int LOCK;
+/* lock a lock */
+printf("#define lock(arg) _lock(&arg)")
+int _lock(LOCK*);
+/* unlock a lock */
+printf("#define unlock(arg) _unlock(&arg)")
+void _unlock(LOCK*);
+
+printf("#endif // X32_H")

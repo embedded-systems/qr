@@ -1,0 +1,131 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>Form1</class>
+<widget class="QMainWindow">
+    <property name="name">
+        <cstring>Form1</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>842</width>
+            <height>649</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>X32 Debugger</string>
+    </property>
+    <widget class="QTextEdit">
+        <property name="name">
+            <cstring>textEdit1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>9</y>
+                <width>620</width>
+                <height>390</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <family>Monospace</family>
+            </font>
+        </property>
+        <property name="textFormat">
+            <enum>RichText</enum>
+        </property>
+    </widget>
+    <widget class="QTextEdit">
+        <property name="name">
+            <cstring>textEdit2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>410</y>
+                <width>620</width>
+                <height>210</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <family>Monospace</family>
+            </font>
+        </property>
+        <property name="text">
+            <string>blahblah</string>
+        </property>
+        <property name="wordWrap">
+            <enum>WidgetWidth</enum>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>650</x>
+                <y>10</y>
+                <width>60</width>
+                <height>31</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>PC:</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>lineEdit1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>720</x>
+                <y>10</y>
+                <width>100</width>
+                <height>31</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>lineEdit1_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>720</x>
+                <y>60</y>
+                <width>100</width>
+                <height>31</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel1_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>650</x>
+                <y>60</y>
+                <width>60</width>
+                <height>31</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>SP:</string>
+        </property>
+    </widget>
+</widget>
+<toolbars>
+</toolbars>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

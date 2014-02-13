@@ -1,0 +1,40 @@
+code
+export _return_from_main
+import $main_fp
+label _return_from_main	
+	ARGSTACKP4 4
+	# pass fp to $set_fp
+	ADDRAP4 0
+
+	# get fp of main
+	ADDRGP4 $main_fp
+	INDIRP4
+
+	ASGNP4
+
+	ADDRGP4 $set_fp
+	CALLV
+
+	# return argument
+	ADDRFP4 0
+	INDIRP4
+	RETI4
+
+
+
+#
+# set the frame pointer of the calling function
+label $set_fp
+	# get fp of $set_fp
+	SAVEFPP4
+	# fp of _return_from_main function is placed right 
+	#	before the position the current fp points to, 
+	# subtract 4:
+	CNSTP4 4
+	SUBP4
+	# get new value
+	ADDRFP4 0
+	INDIRP4
+	# asign:
+	ASGNP4
+	RETV

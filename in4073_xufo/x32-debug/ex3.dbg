@@ -1,0 +1,72 @@
+local: main:k <unsigned int> @ 0x00000000
+typedef: unsigned long:unsigned[4]
+local: hop_loop:j <int> @ 0x00000000
+typedef: unsigned char:unsigned[1]
+typedef: long int:integer[4]
+global: i <int> @ 0x00001E78
+typedef: INSTRUCTION:unsigned short
+function: hop_loop <void> @ 0x000000C8
+typedef: void:void[0]
+typedef: unsigned long long:unsigned[4]
+typedef: float:float[4]
+typedef: clock_t:int
+typedef: long long int:integer[4]
+typedef: int:integer[4]
+typedef: short:integer[2]
+function: isr_hoppa <void> @ 0x00000078
+line: "ex3.c":8 @ 0x000000C6
+typedef: double:float[8]
+file: "ex3.c" @ 0x00000078
+line: "ex3.c":5 @ 0x00000078
+line: "ex3.c":7 @ 0x000000AE
+line: "ex3.c":6 @ 0x00000084
+local: main:c <char> @ 0x00000004
+typedef: char:integer[1]
+local: main:d <unsigned char> @ 0x00000005
+typedef: signed char:integer[1]
+typedef: LOCK:int
+typedef: long double:float[8]
+line: "ex3.c":18 @ 0x0000011E
+line: "ex3.c":19 @ 0x0000012A
+line: "ex3.c":29 @ 0x000001A4
+line: "ex3.c":14 @ 0x000000FC
+line: "ex3.c":27 @ 0x0000018C
+line: "ex3.c":36 @ 0x00000208
+typedef: unsigned short:unsigned[2]
+line: "ex3.c":15 @ 0x00000114
+line: "ex3.c":26 @ 0x00000174
+line: "ex3.c":37 @ 0x00000232
+line: "ex3.c":16 @ 0x0000011C
+line: "ex3.c":25 @ 0x0000015C
+line: "ex3.c":34 @ 0x000001E0
+line: "ex3.c":61 @ 0x00000246
+line: "ex3.c":35 @ 0x000001E0
+line: "ex3.c":10 @ 0x000000C8
+line: "ex3.c":23 @ 0x0000014E
+line: "ex3.c":32 @ 0x000001D0
+line: "ex3.c":11 @ 0x000000CE
+line: "ex3.c":12 @ 0x000000E4
+function: main <int> @ 0x0000011E
+line: "ex3.c":21 @ 0x00000143
+line: "ex3.c":30 @ 0x000001BA
+line: "ex3.c":13 @ 0x000000E4
+line: "ex3.c":20 @ 0x00000138
+typedef: unsigned int:unsigned[4]
+function: _va_init <0> @ 0x00000460
+function: _va_next <0> @ 0x00000486
+function: printf <0> @ 0x0000027A
+function: $appstart <0> @ 0x00000000
+global: _symbols @ <0> 0x00001E88
+function: $main <0> @ 0x00000060
+function: _xprintf <0> @ 0x00000614
+function: enable_interrupt <0> @ 0x00000398
+global: $endprog @ <0> 0x00001E90
+function: disable_interrupt <0> @ 0x000003FA
+function: vprintf <0> @ 0x00000334
+global: $main_fp @ <0> 0x00001E74
+function: set_execution_level <0> @ 0x00001DF8
+function: putchar <0> @ 0x00001DA8
+function: _va_end <0> @ 0x0000050A
+function: tolower <0> @ 0x00000510
+function: toupper <0> @ 0x00000592
+global: peripherals @ <0> 0x00001E80

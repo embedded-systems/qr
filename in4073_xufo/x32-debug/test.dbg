@@ -1,0 +1,93 @@
+typedef: unsigned long:unsigned[4]
+local: breakhierook:k <unsigned short> @ 0x00000014
+function: breakhierook <void> @ 0x00000078
+local: breakhierook:bla <int[4]> @ 0x00000004
+typedef: unsigned char:unsigned[1]
+typedef: long int:integer[4]
+typedef: INSTRUCTION:unsigned short
+local: breakhierook:i <int> @ 0x0000002C
+local: breakhierook:j <short> @ 0x00000030
+typedef: void:void[0]
+typedef: unsigned long long:unsigned[4]
+typedef: float:float[4]
+typedef: clock_t:int
+parameter: breakhierook:arg <int> @ 0x00000004
+typedef: long long int:integer[4]
+typedef: int:integer[4]
+typedef: short:integer[2]
+line: "test.c":27 @ 0x0000019D
+line: "test.c":36 @ 0x00000263
+line: "test.c":41 @ 0x0000028C
+line: "test.c":50 @ 0x000002EA
+line: "test.c":63 @ 0x00000352
+line: "test.c":72 @ 0x000003B8
+line: "test.c":26 @ 0x0000018D
+line: "test.c":40 @ 0x0000027E
+line: "test.c":34 @ 0x00000248
+line: "test.c":43 @ 0x000002A8
+line: "test.c":52 @ 0x000002EC
+line: "test.c":61 @ 0x00000350
+line: "test.c":70 @ 0x00000388
+line: "test.c":24 @ 0x00000171
+line: "test.c":35 @ 0x00000256
+line: "test.c":42 @ 0x0000029A
+line: "test.c":60 @ 0x00000338
+line: "test.c":71 @ 0x000003A0
+line: "test.c":23 @ 0x00000163
+line: "test.c":67 @ 0x00000378
+local: breakhierook:c <char> @ 0x00000000
+line: "test.c":22 @ 0x00000158
+line: "test.c":33 @ 0x0000023D
+line: "test.c":44 @ 0x000002B6
+line: "test.c":55 @ 0x000002F8
+line: "test.c":66 @ 0x00000370
+typedef: double:float[8]
+local: breakhierook:c2 <char[7]> @ 0x00000016
+line: "test.c":21 @ 0x0000014A
+line: "test.c":30 @ 0x00000204
+line: "test.c":47 @ 0x000002D2
+line: "test.c":56 @ 0x00000306
+line: "test.c":20 @ 0x0000011A
+line: "test.c":31 @ 0x0000020F
+line: "test.c":46 @ 0x000002C4
+local: breakhier:a <int> @ 0x00000000
+line: "test.c":64 @ 0x00000358
+line: "test.c":58 @ 0x00000314
+line: "test.c":48 @ 0x000002DE
+line: "test.c":68 @ 0x00000380
+line: "test.c":19 @ 0x0000010E
+line: "test.c":29 @ 0x000001D6
+line: "test.c":38 @ 0x0000026E
+line: "test.c":28 @ 0x000001CB
+parameter: breakhierook:uh <int> @ 0x00000000
+typedef: char:integer[1]
+local: breakhierook:hepl <int**> @ 0x00000028
+typedef: signed char:integer[1]
+typedef: LOCK:int
+local: breakhierook:d <char*> @ 0x00000020
+local: breakhierook:e <char***> @ 0x00000034
+typedef: long double:float[8]
+local: breakhierook:heph <int*> @ 0x00000024
+line: "test.c":6 @ 0x00000078
+global: crap <int> @ 0x00001F18
+typedef: unsigned short:unsigned[2]
+function: breakhier <void> @ 0x000002EC
+line: "test.c":8 @ 0x0000007E
+function: main <int> @ 0x00000352
+file: "test.c" @ 0x00000078
+typedef: unsigned int:unsigned[4]
+function: _va_init <0> @ 0x00000510
+function: _va_next <0> @ 0x00000536
+function: printf <0> @ 0x000003F2
+function: $appstart <0> @ 0x00000000
+global: _symbols @ <0> 0x00001F20
+function: $main <0> @ 0x00000060
+function: _xprintf <0> @ 0x000006C4
+global: $endprog @ <0> 0x00001F30
+function: vprintf <0> @ 0x000004AC
+global: $main_fp @ <0> 0x00001F14
+function: putchar <0> @ 0x00001E58
+function: _va_end <0> @ 0x000005BA
+function: tolower <0> @ 0x000005C0
+function: toupper <0> @ 0x00000642
+global: peripherals @ <0> 0x00001F28

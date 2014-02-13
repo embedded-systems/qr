@@ -1,0 +1,27 @@
+code
+export restore_execution_level 
+label restore_execution_level 
+	# note that setting the execution level directly is useless, it will
+	# reset immediatly when returning from this function. Instead, alter
+	# the stackframe:
+
+	# get the address of the execution level on the stack
+	SAVEFPP4
+	CNSTP4 16
+	SUBP4
+
+	# to restore the execution level, the execution level of the parents
+	# parent function must be found:
+	# generate new el:
+	SAVEFPP4	# FP of current function
+	CNSTP4 4
+	SUBP4
+	INDIRP4		# FP of previous function
+	CNSTP4 16
+	SUBP4
+	INDIRP4		# original EL of previous function
+	
+	# asign:
+	ASGNP4
+
+	RETV

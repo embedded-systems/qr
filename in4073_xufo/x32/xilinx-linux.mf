@@ -1,0 +1,164 @@
+TMPDIR=tmp
+OPT_INTSTYLE=-intstyle xflow
+PAR_EFFORT=high
+
+.PHONY : xilinxclean
+
+###############################################################################
+### CLEAN
+###############################################################################
+xilinxclean :
+	-$(RM) *.lso
+	-$(RM) *.xst-script
+	-$(RM) *.ngc
+	-$(RM) *.xst.log
+	-$(RM) *.ngd
+	-$(RM) *.bld
+	-$(RM) *.pcf 
+	-$(RM) *_map.mrp 
+	-$(RM) *_map.ncd 
+	-$(RM) *_map.ngm
+	-$(RM) *.ncd 
+	-$(RM) *.pad 
+	-$(RM) *.par 
+	-$(RM) *.xpi 
+	-$(RM) *_pad.csv 
+	-$(RM) *_pad.txt
+	-$(RM) *.twr 
+	-$(RM) *.twx
+	-$(RM) *.bgn 
+	-$(RM) *.drc
+	-$(RM) *.unroutes
+
+###############################################################################
+### Create Library Search Order File
+### *.lso
+###############################################################################
+%.lso :
+	@echo "work" > $@
+
+###############################################################################
+### Create XST Script File
+### *.xst-script
+###############################################################################
+%.xst-script :
+	@echo "set -tmpdir $(TMPDIR)"                            > $@
+	@echo "set -xsthdpdir ."                                >> $@
+	@echo "run"                                             >> $@
+	@echo "-ifn                          $*.prj"            >> $@
+	@echo "-ifmt                         mixed"             >> $@
+	@echo "-ofn                          $*"                >> $@
+	@echo "-ofmt                         ngc"               >> $@
+	@echo "-p                            $(FPGA_TYPE)"      >> $@
+	@echo "-top                          $(notdir $*)"      >> $@
+	@echo "-opt_mode                     speed"             >> $@
+	@echo "-opt_level                    1"                 >> $@
+	@echo "-iuc                          no"                >> $@
+	@echo "-lso                          $*.lso"            >> $@
+	@echo "-keep_hierarchy               soft"              >> $@
+	@echo "-glob_opt                     AllClockNets"      >> $@
+	@echo "-rtlview                      no"                >> $@
+	@echo "-read_cores                   yes"               >> $@
+	@echo "-write_timing_constraints     no"                >> $@
+	@echo "-cross_clock_analysis         no"                >> $@
+	@echo "-hierarchy_separator          _"                 >> $@
+	@echo "-bus_delimiter                <>"                >> $@
+	@echo "-case                         maintain"          >> $@
+	@echo "-slice_utilization_ratio      100"               >> $@
+	@echo "-verilog2001                  yes"               >> $@
+#	@echo "-vlgincdir"                   					          >> $@
+	@echo "-fsm_extract                  yes"               >> $@
+	@echo "-fsm_encoding                 auto"              >> $@
+	@echo "-fsm_style                    lut"               >> $@
+	@echo "-ram_extract                  yes"               >> $@
+	@echo "-ram_style                    auto"              >> $@
+	@echo "-rom_extract                  yes"               >> $@
+	@echo "-rom_style                    auto"              >> $@
+	@echo "-mux_extract                  yes"               >> $@
+	@echo "-mux_style                    auto"              >> $@
+	@echo "-decoder_extract              yes"               >> $@
+	@echo "-priority_extract             yes"               >> $@
+	@echo "-shreg_extract                yes"               >> $@
+	@echo "-shift_extract                yes"               >> $@
+	@echo "-xor_collapse                 yes"               >> $@
+	@echo "-resource_sharing             yes"               >> $@
+	@echo "-mult_style                   auto"              >> $@
+	@echo "-iobuf                        yes"               >> $@
+	@echo "-max_fanout                   500"               >> $@
+	@echo "-bufg                         8"                 >> $@
+	@echo "-register_duplication         yes"               >> $@
+	@echo "-equivalent_register_removal  yes"               >> $@
+	@echo "-register_balancing           no"                >> $@
+	@echo "-slice_packing                yes"               >> $@
+	@echo "-optimize_primitives          no"                >> $@
+	@echo "-iob                          auto"              >> $@
+
+###############################################################################
+### Create Netlist File (Synthesize)
+### *.ngc, *.xst.log from *.prj, *.lso, *.xst-script
+###############################################################################
+%.ngc %.xst.log : %.prj %.lso %.xst-script
+	xst $(OPT_INTSTYLE) -ifn $*.xst-script -ofn $*.xst.log
+	-$(RM) -r work
+	-$(RM) -r dump.xst
+
+###############################################################################
+### Create NGD File
+### *.ngd, *.bld from *.ngc
+###############################################################################
+%.ngd %.bld : %.ngc
+	ngdbuild $(OPT_INTSTYLE) -dd _ngo -aul -p $(FPGA_TYPE) -uc $(USER_CONSTRAINTS_FILE) $*.ngc $*.ngd
+
+###############################################################################
+### Create _map.ncd File (Mapper)
+### *.pcf, *_map.mrp, *_map.ncd, *_map.ngm from *.ngd
+###############################################################################
+%.pcf %_map.mrp %_map.ncd %_map.ngm: %.ngd
+	map $(OPT_INTSTYLE) -ol $(PAR_EFFORT) -p $(FPGA_TYPE) -cm area -pr b -c 100 -tx off -xe n -o $*_map.ncd $*.ngd $*.pcf 
+	-$(RM) -r _ngo
+
+###############################################################################
+### Create NCD File (Placer & Router)
+### *.ncd, *.pad, *.par, *.xpi, *_pad.csv, *_pad.txt from *.pcf, *_map.ncd
+###############################################################################
+%.ncd %.pad %.par %.xpi %_pad.csv %_pad.txt: %.pcf %_map.ncd
+	par -w $(OPT_INTSTYLE) -ol $(PAR_EFFORT) -t 1 -xe n $*_map.ncd $*.ncd $*.pcf
+%.dir : %.pcf %_map.ncd
+	par -w $(OPT_INTSTYLE) -ol $(PAR_EFFORT) -t 1 -n 500 -xe c $*_map.ncd $*.dir $*.pcf
+
+###############################################################################
+### Create Trace Files (Optionally)
+### *.twr, *.twx from *_map.ncd, *.pcf
+###############################################################################
+%.twr %.twx : %_map.ncd %.pcf
+	trce $(OPT_INTSTYLE) -e 3 -l 3 -xml $* $*_map.ncd -o $*.twr $*.pcf
+
+###############################################################################
+### Create Binary Bitmaps
+### *.bit, *.bgn, *.drc from *.ncd
+###############################################################################
+OPT_BITGEN = -w -d \
+             -g DebugBitstream:No \
+             -g Binary:no \
+             -g CRC:Enable \
+             -g ConfigRate:6 \
+             -g ProgPin:PullUp \
+             -g DonePin:PullUp \
+             -g TckPin:PullUp \
+             -g TdiPin:PullUp \
+             -g TdoPin:PullUp \
+             -g TmsPin:PullUp \
+             -g UnusedPin:PullNone \
+             -g UserID:0xFFFFFFFF \
+             -g DCMShutdown:Disable \
+             -g StartUpClk:CClk \
+             -g DONE_cycle:4 \
+             -g GTS_cycle:5 \
+             -g GWE_cycle:6 \
+             -g LCK_cycle:NoWait \
+             -g Security:None \
+             -g DonePipe:No \
+             -g DriveDone:No
+
+%.bit %.bgn %.drc: %.ncd
+	bitgen $(OPT_INTSTYLE) $(OPT_BITGEN) $*.ncd

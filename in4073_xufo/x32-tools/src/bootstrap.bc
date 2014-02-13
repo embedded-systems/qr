@@ -1,0 +1,72 @@
+code
+# $appstart must point to the first byte of the binary
+export $appstart
+label $appstart
+
+import $endprog
+import $bss_size
+
+# move the stack to the end of the bss segment:
+	MOVESTACKP4 $endprog
+	# call to init to initialize all other pointers (lp, ap, fp, etc)
+	ADDRGP4 $init
+	CALLV
+label $init
+	ARGSTACKP4 8
+
+# call $main (argc = 1, argv[0] = "application")
+	ADDRAP4 0
+	CNSTI4 1
+	ASGNI4
+	ADDRAP4 4
+	ADDRGP4 $ptr_to_appname
+	ASGNP4
+	ADDRAP4 0
+	ADDRGP4 $main
+	CALLI4
+label $loop
+	TRAPV
+	ADDRGP4 $loop
+	JUMPV
+
+align 96
+# wrapper form main ($main)
+export $main
+import main
+label $main
+	ADDRGP4 $main_fp
+	SAVEFPP4
+	ASGNP4
+
+	ADDRGP4 main
+	JUMPV
+
+data
+align 4
+label $ptr_to_appname
+address $appname
+
+export $main_fp
+label $main_fp
+skip 4
+
+lit
+#string "application"
+align 1
+label $appname
+	byte 1 97
+	byte 1 112
+	byte 1 112
+	byte 1 108
+	byte 1 105
+	byte 1 99
+	byte 1 97
+	byte 1 116
+	byte 1 105
+	byte 1 111
+	byte 1 110
+	byte 1 0
+
+bss
+# first bss variable
+label $bss_start

@@ -1,0 +1,14 @@
+# general settings
+export X32_PACKAGE_ROOT=`pwd`
+export X32_PACKAGE_SERIAL=/dev/ttyUSB0
+
+# x32-tools
+export X32TOOLDIR=${X32_PACKAGE_ROOT}/x32-tools/bin
+export X32LIBDIR=${X32_PACKAGE_ROOT}/x32-tools/lib-x32
+export X32INC=${X32_PACKAGE_ROOT}/x32/te32-qr
+
+# x32 debugger
+export X32DBDIR=${X32_PACKAGE_ROOT}/x32-debug
+
+# path settings
+export PATH=${X32_PACKAGE_ROOT}/XC3Sprog:${X32TOOLDIR}:${X32DBDIR}:$PATH

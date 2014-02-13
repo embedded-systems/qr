@@ -1,0 +1,192 @@
+#####################################################################
+### CONFIGURATION
+#####################################################################
+## PATH TO PROGRAMMING TOOLS
+#X32TOOLDIR=../x32-tools/bin
+## VHDL SOURCE DIRECTORY
+VHDDIR=vhdl
+## JTAG_INDEX FOR FPGA UPLOADING
+JTAG_INDEX=0
+## PATH TO X32 LIBRARY SOURCES
+LIBDIR=library
+## extra C flags to compile the library/loader, use empty or -g to compile
+## with debug symbols
+C_COMPILE_FLAGS=-I$(X32LIBDIR)
+## some linux systems require this to be -e
+ECHO_FLAGS="-e"
+#ECHO_FLAGS=
+ECHO=-e
+
+LOADER_SOURCES=loader/loader.c loader/loader_helper.bc loader/shell.c
+
+X32_MEM_SOURCES= \
+	$(VHDDIR)/mem_cache/tlb.vhd \
+	$(VHDDIR)/mem_cache/bram_dual_clock.vhd \
+	$(VHDDIR)/mem_cache/cache_controller.vhd \
+	$(VHDDIR)/mem_cache/cache_parameters.vhd \
+	$(VHDDIR)/mem_cache/ddr_sdram.vhd \
+	$(VHDDIR)/mem_cache/mem_cache.vhd \
+	$(VHDDIR)/mem_cache/mem_decoder.vhd \
+	$(VHDDIR)/mem_cache/sdram_controller.vhd \
+	$(VHDDIR)/sdram/mig_23_cal_ctl.vhd \
+	$(VHDDIR)/sdram/mig_23_cal_top.vhd \
+	$(VHDDIR)/sdram/mig_23_clk_dcm.vhd \
+	$(VHDDIR)/sdram/mig_23_controller_0.vhd \
+	$(VHDDIR)/sdram/mig_23_controller_iobs_0.vhd \
+	$(VHDDIR)/sdram/mig_23_data_path_0.vhd \
+	$(VHDDIR)/sdram/mig_23_data_path_iobs_0.vhd \
+	$(VHDDIR)/sdram/mig_23_data_read_0.vhd \
+	$(VHDDIR)/sdram/mig_23_data_read_controller_0.vhd \
+	$(VHDDIR)/sdram/mig_23_data_write_0.vhd \
+	$(VHDDIR)/sdram/mig_23_dqs_delay_0.vhd \
+	$(VHDDIR)/sdram/mig_23_fifo_0_wr_en_0.vhd \
+	$(VHDDIR)/sdram/mig_23_fifo_1_wr_en_0.vhd \
+	$(VHDDIR)/sdram/mig_23_infrastructure_iobs_0.vhd \
+	$(VHDDIR)/sdram/mig_23_infrastructure_top.vhd \
+	$(VHDDIR)/sdram/mig_23_infrastructure.vhd \
+	$(VHDDIR)/sdram/mig_23_iobs_0.vhd \
+	$(VHDDIR)/sdram/mig_23_parameters_0.vhd \
+	$(VHDDIR)/sdram/mig_23_ram8d_0.vhd \
+	$(VHDDIR)/sdram/mig_23_rd_gray_cntr.vhd \
+	$(VHDDIR)/sdram/mig_23_s3_dm_iob.vhd \
+	$(VHDDIR)/sdram/mig_23_s3_dq_iob.vhd \
+	$(VHDDIR)/sdram/mig_23_s3_dqs_iob.vhd \
+	$(VHDDIR)/sdram/mig_23_tap_dly.vhd \
+	$(VHDDIR)/sdram/mig_23_top_0.vhd \
+	$(VHDDIR)/sdram/mig_23.vhd \
+	$(VHDDIR)/sdram/mig_23_wr_gray_cntr.vhd
+
+
+
+X32_CORE_SOURCES= \
+	$(VHDDIR)/core/types.vhd \
+	$(VHDDIR)/core/register.vhd \
+	$(VHDDIR)/core/register_init.vhd \
+	$(VHDDIR)/core/timer.vhd \
+	$(VHDDIR)/core/alu_leftshifter.vhd \
+	$(VHDDIR)/core/alu_rightshifter.vhd \
+	$(VHDDIR)/core/alu_divider.vhd \
+	$(VHDDIR)/core/alu_multiplier.vhd \
+	$(VHDDIR)/core/alu_addsub.vhd \
+	$(VHDDIR)/core/alu.vhd \
+	$(VHDDIR)/core/comperator_signed.vhd \
+	$(VHDDIR)/core/comperator_unsigned.vhd \
+	$(VHDDIR)/core/comperator.vhd \
+	$(VHDDIR)/core/controller.vhd \
+	$(VHDDIR)/core/decoder.vhd \
+	$(VHDDIR)/core/core.vhd 
+
+PERIPHERAL_SOURCES= \
+	$(VHDDIR)/peripherals/4x7seg/bin2hex.vhd \
+	$(VHDDIR)/peripherals/4x7seg/disp.vhd \
+	$(VHDDIR)/peripherals/rs232/rs232in.vhd \
+	$(VHDDIR)/peripherals/rs232/rs232out.vhd \
+	$(VHDDIR)/peripherals/rs232/fifo_buffer.vhd \
+	$(VHDDIR)/peripherals/rs232/uart.vhd \
+	$(VHDDIR)/peripherals/pdc_dpc/pdc.vhd \
+	$(VHDDIR)/peripherals/pdc_dpc/dpc.vhd \
+	$(VHDDIR)/peripherals/ps2/ps2reader.vhd \
+	$(VHDDIR)/peripherals/maxon/decoder.vhd \
+	$(VHDDIR)/peripherals/maxon/maxon.vhd \
+	$(VHDDIR)/peripherals/maxon/counter.vhd \
+	$(VHDDIR)/peripherals/trex_comm/trex_comm.vhd \
+	$(VHDDIR)/peripherals/xufo_comm/xufo_comm.vhd \
+	$(VHDDIR)/interrupt/interrupt_controller.vhd \
+	$(VHDDIR)/xs3e/sram-32.vhd \
+	$(VHDDIR)/xs3e/mem_decoder.vhd \
+	$(VHDDIR)/nexys/psram.vhd \
+	$(VHDDIR)/nexys/psram_clk_iob.vhd \
+	$(VHDDIR)/nexys/psram_controller.vhd \
+	$(VHDDIR)/nexys/psram_data_iob.vhd \
+	$(VHDDIR)/nexys/psram_off_iob.vhd \
+	$(VHDDIR)/nexys/psram_wait_iob.vhd \
+	$(VHDDIR)/rs232mem.vhd \
+	$(VHDDIR)/data32to8.vhd 
+
+
+X32_SOURCES=$(CONFIG) $(X32_CORE_SOURCES) $(PERIPHERAL_SOURCES) $(X32_MEM_SOURCES)
+
+LIB_X32_SOURCES=$(LIBDIR)/x32.c $(LIBDIR)/get_execution_level.bc \
+	$(LIBDIR)/set_execution_level.bc $(LIBDIR)/lock.c $(LIBDIR)/sleep.c \
+	$(LIBDIR)/combine_stackframe.c $(LIBDIR)/getchar_nb.c \
+	$(LIBDIR)/getchar.c $(LIBDIR)/putchar.c $(LIBDIR)/taskswitch.c \
+	$(LIBDIR)/restore_execution_level.bc \
+	$(LIBDIR)/enable_disable_interrupt.c $(LIBDIR)/clock.c
+
+
+.PHONY : default clean loader all %-clean
+
+default : te32-qr
+
+upload : te32-qr
+	 ../XC3Sprog/xc3sprog te32-qr/x32.bit 0
+
+all : te32-qr
+
+te32-qr: FPGA_TYPE=xc3s1600e-fg320-4
+te32-qr: USER_CONSTRAINTS_FILE=te300.ucf
+te32-qr: te32-qr/x32.bit te32-qr/x32.h te32-qr/x32.cl
+		
+
+clean : xilinxclean te32-qr-clean
+
+%-clean :
+	$(RM) -rf $*/x32.dir
+	$(RM) -f $*/peripherals.vhd
+	$(RM) -f $*/toplevel.vhd
+	$(RM) -f $*/rom.dbg
+	$(RM) -f $*/rom.ce
+	$(RM) -f $*/rom.vhd
+	$(RM) -f $*/toplevel.vhd
+	$(RM) -f $*/cache_content.bits
+	$(RM) -f $*/x32.bgn
+	$(RM) -f $*/x32.bit
+	$(RM) -f $*/x32.bld
+	$(RM) -f $*/x32.cl
+	$(RM) -f $*/x32.drc
+	$(RM) -f $*/x32.ngd
+	$(RM) -f $*/x32.ncd
+	$(RM) -f $*/x32.ngc
+	$(RM) -f $*/x32.pcf
+	$(RM) -f $*/x32.h
+	$(RM) -f $*/x32.lso
+	$(RM) -f $*/x32.pad
+	$(RM) -f $*/x32.par
+	$(RM) -f $*/x32.prj
+	$(RM) -f $*/x32.unroutes
+	$(RM) -f $*/x32.xpi
+	$(RM) -f $*/x32.xst.log
+	$(RM) -f $*/x32.xst-script
+	$(RM) -f $*/x32_map.mrp
+	$(RM) -f $*/x32_map.ncd
+	$(RM) -f $*/x32_map.ngm
+	$(RM) -f $*/x32_pad.csv
+	$(RM) -f $*/x32_pad.txt
+
+## NEW MAKEFILE LAYOUT:
+%/rom.ce : $(LOADER_SOURCES) %/x32.h %/x32.cl
+	$(X32TOOLDIR)/lcc-x32$(EXE) $(C_COMPILE_FLAGS) -Wo-lccdir=$(X32TOOLDIR) -Wo-base=C0000 $(LOADER_SOURCES) -o $@ -I$* -Wl-lib -Wl$(abspath $*)
+
+%/rom.vhd : %/rom.ce
+	$(X32TOOLDIR)/bin2vhd $*/rom.ce -o $*/rom.vhd
+	$(X32TOOLDIR)/bin2bit $*/rom.ce -o cache_content.bits
+
+%/toplevel.vhd : $(VHDDIR)/toplevel._vhd %/config.vh
+	filepp/filepp -Mfilepp/modules -m for.pm -m c-comment.pm -m bigfunc.pm -m ppresolve.pm -DCONFIGURATION_FILE="config.vh" $(VHDDIR)/toplevel._vhd -I$* -I$../$(VHDDIR) -o $@
+
+%/peripherals.vhd : $(VHDDIR)/peripherals._vhd %/config.vh
+	filepp/filepp -Mfilepp/modules -m for.pm -m c-comment.pm -m bigfunc.pm -m ppresolve.pm -DCONFIGURATION_FILE="config.vh" $(VHDDIR)/peripherals._vhd -I$* -I$../$(VHDDIR) -o $@
+
+%/x32.h : $(LIBDIR)/x32._h %/config.vh
+	filepp/filepp -Mfilepp/modules -m for.pm -m c-comment.pm -m bigfunc.pm -m ppresolve.pm -m format.pm  -DCONFIGURATION_FILE="config.vh" $(LIBDIR)/x32._h -I$* -I$../$(VHDDIR) -o $@
+
+%/x32.cl : $(LIB_X32_SOURCES)
+	$(X32TOOLDIR)/lcc-x32$(EXE) $(C_COMPILE_FLAGS) -Wo-lccdir=$(X32TOOLDIR) -Wo-buildlib $(LIB_X32_SOURCES) -I$* -o $@
+	
+%/x32.prj : $(X32_SOURCES) %/toplevel.vhd %/peripherals.vhd %/rom.vhd
+	@echo $(ECHO_FLAGS) "vhdl work rom.vhd" >> $@
+	@echo $(ECHO_FLAGS) "vhdl work peripherals.vhd" >> $@
+	@echo $(ECHO_FLAGS) "vhdl work toplevel.vhd" >> $@
+	@echo $(ECHO_FLAGS) "$(foreach SOURCE,$(X32_SOURCES),vhdl work ../$(SOURCE)\n)" >> $@
+
+include xilinx-linux.mf

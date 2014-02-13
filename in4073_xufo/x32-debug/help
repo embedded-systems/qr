@@ -1,0 +1,31 @@
+Command syntax:
+
+var = expr 
+command [expr1 [expr2 expr3 ..]]
+
+Expressions cannot contain whitespace characters.
+If omitted, expr1 evaluates to the address/line of the current instruction.
+An expression '#123' evaluates to the address of line 123.
+
+Commands:
+
+? : print specific command information (e.g., '? d')
+a : print call stack
+b : toggle breakpoint (with optional break condition)
+c : continue (to optional target address) 
+d : dump memory region (to optional end address)
+f : run script file expr1
+h : evaluate expression (hexadecimal output)
+i : show session information 
+l : list/scroll to source code (from line expr1)
+n : skip to next line/instruction (see 'z' command)
+o : set output length (for 'd', 'l', 't', 'u' commands)
+p : evaluate expression(s) (separated by whitespace)   
+q : quit debugger 
+r : restart application
+s : skip to next line/instruction (stepping in/out of function call)
+t : show top of stack
+u : unassemble 
+w : write (byte) value(s) at address expr1
+x : show processor state
+z : toggle assembly-level mode (affecting 'n' and 's' commands)

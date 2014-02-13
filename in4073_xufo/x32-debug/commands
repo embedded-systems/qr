@@ -1,0 +1,136 @@
+::a::
+Format: a 
+
+Prints the current call stack. 
+::b::
+Format: b [expr1 [expr2]]
+
+Sets a break point at address expr1. Optionally, a condition expr2 
+can be given; the debugger evaluates the condition each time it passes 
+the break point (which can be slow!), and only breaks if it is true. 
+
+Examples: 
+  b             # Set a break point at the current address
+  b 0x123       # Set a break point at address 0x123
+  b #44         # Set a break point at (the address of) line 44
+  b #44 i==j    # Set a break point, only to stop if "i==j" is true
+  b somefunc    # Set a break point at function "somefunc"
+::c::
+Format: c [expr1]
+
+Continues program execution. If an optional address expr1 is given, 
+a one-time break point is set here. This makes it easy to "jump" to a
+different address/line.
+
+Examples:
+  c             # Continue program execution
+  c #44         # Continue, breaking at (the address of) line 44
+::d::
+Format: d [expr1 [expr2]]
+
+Dumps memory contents, from start address expr1 to optional end 
+address expr2 (see 'o' command). 
+
+Examples:
+  d 0x120                   # Dump memory contents from 0x120 
+  d 0x120 0x120+16          # Dump from 0x120 to 0x130
+  d &somevar &somevar+1     # Dump contents of variable 
+::h::
+Format: h [expr]*
+
+Evaluates a list of expressions, separated by whitespace 
+characters. Uses hexadecimal representation (see 'p' command).
+
+Examples:
+   h 1234                           # Prints 1234 in hexadecimal
+   h a+1                            # Evaluate single expression
+   h i[0] -j[0] i[0]+j[0]           # Evaluates three expressions
+::i::
+Format: i 
+
+Prints an overview of current break points.
+::l::
+Format: l [expr1]
+
+Lists source code from line expr1 (see 'o' command), or scrolls 
+to this line in graphical mode. Note: expr1 should evaluate to a 
+line number, not an address.
+
+Examples:
+  l         # List/scroll to source code starting at current line
+  l 44      # List/scroll to source code starting at line 44
+::n::
+Format: n
+
+Skips to next line in source code, or to next instruction when 
+in assembly mode (see 'z' command).  
+::o::
+Format: o expr1
+
+Sets the output length for the 'd', 'l', 't' and 'u' commands.
+
+Example:
+  o 8   # Use output length of 8 
+::p::
+Format: p [expr]*
+
+Evaluates list of expressions, separated by whitespace characters
+(see 'h' command).
+
+Examples:
+   p 0x1234                         # Prints 1234 in decimal
+   p a+1                            # Evaluates single expression
+   p i[0] -j[0] i[0]+j[0]           # Evaluates three expressions
+::q::
+Format: q
+
+Quits the debugger, while resetting the program.
+::f::
+Format: f expr1
+
+Runs the lines in the file expr1 as though they are user commands.
+
+Example:
+  f blah    # Run the lines in the file "blah" as commands
+::r::
+Format: r
+
+Restarts the application.
+::s::
+Format: s 
+
+Skips to the next line in source code, or to the next instruction 
+when in assembly mode (see 'z' command), while stepping in/out of 
+function calls. 
+::t::
+Format: t
+
+Shows the top of the stack (see 'o' command).
+::u::
+Format: u [expr1]
+
+Unassemble (show assembly code) starting from address expr1 (see 'o'
+command).
+
+Examples:
+  u             # Unassemble from current address
+  u #44         # Unassemble from line 44
+  u somefunc    # Unassemble from start of function "somefunc"
+::w::
+Format: w expr1 [expr]*
+
+Writes (byte) value(s) [expr]*, starting from address expr1.
+
+Examples:
+  w 0x123 4         # Writes 4 to address 0x123
+  w 0x123 1 2+2     # Writes 1 and 5, starting at address 0x123
+  w &i 1 2 3 -1     # Writes four bytes at the address of variable "i"
+::x::
+Format: x
+
+Shows the current state of the processor.
+::z::
+Format: z
+
+Toggles assembly-level mode. In assembly-level mode, the 'n' and 's' 
+commands skip to the next instruction, instead of the next line.

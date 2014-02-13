@@ -1,0 +1,26 @@
+s
+s; start
+h crap; 0x12345678
+b #20
+c
+a
+s
+s
+n
+b #46
+c
+p bla[0]+bla[1]; 19 
+h c+arg+crap; 0x123456ee
+b #20
+b #46
+b #61
+c
+a
+s
+b #68
+c; breakhier
+c
+b #61
+n
+s; done
+c; *** halted ***

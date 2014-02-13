@@ -1,0 +1,19 @@
+code
+#
+# set the frame pointer of the calling function
+export _set_fp
+label _set_fp
+	# get fp
+	#SAVEFPP4
+	ADDRAP4 0
+	# fp of calling function is placed right before
+	#	the position the current fp points to, subtract
+	# 4:
+	CNSTP4 4
+	SUBP4
+	# get new value
+	ADDRFP4 0
+	INDIRP4
+	# asign:
+	ASGNP4
+	RETV

@@ -1,0 +1,203 @@
+Release 11.2 Map L.46 (lin)
+Xilinx Map Application Log File for Design 'x32'
+
+Design Information
+------------------
+Command Line   : map -intstyle xflow -ol high -p xc3s1600e-fg320-4 -cm area -pr
+b -c 100 -tx off -xe n -o te32-qr/x32_map.ncd te32-qr/x32.ngd te32-qr/x32.pcf 
+Target Device  : xc3s1600e
+Target Package : fg320
+Target Speed   : -4
+Mapper Version : spartan3e -- $Revision: 1.51.18.1 $
+Mapped Date    : Fri Jan 28 13:12:29 2011
+
+WARNING:Map:122 - The command line option -ol can only be used when running in
+   timing mode (-timing option).  The option will be ignored.
+WARNING:Map:123 - The command line option -xe can only be used when running in
+   timing mode (-timing option).  The option will be ignored.
+WARNING:Map:210 - The -tx switch is not supported for this architecture, and
+   will be ignored.
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to
+'27040@eros.et.tudelft.nl'.
+INFO:Security:52 - The LM_LICENSE_FILE environment variable is set to
+'27040@eros.et.tudelft.nl'.
+INFO:Security:54 - 'xc3s1600e' is a WebPack part.
+WARNING:Security:43 - No license file was found in the standard Xilinx license
+directory.
+WARNING:Security:44 - No license file was found.
+       Please run the Xilinx License Configuration Manager
+       (xlcm or "Manage Xilinx Licenses")
+       to assist in obtaining a license.
+WARNING:Security:42 - Your license support version '2010.12' for ISE expires in
+-28 days.
+----------------------------------------------------------------------
+License server system does not support this feature.
+Feature:       WebPack
+License path: 
+27040@eros.et.tudelft.nl:/home/imranashraf/.Xilinx/*.lic:/opt/apps/xilinx-11.1/I
+SE/data/*.lic:/opt/apps/xilinx-11.1/ISE/coregen/core_licenses/can_v1_flexlm.lic:
+/opt/apps/xilinx-11.1/ISE/coregen/core_licenses/can_v2_flexlm.lic:/opt/apps/xili
+nx-11.1/ISE/coregen/core_licenses/cpri_flexlm.lic:/opt/apps/xilinx-11.1/ISE/core
+gen/core_licenses/cpri_v2_flexlm.lic:/opt/apps/xilinx-11.1/ISE/coregen/core_lice
+nses/eth_avb_endpoint_flexlm.lic:/opt/apps/xilinx-11.1/ISE/coregen/core_licenses
+/eth_avb_endpoint_v1_flexlm.lic:/opt/apps/xilinx-11.1/ISE/coregen/core_licenses/
+ethernet_statistics_flexlm.lic:/opt/apps/xilinx-11.1/ISE/coregen/core_licenses/e
+thernet_statistics_v2_flexlm.lic:/opt/apps/xilinx-11.1/ISE/coregen/core_licenses
+/ethernet_statistics_v3_flexlm.lic:/opt/apps/xilinx-11.1/ISE/coregen/core_licens
+es/fibre_channel_v3_flexlm.lic:/opt/apps/xilinx-11.1/ISE/coregen/core_licenses/g
+fp_v1_3_flexlm.lic:/opt/apps/xilinx-11.1/ISE/coregen/core_licenses/gfp_v2_flexlm
+.lic:/opt/apps/xilinx-11.1/ISE/coregen/core_licenses/gig_eth_mac_v8_flexlm.lic:/
+opt/apps/xilinx-11.1/ISE/coregen/core_licenses/gig_eth_pcs_pma_flexlm.lic:/opt/a
+pps/xilinx-11.1/ISE/coregen/core_licenses/gig_eth_pcs_pma_v10_flexlm.lic:/opt/ap
+ps/xilinx-11.1/ISE/coregen/core_licenses/gig_eth_pcs_pma_v9_flexlm.lic:/opt/apps
+/xilinx-11.1/ISE/coregen/core_licenses/obsai_flexlm.lic:/opt/apps/xilinx-11.1/IS
+E/coregen/core_licenses/obsai_v3_flexlm.lic:/opt/apps/xilinx-11.1/ISE/coregen/co
+re_licenses/pci32_flexlm.lic:/opt/apps/xilinx-11.1/ISE/coregen/core_licenses/pci
+32_spng_flexlm.lic:/opt/apps/xilinx-11.1/ISE/coregen/core_licenses/pci32_v4_flex
+lm.lic:/opt/apps/xilinx-11.1/ISE/coregen/core_licenses/pci64_flexlm.lic:/opt/app
+s/xilinx-11.1/ISE/coregen/core_licenses/pci64_v4_flexlm.lic:/opt/apps/xilinx-11.
+1/ISE/coregen/core_licenses/pci_express_v3_flexlm.lic:/opt/apps/xilinx-11.1/ISE/
+coregen/core_licenses/pcie_blk_plus_v1_flexlm.lic:/opt/apps/xilinx-11.1/ISE/core
+gen/core_licenses/pcie_pipe_v1_flexlm.lic:/opt/apps/xilinx-11.1/ISE/coregen/core
+_licenses/pcix_v6_flexlm.lic:/opt/apps/xilinx-11.1/ISE/coregen/core_licenses/pkt
+q_v2_flexlm.lic:/opt/apps/xilinx-11.1/ISE/coregen/core_licenses/pl4_flexlm.lic:/
+opt/apps/xilinx-11.1/ISE/coregen/core_licenses/pl4_lite_flexlm.lic:/opt/apps/xil
+inx-11.1/ISE/coregen/core_licenses/pl4_lite_v4_flexlm.lic:/opt/apps/xilinx-11.1/
+ISE/coregen/core_licenses/pl4_v8_flexlm.lic:/opt/apps/xilinx-11.1/ISE/coregen/co
+re_licenses/pl4_v9_flexlm.lic:/opt/apps/xilinx-11.1/ISE/coregen/core_licenses/ri
+o_log_io_v4,srio_phy_v4_flexlm.lic:/opt/apps/xilinx-11.1/ISE/coregen/core_licens
+es/rio_log_io_v4_flexlm.lic:/opt/apps/xilinx-11.1/ISE/coregen/core_licenses/rio_
+log_io_v5,srio_phy_v5_flexlm.lic:/opt/apps/xilinx-11.1/ISE/coregen/core_licenses
+/rio_log_io_v5_flexlm.lic:/opt/apps/xilinx-11.1/ISE/coregen/core_licenses/s6_pci
+e_flexlm.lic:/opt/apps/xilinx-11.1/ISE/coregen/core_licenses/spi3_link_v5_flexlm
+.lic:/opt/apps/xilinx-11.1/ISE/coregen/core_licenses/spi3_phy_v5_flexlm.lic:[...
+]
+FLEXnet Licensing error:-18,147.  System Error: 2 "No such file or directory"
+For further information, refer to the FLEXnet Licensing documentation,
+available at "www.acresso.com".
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+WARNING:LIT:243 - Logical network N159 has no load.
+WARNING:LIT:395 - The above warning message is repeated 65 more times for the
+   following (max. 5 shown):
+   N160,
+   N161,
+   N162,
+   N163,
+   N164
+   To see the details of these warning messages, please use the -detail switch.
+Mapping design into LUTs...
+WARNING:LIT:176 - Clock buffer is designated to drive clock loads. BUFGMUX
+   symbol
+   "physical_group_l_memory/clk_o/l_memory/I_sdram_interface/infrastructure_top0
+   /clk_dcm0/BUFG_CLK0" (output signal=l_memory/clk_o) has a mix of clock and
+   non-clock loads. The non-clock loads are:
+   Pin I0 of l_memory/I_sdram_interface/infrastructure_top0/cal_top0/tap_dly0/l0
+Running directed packing...
+Running delay-based LUT packing...
+Running related packing...
+Updating timing models...
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   l_memory/I_sdram_interface/top_00/data_path0/dqs_delayed_col1<0> is sourced
+   by a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   l_memory/I_sdram_interface/top_00/data_path0/dqs_delayed_col0<0> is sourced
+   by a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   l_memory/I_sdram_interface/top_00/data_path0/dqs_delayed_col1<1> is sourced
+   by a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   l_memory/I_sdram_interface/top_00/data_path0/dqs_delayed_col0<1> is sourced
+   by a combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA0> on
+   block:<l_memory/I_tlb/Mram_bram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA11> on
+   block:<l_memory/I_tlb/Mram_bram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA12> on
+   block:<l_memory/I_tlb/Mram_bram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA13> on
+   block:<l_memory/I_tlb/Mram_bram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA14> on
+   block:<l_memory/I_tlb/Mram_bram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOA15> on
+   block:<l_memory/I_tlb/Mram_bram.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB11> on
+   block:<l_memory/I_tlb/Mram_bram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB12> on
+   block:<l_memory/I_tlb/Mram_bram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB13> on
+   block:<l_memory/I_tlb/Mram_bram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB14> on
+   block:<l_memory/I_tlb/Mram_bram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB15> on
+   block:<l_memory/I_tlb/Mram_bram.B>:<RAMB16_RAMB16B>.
+
+Design Summary
+--------------
+
+Design Summary:
+Number of errors:      0
+Number of warnings:   21
+Logic Utilization:
+  Number of Slice Flip Flops:         2,803 out of  29,504    9%
+  Number of 4 input LUTs:             4,581 out of  29,504   15%
+Logic Distribution:
+  Number of occupied Slices:          3,326 out of  14,752   22%
+    Number of Slices containing only related logic:   3,326 out of   3,326 100%
+    Number of Slices containing unrelated logic:          0 out of   3,326   0%
+      *See NOTES below for an explanation of the effects of unrelated logic.
+  Total Number of 4 input LUTs:       5,037 out of  29,504   17%
+    Number used as logic:             4,373
+    Number used as a route-thru:        456
+    Number used as 16x1 RAMs:            64
+    Number used for Dual Port RAMs:      64
+      (Two LUTs used per Dual Port RAM)
+    Number used as Shift registers:      80
+
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+  Number of bonded IOBs:                 64 out of     250   25%
+    IOB Flip Flops:                      26
+    IOB Master Pads:                      1
+    IOB Slave Pads:                       1
+  Number of ODDR2s used:                 22
+    Number of DDR_ALIGNMENT = NONE       22
+    Number of DDR_ALIGNMENT = C0          0
+    Number of DDR_ALIGNMENT = C1          0
+  Number of RAMB16s:                     33 out of      36   91%
+  Number of BUFGMUXs:                     3 out of      24   12%
+  Number of DCMs:                         1 out of       8   12%
+  Number of MULT18X18SIOs:                4 out of      36   11%
+
+  Number of RPM macros:            1
+Average Fanout of Non-Clock Nets:                3.31
+
+Peak Memory Usage:  228 MB
+Total REAL time to MAP completion:  17 secs 
+Total CPU time to MAP completion:   11 secs 
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity - e.g. two
+   LUTs are "related" if they share common inputs.  When assembling slices,
+   Map gives priority to combine logic that is related.  Doing so results in
+   the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin packing
+   unrelated logic into a slice once 99% of the slices are occupied through
+   related logic packing.
+
+   Note that once logic distribution reaches the 99% level through related
+   logic packing, this does not mean the device is completely utilized.
+   Unrelated logic packing will then begin, continuing until all usable LUTs
+   and FFs are occupied.  Depending on your timing budget, increased levels of
+   unrelated logic packing may adversely affect the overall timing performance
+   of your design.
+
+Mapping completed.
+See MAP report file "te32-qr/x32_map.mrp" for details.

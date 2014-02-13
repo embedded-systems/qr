@@ -1,0 +1,3 @@
+source /opt/apps/xilinx-11.1/settings32.sh
+export LM_LICENSE_FILE=27040@eros.et.tudelft.nl
+export XILINXD_LICENSE_FILE=27040@eros.et.tudelft.nl

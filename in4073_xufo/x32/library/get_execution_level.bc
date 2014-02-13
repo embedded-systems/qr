@@ -1,0 +1,9 @@
+code
+
+export get_execution_level 
+label get_execution_level 
+	# the el is preserved on calls, so the current execution level
+	# is equal to the parent execution level
+	SAVEELP4
+	CVPU4 4
+	RETU4
