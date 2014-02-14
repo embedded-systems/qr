@@ -1,6 +1,30 @@
-13-02-2014
-==========
++——————————+
+|13-02-2014|
++——————————+
 
 - Initial meeting
 - Hello World testing with the testboard
-- Discussing how to communicate between th board and PC
+- Discussing how to communicate between the board and PC
+
+
++——————————+
+|14-02-2014|
++——————————+
+
+Before lab:
+- Research about the communication princpiles
+- First attempt at RS232 communication
+- RS232 protocol adapted to accept manual commands
+
+Lab planning:
+- Connect to QR
+- Run test code (qr_test)
+- Test RS232 protocol on QR
+- Implement manual mode addition
+-+- When working
+ |
+ +——— Demonstrate protocol
+ +——— Implement motors
+ +——— Test manual mode
+
+Lab:
